@@ -1,0 +1,728 @@
+<!doctype html>
+<!--
+  CasaConnect — vista de la Placa B (entradas RJ12).
+  Copia local y autocontenida del artifact:
+      https://claude.ai/artifact/Ta7Z8rkXb2Gyk54ggMbzAx
+  Abrir con doble clic en cualquier navegador. Requiere internet solo para
+  las tipografias; sin conexion cae a las del sistema y se ve igual de bien.
+
+  NOTA: las 6 primeras lineas (doctype/html/head/meta/reset) y el cierre
+  existen solo para que el archivo funcione suelto. Al republicar el
+  artifact hay que quitarlas: la plataforma pone su propio esqueleto.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<title>Placa B — Entradas RJ12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    /* Chrome — tema claro */
+    --bg:        #f2f5f3;
+    --surface:   #ffffff;
+    --surface-2: #e9efeb;
+    --text:      #141d1a;
+    --muted:     #5c6b65;
+    --border:    #d6dfda;
+    --accent:    #15745b;
+    --accent-dim:#d6ebe3;
+    --warn:      #b03f23;
+    --warn-dim:  #fbe4dc;
+    --ok:        #15745b;
+
+    /* Placa — constantes en ambos temas, es un objeto */
+    --pcb:       #15453a;
+    --pcb-hi:    #1b5547;
+    --pcb-edge:  #0a2a22;
+    --silk:      #e6efe9;
+    --silk-dim:  #8fae9f;
+    --trace:     #c0813f;
+    --pad:       #dfab4d;
+    --plastic:   #22282a;
+    --plastic-hi:#3a4347;
+
+    --r: 9px;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:        #0d1211;
+      --surface:   #151d1a;
+      --surface-2: #1d2724;
+      --text:      #e2eae6;
+      --muted:     #90a19a;
+      --border:    #27322e;
+      --accent:    #4cbd95;
+      --accent-dim:#153029;
+      --warn:      #e8805c;
+      --warn-dim:  #351c14;
+      --ok:        #4cbd95;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:        #0d1211;
+    --surface:   #151d1a;
+    --surface-2: #1d2724;
+    --text:      #e2eae6;
+    --muted:     #90a19a;
+    --border:    #27322e;
+    --accent:    #4cbd95;
+    --accent-dim:#153029;
+    --warn:      #e8805c;
+    --warn-dim:  #351c14;
+    --ok:        #4cbd95;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 15px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; }
+
+  /* ---- Cajetín de título, como un plano ---- */
+  .titleblock {
+    border: 1px solid var(--border); border-radius: var(--r);
+    background: var(--surface); overflow: hidden; margin-bottom: 26px;
+  }
+  .titleblock-main { padding: 18px 20px 16px; }
+  h1 {
+    font-size: clamp(22px, 4vw, 30px); line-height: 1.15; margin: 0 0 6px;
+    letter-spacing: -0.02em; text-wrap: balance; font-weight: 700;
+  }
+  .sub { color: var(--muted); margin: 0; max-width: 62ch; font-size: 14.5px; }
+  .meta {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+    border-top: 1px solid var(--border); background: var(--surface-2);
+  }
+  .meta div { padding: 9px 14px; border-right: 1px solid var(--border); }
+  .meta div:last-child { border-right: 0; }
+  .meta dt {
+    font: 500 10px/1.4 var(--mono); letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted); margin: 0 0 1px;
+  }
+  .meta dd { margin: 0; font: 500 13.5px/1.3 var(--mono); }
+
+  /* ---- Placa ---- */
+  .boardpanel {
+    border: 1px solid var(--border); border-radius: var(--r);
+    background: var(--surface); padding: 14px; margin-bottom: 14px;
+  }
+  .boardscroll { overflow-x: auto; }
+  svg.board { display: block; width: 100%; min-width: 660px; height: auto; }
+
+  .hint {
+    display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline;
+    margin: 12px 2px 0; font-size: 13px; color: var(--muted);
+  }
+  .hint b { color: var(--text); font-weight: 600; }
+
+  /* ---- Secciones ---- */
+  h2 {
+    font-size: 17px; letter-spacing: -0.01em; margin: 34px 0 4px; font-weight: 600;
+  }
+  h2 + .lede { margin: 0 0 14px; color: var(--muted); max-width: 68ch; font-size: 14.5px; }
+
+  .rule {
+    border: 1px solid var(--accent); border-left-width: 3px; border-radius: var(--r);
+    background: var(--accent-dim); color: var(--text);
+    padding: 13px 16px; margin: 0 0 18px; font-size: 14.5px;
+  }
+  .rule strong { font-weight: 600; }
+
+  /* ---- Planificador ---- */
+  .planner {
+    border: 1px solid var(--border); border-radius: var(--r);
+    background: var(--surface); overflow: hidden;
+  }
+  .plannerscroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 620px; }
+  th, td { text-align: left; padding: 0; border-bottom: 1px solid var(--border); }
+  thead th {
+    font: 500 10.5px/1.4 var(--mono); letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--muted); padding: 10px 12px; background: var(--surface-2);
+    white-space: nowrap;
+  }
+  tbody tr:last-child td { border-bottom: 0; }
+  .portcell { padding: 10px 12px; white-space: nowrap; }
+  .portname { font: 600 14px var(--mono); }
+  .portrole { font-size: 11.5px; color: var(--muted); }
+  .pairtag {
+    display: inline-block; font: 500 10px/1.5 var(--mono); letter-spacing: 0.08em;
+    padding: 1px 6px; border-radius: 4px; background: var(--surface-2);
+    border: 1px solid var(--border); color: var(--muted); margin-left: 6px;
+  }
+  tr.pairstart td { border-top: 2px solid var(--border); }
+
+  .slot {
+    width: 100%; min-height: 58px; display: flex; flex-direction: column;
+    justify-content: center; gap: 1px; padding: 7px 10px; border: 0; margin: 0;
+    background: transparent; color: var(--text); font: inherit; text-align: left;
+    cursor: pointer; border-left: 1px solid var(--border);
+    transition: background .12s;
+  }
+  .slot:hover { background: var(--surface-2); }
+  .slot:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .slot .gpio { font: 500 12.5px var(--mono); color: var(--muted); }
+  .slot .what { font-size: 12.5px; color: var(--muted); }
+  .slot[data-on="1"] { background: var(--accent-dim); }
+  .slot[data-on="1"] .gpio { color: var(--accent); font-weight: 600; }
+  .slot[data-on="1"] .what { color: var(--text); font-weight: 500; }
+  .slot[data-clash="1"] { background: var(--warn-dim); }
+  .slot[data-clash="1"] .gpio,
+  .slot[data-clash="1"] .what { color: var(--warn); }
+  .slot[data-blocked="1"] .what { font-style: italic; opacity: .72; }
+
+  .tally {
+    display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center;
+    padding: 12px 14px; background: var(--surface-2); border-top: 1px solid var(--border);
+    font-size: 13.5px;
+  }
+  .tally .num { font: 600 15px var(--mono); }
+  .tally .bad { color: var(--warn); font-weight: 600; }
+  .tally .good { color: var(--ok); }
+  button.reset {
+    margin-left: auto; font: 500 12.5px var(--sans); cursor: pointer;
+    background: var(--surface); color: var(--text); border: 1px solid var(--border);
+    border-radius: 6px; padding: 5px 11px;
+  }
+  button.reset:hover { border-color: var(--accent); color: var(--accent); }
+  button.reset:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  /* ---- Leyenda de pines ---- */
+  .legend {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 10px; margin-top: 14px;
+  }
+  .lg {
+    border: 1px solid var(--border); border-left-width: 3px; border-radius: 7px;
+    background: var(--surface); padding: 10px 13px;
+  }
+  .lg h3 { margin: 0 0 2px; font: 600 13px var(--sans); }
+  .lg p { margin: 0; font-size: 12.5px; color: var(--muted); }
+  .lg code { font: 500 12px var(--mono); color: var(--text); }
+
+  .foot {
+    margin-top: 34px; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--muted);
+  }
+  .foot code { font: 500 12.5px var(--mono); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<div class="wrap">
+
+  <div class="titleblock">
+    <div class="titleblock-main">
+      <h1>Placa B — Entradas RJ12</h1>
+      <p class="sub">Vista superior. Cada GPIO del ESP32 se cablea a la <strong>misma línea</strong>
+      de los dos puertos de una pareja, así que las 24 líneas posibles caben en 12 pines
+      sin campo de patch ni cables internos.</p>
+    </div>
+    <dl class="meta">
+      <div><dt>Proyecto</dt><dd>CasaConnect v1</dd></div>
+      <div><dt>Esquema</dt><dd>1 — Parejas</dd></div>
+      <div><dt>Puertos</dt><dd>6 × RJ12 6P6C</dd></div>
+      <div><dt>Entradas</dt><dd>12 GPIO</dd></div>
+      <div><dt>Montaje</dt><dd>THT, 1 capa</dd></div>
+    </dl>
+  </div>
+
+  <div class="boardpanel">
+    <div class="boardscroll"><svg class="board" id="board" viewBox="0 0 1000 690" role="img"
+      aria-label="Vista superior de la placa de entradas con seis jacks RJ12 agrupados en tres parejas"></svg></div>
+    <p class="hint">
+      <span><b>Pasá el cursor o tocá</b> un jack para ver su pareja y sus líneas compartidas.</span>
+    </p>
+  </div>
+
+  <h2>La regla</h2>
+  <p class="lede">Lo único que hay que recordar al armar un cable.</p>
+  <div class="rule">
+    Cada puerto tiene un <strong>compañero</strong>. Entre los dos pueden usar
+    <strong>4 líneas en total</strong>, y <strong>nunca la misma línea en ambos</strong>.
+    Un puerto puede quedarse con las 4 — su compañero entonces queda en cero.
+  </div>
+
+  <h2>Planificador de líneas</h2>
+  <p class="lede">Hacé clic en cada casilla para marcar qué línea vas a usar. Si dos puertos
+  de la misma pareja piden la misma línea, se marca el conflicto.</p>
+
+  <div class="planner">
+    <div class="plannerscroll">
+      <table id="tbl">
+        <thead>
+          <tr>
+            <th>Puerto</th>
+            <th>L1 · digital</th>
+            <th>L2 · digital</th>
+            <th>L3 · ADC</th>
+            <th>L4 · ADC solo-entrada</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="tally">
+      <span>GPIO en uso: <span class="num" id="used">0</span> de 12</span>
+      <span id="status" class="good">Sin conflictos</span>
+      <button class="reset" id="reset" type="button">Volver a la configuración v1</button>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="lg" style="border-left-color:#4e8ad4">
+      <h3>L1 y L2 — digitales</h3>
+      <p><code>GPIO 2 · 4 · 5 · 14 · 15 · 27</code><br>Pull-up interno. Botones, PIR, reed switches.</p>
+    </div>
+    <div class="lg" style="border-left-color:#c98a46">
+      <h3>L3 — analógica</h3>
+      <p><code>GPIO 32 · 33 · 36</code><br>ADC1. Las dos primeras tienen pull-up interno; la 36 no.</p>
+    </div>
+    <div class="lg" style="border-left-color:#b0567f">
+      <h3>L4 — analógica, solo entrada</h3>
+      <p><code>GPIO 34 · 35 · 39</code><br>Sin pull-up interno: si va un botón, <strong>poner el jumper</strong>.</p>
+    </div>
+  </div>
+
+  <p class="foot">
+    Cada línea pasa por su red de protección antes de llegar al ESP32:
+    <code>1 kΩ en serie · 100 nF a GND · 2 × BAT85 de recorte</code>, más un
+    <code>PTC de 500 mA</code> en el riel de 5 V de cada puerto.
+    La placa se une a la Placa A — Control por el cable plano de 16 vías del borde superior.
+  </p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Modelo ---------- */
+  // Orden físico en la placa: los compañeros quedan uno al lado del otro.
+  var PAIRS = [
+    { tag: "A", ports: ["P1", "P4"], gpios: [2, 4, 32, 34] },
+    { tag: "B", ports: ["P2", "P5"], gpios: [5, 14, 33, 35] },
+    { tag: "C", ports: ["P3", "P6"], gpios: [15, 27, 36, 39] }
+  ];
+  var KIND = {
+    2:"dig", 4:"dig", 5:"dig", 14:"dig", 15:"dig", 27:"dig",
+    32:"adc", 33:"adc", 36:"adcin", 34:"adcin", 35:"adcin", 39:"adcin"
+  };
+  var ROLE = {
+    P1:"2 botones + PIR", P4:"reserva",
+    P2:"2 botones + PIR", P5:"reserva",
+    P3:"2 botones",       P6:"sensor de luz"
+  };
+  // Configuración v1: puerto -> { linea(1..4): etiqueta }
+  var V1 = {
+    P1: { 1:"Botón 1", 2:"Botón 2", 3:"PIR 1" },
+    P2: { 1:"Botón 3", 2:"Botón 4", 3:"PIR 2" },
+    P3: { 1:"Botón 5", 2:"Botón 6" },
+    P4: {}, P5: {},
+    P6: { 3:"Sensor de luz" }
+  };
+  var LINE_COLOR = { dig:"#4e8ad4", adc:"#c98a46", adcin:"#b0567f" };
+
+  var PORTS = [];
+  PAIRS.forEach(function (p) { PORTS.push(p.ports[0], p.ports[1]); });
+
+  function pairOf(port) {
+    for (var i = 0; i < PAIRS.length; i++) {
+      if (PAIRS[i].ports.indexOf(port) !== -1) return PAIRS[i];
+    }
+    return null;
+  }
+  function partnerOf(port) {
+    var p = pairOf(port);
+    return p.ports[0] === port ? p.ports[1] : p.ports[0];
+  }
+  function gpioFor(port, line) { return pairOf(port).gpios[line - 1]; }
+
+  /* ---------- Estado ---------- */
+  var STORE = "casaconnect.rj12.plan.v1";
+  var state = load();
+
+  function fresh() {
+    var s = {};
+    PORTS.forEach(function (pt) {
+      s[pt] = {};
+      for (var L = 1; L <= 4; L++) s[pt][L] = V1[pt][L] || null;
+    });
+    return s;
+  }
+  function load() {
+    try {
+      var raw = localStorage.getItem(STORE);
+      if (raw) {
+        var v = JSON.parse(raw);
+        if (v && v.P1) return v;
+      }
+    } catch (e) { /* almacenamiento no disponible: seguimos sin él */ }
+    return fresh();
+  }
+  function save() {
+    try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {}
+  }
+
+  function isOn(port, line) { return state[port][line] !== null; }
+  function clash(port, line) { return isOn(port, line) && isOn(partnerOf(port), line); }
+  function usedCount() {
+    var n = 0;
+    PAIRS.forEach(function (p) {
+      for (var L = 1; L <= 4; L++) {
+        if (isOn(p.ports[0], L) || isOn(p.ports[1], L)) n++;
+      }
+    });
+    return n;
+  }
+
+  /* ---------- Dibujo de la placa ---------- */
+  var NS = "http://www.w3.org/2000/svg";
+  var svg = document.getElementById("board");
+
+  function el(name, attrs, parent) {
+    var n = document.createElementNS(NS, name);
+    for (var k in attrs) if (attrs.hasOwnProperty(k)) n.setAttribute(k, attrs[k]);
+    (parent || svg).appendChild(n);
+    return n;
+  }
+  function txt(s, x, y, attrs, parent) {
+    var a = { x: x, y: y, "font-family": "IBM Plex Mono, monospace", fill: "#e6efe9" };
+    for (var k in attrs) if (attrs.hasOwnProperty(k)) a[k] = attrs[k];
+    var n = el("text", a, parent);
+    n.textContent = s;
+    return n;
+  }
+
+  // Geometría
+  var BX = 22, BY = 22, BW = 956, BH = 646;      // placa
+  var JW = 92, JH = 108;                          // jack
+  var JY = BY + BH - JH - 16;                     // y de los jacks
+  var PIN0 = 18, PIND = 11;                       // primer pin y paso
+  var RAIL_Y = [398, 414, 430, 446];              // rieles compartidos L1..L4
+  var PROT_Y = 168, PROT_H = 92, PROT_GAP = 22;   // redes de protección
+  var HDR_Y = 74;                                 // conector de enlace
+
+  var xOf = {};
+  (function () {
+    var intra = 70, inter = 50, margin = 45;
+    var x = BX + margin;
+    PAIRS.forEach(function (p, i) {
+      xOf[p.ports[0]] = x;
+      xOf[p.ports[1]] = x + JW + intra;
+      x += JW * 2 + intra + inter;
+    });
+  })();
+
+  function dataPinX(port, line) { return xOf[port] + PIN0 + PIND * line; }
+
+  function drawBoard() {
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    var defs = el("defs", {});
+    var g = el("linearGradient", { id: "mask", x1: "0", y1: "0", x2: "0", y2: "1" }, defs);
+    el("stop", { offset: "0", "stop-color": "#1b5547" }, g);
+    el("stop", { offset: "1", "stop-color": "#113a30" }, g);
+
+    // Sustrato
+    el("rect", { x: BX, y: BY, width: BW, height: BH, rx: 12, fill: "url(#mask)",
+                 stroke: "#0a2a22", "stroke-width": 3 });
+    // Agujeros de montaje
+    [[BX+26,BY+26],[BX+BW-26,BY+26],[BX+26,BY+BH-26],[BX+BW-26,BY+BH-26]].forEach(function (c) {
+      el("circle", { cx: c[0], cy: c[1], r: 11, fill: "#0a2a22", stroke: "#dfab4d", "stroke-width": 3 });
+    });
+
+    // Serigrafía de identificación
+    txt("CASACONNECT  ·  PLACA B  ·  ENTRADAS RJ12", BX + 48, BY + 34,
+        { "font-size": 13, "letter-spacing": 1.6, fill: "#8fae9f", "font-weight": 500 });
+    txt("v1", BX + BW - 48, BY + 34,
+        { "font-size": 13, fill: "#8fae9f", "text-anchor": "end", "font-weight": 500 });
+
+    drawHeader();
+    drawProtection();
+    drawRails();
+    drawJacks();
+  }
+
+  // Conector de enlace a la Placa A
+  function drawHeader() {
+    var n = 16, pitch = 22, w = (n - 1) * pitch, x0 = 500 - w / 2;
+    el("rect", { x: x0 - 15, y: HDR_Y - 17, width: w + 30, height: 34, rx: 4,
+                 fill: "#22282a", stroke: "#3a4347", "stroke-width": 1.5 });
+    for (var i = 0; i < n; i++) {
+      el("rect", { x: x0 + i * pitch - 4, y: HDR_Y - 8, width: 8, height: 16, rx: 1.5, fill: "#dfab4d" });
+    }
+    txt("J1 — ENLACE A PLACA A  ·  16 VÍAS", 500, HDR_Y - 28,
+        { "font-size": 11.5, "text-anchor": "middle", fill: "#8fae9f", "letter-spacing": 1.1 });
+    txt("+5V  GND  +3V3  GND  ·  IN1 … IN12", 500, HDR_Y + 33,
+        { "font-size": 10.5, "text-anchor": "middle", fill: "#8fae9f" });
+  }
+
+  // 12 redes de protección, una por GPIO
+  var protX = {};
+  function drawProtection() {
+    var all = [];
+    PAIRS.forEach(function (p) { p.gpios.forEach(function (gp) { all.push(gp); }); });
+
+    var cols = 6, bw = 120, gap = (BW - 90 - cols * bw) / (cols - 1), x0 = BX + 45;
+    all.forEach(function (gp, i) {
+      var c = i % cols, r = Math.floor(i / cols);
+      var x = x0 + c * (bw + gap), y = PROT_Y + r * (PROT_H + PROT_GAP);
+      protX[gp] = { x: x + bw / 2, y: y, bottom: y + PROT_H };
+
+      var grp = el("g", { "class": "prot", "data-gpio": gp });
+      el("rect", { x: x, y: y, width: bw, height: PROT_H, rx: 5,
+                   fill: "#113a30", stroke: "#2d6454", "stroke-width": 1.2 });
+      txt("GPIO " + gp, x + bw / 2, y + 19,
+          { "font-size": 12, "text-anchor": "middle", "font-weight": 600,
+            fill: LINE_COLOR[KIND[gp]] }, grp);
+
+      // Símbolos: R serie, C a masa, 2 diodos de recorte
+      var cy = y + 44;
+      el("rect", { x: x + 16, y: cy - 6, width: 30, height: 12, rx: 2,
+                   fill: "#22282a", stroke: "#c0813f", "stroke-width": 1.4 }, grp);
+      txt("1k", x + 31, cy + 4, { "font-size": 9, "text-anchor": "middle", fill: "#e6efe9" }, grp);
+      el("line", { x1: x + 46, y1: cy, x2: x + 104, y2: cy, stroke: "#c0813f", "stroke-width": 2 }, grp);
+      el("line", { x1: x + 62, y1: cy, x2: x + 62, y2: cy + 14, stroke: "#c0813f", "stroke-width": 2 }, grp);
+      el("rect", { x: x + 55, y: cy + 14, width: 14, height: 7, fill: "#22282a",
+                   stroke: "#c0813f", "stroke-width": 1.2 }, grp);
+      txt("100n", x + 62, cy + 34, { "font-size": 8.5, "text-anchor": "middle", fill: "#8fae9f" }, grp);
+      el("path", { d: "M " + (x + 86) + " " + (cy + 10) + " l 9 0 l -4.5 9 z", fill: "#b0567f" }, grp);
+      el("path", { d: "M " + (x + 100) + " " + (cy + 19) + " l 9 0 l -4.5 -9 z", fill: "#b0567f" }, grp);
+      txt("BAT85 ×2", x + 97, cy + 34, { "font-size": 8.5, "text-anchor": "middle", fill: "#8fae9f" }, grp);
+
+      // Traza hacia el conector de enlace
+      el("path", { d: "M " + (x + bw / 2) + " " + y + " L " + (x + bw / 2) + " " + (y - 14) +
+                      " L 500 " + (y - 14) + " L 500 " + (HDR_Y + 10),
+                   fill: "none", stroke: "#c0813f", "stroke-width": 1.6, opacity: .4 });
+
+      // Jumper de pull-up en las entradas sin pull-up interno
+      if (KIND[gp] === "adcin") {
+        el("rect", { x: x + bw - 26, y: y + 6, width: 18, height: 9, rx: 2,
+                     fill: "#dfab4d" }, grp);
+        txt("JP", x + bw - 17, y + 27, { "font-size": 8, "text-anchor": "middle", fill: "#8fae9f" }, grp);
+      }
+    });
+  }
+
+  // Rieles compartidos: cada uno une la misma línea de los dos puertos de la pareja
+  var railEls = {};
+  function drawRails() {
+    PAIRS.forEach(function (p) {
+      var a = p.ports[0], b = p.ports[1];
+      var g = el("g", { "class": "rails", "data-pair": p.tag });
+      railEls[p.tag] = [];
+
+      // Marco de la pareja
+      el("rect", { x: xOf[a] - 13, y: RAIL_Y[0] - 20, width: (xOf[b] + JW + 13) - (xOf[a] - 13),
+                   height: (JY + JH + 8) - (RAIL_Y[0] - 20), rx: 7,
+                   fill: "none", stroke: "#2d6454", "stroke-width": 1.2,
+                   "stroke-dasharray": "5 4", opacity: .75 }, g);
+      txt("PAREJA " + p.tag, (xOf[a] + xOf[b] + JW) / 2, RAIL_Y[0] - 28,
+          { "font-size": 10.5, "text-anchor": "middle", fill: "#8fae9f", "letter-spacing": 1.3 }, g);
+
+      for (var L = 1; L <= 4; L++) {
+        var gp = p.gpios[L - 1], y = RAIL_Y[L - 1];
+        var xa = dataPinX(a, L), xb = dataPinX(b, L);
+        var col = LINE_COLOR[KIND[gp]];
+        var sub = el("g", { "data-gpio": gp, "data-line": L }, g);
+
+        // riel horizontal + bajadas a cada jack
+        el("path", { d: "M " + xa + " " + JY + " L " + xa + " " + y + " L " + xb + " " + y +
+                        " L " + xb + " " + JY,
+                     fill: "none", stroke: col, "stroke-width": 2.4, opacity: .62,
+                     "stroke-linejoin": "round", "stroke-linecap": "round" }, sub);
+        // subida a la red de protección
+        var px = protX[gp].x;
+        el("path", { d: "M " + ((xa + xb) / 2) + " " + y + " L " + ((xa + xb) / 2) + " " + (y - 8) +
+                        " L " + px + " " + (y - 8) + " L " + px + " " + protX[gp].bottom,
+                     fill: "none", stroke: col, "stroke-width": 1.8, opacity: .32,
+                     "stroke-linejoin": "round" }, sub);
+        txt("L" + L, xa - 17, y + 4, { "font-size": 9.5, "text-anchor": "end", fill: col }, sub);
+        railEls[p.tag].push(sub);
+      }
+    });
+  }
+
+  function drawJacks() {
+    PORTS.forEach(function (port) {
+      var x = xOf[port], pr = pairOf(port);
+      var g = el("g", { "class": "jack", "data-port": port, tabindex: "0",
+                        role: "button", "aria-label": "Puerto " + port });
+      g.style.cursor = "pointer";
+
+      // cuerpo
+      el("rect", { x: x, y: JY, width: JW, height: JH, rx: 4,
+                   fill: "#22282a", stroke: "#3a4347", "stroke-width": 2 }, g);
+      el("rect", { x: x + 9, y: JY + 20, width: JW - 18, height: JH - 32, rx: 3,
+                   fill: "#161b1d", stroke: "#3a4347", "stroke-width": 1 }, g);
+      // traba
+      el("rect", { x: x + JW / 2 - 9, y: JY + JH - 14, width: 18, height: 12, rx: 2,
+                   fill: "#2e373a" }, g);
+      // contactos dorados dentro de la cavidad
+      for (var c = 0; c < 6; c++) {
+        el("rect", { x: x + PIN0 + PIND * c - 2.2, y: JY + 26, width: 4.4, height: 30,
+                     rx: 1, fill: "#dfab4d", opacity: .85 }, g);
+      }
+      // pads de soldadura (6 pines, cara de pistas)
+      for (var i = 0; i < 6; i++) {
+        var px = x + PIN0 + PIND * i;
+        el("circle", { cx: px, cy: JY - 4, r: 3.6, fill: "#dfab4d" }, g);
+      }
+      // GND (pin 1) y +5V (pin 6)
+      el("path", { d: "M " + (x + PIN0) + " " + (JY - 4) + " L " + (x + PIN0) + " " + (JY - 22) +
+                      " L " + (x - 6) + " " + (JY - 22),
+                   fill: "none", stroke: "#8fae9f", "stroke-width": 2, opacity: .5 }, g);
+      el("path", { d: "M " + (x + PIN0 + PIND * 5) + " " + (JY - 4) + " L " +
+                      (x + PIN0 + PIND * 5) + " " + (JY - 30) + " L " + (x + JW + 6) + " " + (JY - 30),
+                   fill: "none", stroke: "#c0813f", "stroke-width": 2, opacity: .5 }, g);
+      // PTC del riel de 5 V
+      el("rect", { x: x + JW - 16, y: JY - 42, width: 22, height: 11, rx: 5,
+                   fill: "#2a1d12", stroke: "#dfab4d", "stroke-width": 1.2 }, g);
+      txt("PTC", x + JW - 5, JY - 46, { "font-size": 8, "text-anchor": "middle", fill: "#8fae9f" }, g);
+
+      // etiqueta del puerto
+      txt(port, x + JW / 2, JY + 15,
+          { "font-size": 15, "text-anchor": "middle", "font-weight": 600, fill: "#e6efe9" }, g);
+      txt(ROLE[port], x + JW / 2, JY + JH + 18,
+          { "font-size": 9.5, "text-anchor": "middle", fill: "#8fae9f" }, g);
+
+      g.addEventListener("mouseenter", function () { focusPair(port); });
+      g.addEventListener("mouseleave", clearFocus);
+      g.addEventListener("focus", function () { focusPair(port); });
+      g.addEventListener("blur", clearFocus);
+      g.addEventListener("click", function () { focusPair(port); });
+    });
+  }
+
+  function focusPair(port) {
+    var tag = pairOf(port).tag;
+    PAIRS.forEach(function (p) {
+      var on = p.tag === tag;
+      var rails = svg.querySelector('g.rails[data-pair="' + p.tag + '"]');
+      if (rails) rails.style.opacity = on ? "1" : "0.22";
+      p.ports.forEach(function (pt) {
+        var j = svg.querySelector('g.jack[data-port="' + pt + '"]');
+        if (j) j.style.opacity = on ? "1" : "0.3";
+      });
+      p.gpios.forEach(function (gp) {
+        var pr = svg.querySelector('g.prot[data-gpio="' + gp + '"]');
+        if (pr) pr.style.opacity = on ? "1" : "0.25";
+      });
+    });
+  }
+  function clearFocus() {
+    ["g.rails", "g.jack", "g.prot"].forEach(function (sel) {
+      Array.prototype.forEach.call(svg.querySelectorAll(sel), function (n) { n.style.opacity = "1"; });
+    });
+  }
+
+  /* ---------- Tabla ---------- */
+  var tbody = document.getElementById("tbody");
+
+  function buildTable() {
+    tbody.innerHTML = "";
+    PAIRS.forEach(function (p) {
+      p.ports.forEach(function (port, idx) {
+        var tr = document.createElement("tr");
+        if (idx === 0) tr.className = "pairstart";
+        tr.setAttribute("data-port", port);
+
+        var td = document.createElement("td");
+        td.className = "portcell";
+        td.innerHTML = '<div><span class="portname">' + port + '</span>' +
+                       '<span class="pairtag">' + p.tag + '</span></div>' +
+                       '<div class="portrole">con ' + partnerOf(port) + '</div>';
+        tr.appendChild(td);
+
+        for (var L = 1; L <= 4; L++) {
+          var cell = document.createElement("td");
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "slot";
+          b.setAttribute("data-port", port);
+          b.setAttribute("data-line", String(L));
+          cell.appendChild(b);
+          tr.appendChild(cell);
+        }
+        tbody.appendChild(tr);
+      });
+    });
+    tbody.addEventListener("click", function (ev) {
+      var b = ev.target.closest(".slot");
+      if (!b) return;
+      var pt = b.getAttribute("data-port"), L = +b.getAttribute("data-line");
+      state[pt][L] = state[pt][L] === null ? "en uso" : null;
+      save();
+      render();
+    });
+  }
+
+  function render() {
+    Array.prototype.forEach.call(tbody.querySelectorAll(".slot"), function (b) {
+      var pt = b.getAttribute("data-port"), L = +b.getAttribute("data-line");
+      var gp = gpioFor(pt, L), on = isOn(pt, L), bad = clash(pt, L);
+      var takenByPartner = !on && isOn(partnerOf(pt), L);
+
+      b.setAttribute("data-on", on ? "1" : "0");
+      b.setAttribute("data-clash", bad ? "1" : "0");
+      b.setAttribute("data-blocked", takenByPartner ? "1" : "0");
+
+      var what;
+      if (bad) what = "⚠ choca con " + partnerOf(pt);
+      else if (on) what = state[pt][L];
+      else if (takenByPartner) what = "la usa " + partnerOf(pt);
+      else what = "libre";
+
+      b.innerHTML = '<span class="gpio">GPIO ' + gp + '</span><span class="what">' + what + '</span>';
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+
+    var conflicts = 0;
+    PORTS.forEach(function (pt) {
+      for (var L = 1; L <= 4; L++) if (clash(pt, L)) conflicts++;
+    });
+    conflicts = conflicts / 2;
+
+    document.getElementById("used").textContent = String(usedCount());
+    var st = document.getElementById("status");
+    if (conflicts > 0) {
+      st.className = "bad";
+      st.textContent = conflicts === 1 ? "1 conflicto: dos puertos piden la misma línea"
+                                       : conflicts + " conflictos: líneas pedidas dos veces";
+    } else {
+      st.className = "good";
+      st.textContent = "Sin conflictos";
+    }
+  }
+
+  document.getElementById("reset").addEventListener("click", function () {
+    state = fresh();
+    save();
+    render();
+  });
+
+  drawBoard();
+  buildTable();
+  render();
+})();
+</script>
+
+</body>
+</html>
