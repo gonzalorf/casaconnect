@@ -62,11 +62,35 @@ Todo sale del inventario: DevKit, módulo de 8 relés, 2 PIR, LDR, OLED, Dupont.
 | 1.3 | OLED por I²C, detectar `0x3C` | Dirección y bus |
 | 1.4 | Leer un PIR y un botón con 10 m de cable telefónico real | Ruido, rebotes, si hace falta el RC |
 | 1.5 | Leer el LDR por `AO` alimentado a 3.3 V | Rango útil del ADC |
+| 1.6 | **Conmutar los 8 relés a la vez**, con y sin el capacitor de 1000 µF | Si el pico de 560 mA resetea el ESP32, y si el reservorio lo resuelve |
 
-**Por qué esta fase importa más de lo que parece:** cada una de esas cinco cosas es una
-suposición del diseño. Si alguna falla, es **mucho** más barato enterarse ahora que
-después de etchar dos placas. El 1.2 en particular — si los pull-ups no alcanzan,
-cambia el circuito.
+### Kit de banco — lo único que hay que tener a mano
+
+| Componente | Cantidad |
+|---|---:|
+| R 10 kΩ | 1 (8 si querés probar los 8 canales) |
+| R 1 kΩ | 1 |
+| C 100 nF | **2** |
+| C 1000 µF | 1 *(para el test 1.6)* |
+| R 4.7 kΩ | 2 *(solo si el OLED no trae pull-ups de I²C)* |
+
+**Dos capacitores de 100 nF, no doce.** Y están ahí para poder confirmar la solución:
+el test 1.4 existe justamente para averiguar si el filtro RC hace falta. Sin ningún
+capacitor podés ver el problema pero no verificar que se arregla.
+
+### Prerrequisitos que no son obvios
+
+- **Soldarle los pines macho a un DevKit.** Vienen sin soldar. No es trabajo perdido:
+  el diseño final usa zócalo, así que el ESP32 lleva pines macho igual.
+- **Protoboard.** No figura en el inventario. Los tests 1.1, 1.3 y 1.5 se pueden hacer
+  con Dupont de módulo a módulo, pero el 1.2, 1.4 y 1.6 tienen componentes sueltos.
+
+**Por qué esta fase importa más de lo que parece:** cada una de esas seis cosas es una
+**suposición** del diseño, no un hecho verificado. Si alguna falla, es mucho más
+barato enterarse ahora que después de etchar dos placas. Dos en particular pueden
+cambiar el circuito: el **1.2** (si los pull-ups de 10 kΩ no alcanzan, hay que bajar
+a 4.7 kΩ) y el **1.6** (si el reservorio no alcanza, hay que agrandarlo o repensar
+la distribución de la alimentación).
 
 > **Punto de control:** si 1.1 o 1.2 fallan, parar y rediseñar antes de seguir.
 
