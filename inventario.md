@@ -21,7 +21,7 @@
 
 | ID | Componente | Modelo / Chip | Cant. | Detalles clave | Notas |
 |---|---|---|---:|---|---|
-| MCU-001 | DevKit ESP32 38 pines | **ESP32-D0WD-V3 rev v3.1** · 4 MB flash · sin PSRAM · MAC `84:1f:e8:2b:24:5c` | 1 | Dual core + LP core 240 MHz · WiFi + BT · cristal 40 MHz · Vref calibrada en eFuse | USB-UART **Silabs CP2102** (FPC03X 2433+) · micro-USB · botones serigrafiados **EN** y **BOOT**. Pines sin soldar. |
+| MCU-001 | **NodeMCU ESP-32S v1.1** (serigrafía `ESP-32S V1.1 101010`) | **ESP32-D0WD-V3 rev v3.1** · 4 MB flash · sin PSRAM · MAC `84:1f:e8:2b:24:5c` | 1 | Dual core + LP core 240 MHz · WiFi + BT · cristal 40 MHz · Vref calibrada en eFuse | USB-UART **Silabs CP2102** (FPC03X 2433+) · micro-USB · botones **EN** y **BOOT**. ✅ **Pines macho ya soldados** (2026-10-31). Pinout serigrafiado en la cara inferior, verificado — idéntico a MCU-002. **Elegida para la v1.** |
 | MCU-002 | DevKit ESP32 38 pines | **ESP32-D0WD-V3 rev v3.1** · 4 MB flash · sin PSRAM · MAC `d4:e9:f4:64:c5:54` | 1 | Dual core + LP core 240 MHz · WiFi + BT · cristal 40 MHz · Vref calibrada en eFuse | Variante de serigrafía: botones **RST** y **BOOT**, 4 agujeros de montaje en esquinas. Regulador **AMS1117-3.3** (`1117 33 e447`) · CP2102 (FPC03X 2433+) · Q1/Q2 **J3Y (S8050)** para auto-reset · cap. 10 µF 16 V. **Pinout completo verificado — ver apéndice.** |
 
 | MCU-003 | Arduino Pro Mini | **ATmega328P-AU** (date code `1437`) | 1 | 8-bit AVR 16 MHz · 32 KB flash · 2 KB SRAM · 1 KB EEPROM | Regulador marcado `LG50` → **variante 5 V / 16 MHz** (*a confirmar midiendo VCC*). **Sin USB**: se programa con el adaptador FTDI (PRO-005). 14 I/O digitales + **8 entradas analógicas** (A0-A7). Todos los digitales con pull-up interno. |
@@ -95,6 +95,22 @@ Verificado sobre la serigrafía de MCU-002.
 | Fila izquierda (arriba→abajo) | Fila derecha (arriba→abajo) |
 |---|---|
 | `3V3` · `EN` · `SP` (GPIO36) · `SN` (GPIO39) · `G34` · `G35` · `G32` · `G33` · `G25` · `G26` · `G27` · `G14` · `G12` · `GND` · `G13` · `SD2` · `SD3` · `CMD` · `5V` | `GND` · `G23` · `G22` · `TXD` (GPIO1) · `RXD` (GPIO3) · `G21` · `GND` · `G19` · `G18` · `G5` · `G17` · `G16` · `G4` · `G0` · `G2` · `G15` · `SD1` · `SD0` · `CLK` |
+
+### Equivalencia con la serigrafía de la placa
+
+La placa **no usa los mismos nombres** que la documentación de Espressif. Al cablear,
+buscar la columna de la derecha:
+
+| En estos documentos | En la serigrafía |
+|---|---|
+| `GPIO36` | **`SVP`** |
+| `GPIO39` | **`SVN`** |
+| `GPIO2`, `GPIO4`, `GPIO15`… | **`P2`**, **`P4`**, **`P15`**… (prefijo `P`) |
+| `SD0` `SD1` `SD2` `SD3` `CMD` `CLK` | iguales |
+
+> El pinout está serigrafiado en la **cara inferior**, así que las columnas aparecen
+> espejadas respecto de la vista superior. Verificado en MCU-001 y MCU-002: **las dos
+> placas son idénticas en pinout**.
 
 **Restricciones a tener en cuenta al asignar pines:**
 
@@ -268,3 +284,4 @@ es lo único que las distingue en runtime (útil para identificar nodos en red).
 | 5 | 2026-10-31 | Sensores: luz (LDR+LM393), gas (MQ-7) y PIR HC-SR501 | 3 |
 | 6 | 2026-10-31 | LM2596S (buck), TXS0108E (niveles), MT3608 (boost) | 3 |
 | 7 | 2026-10-31 | Display OLED 0.96" SSD1306 I²C | 1 |
+| 8 | 2026-10-31 | MCU-001 cara inferior, pines soldados y pinout serigrafiado | — |
