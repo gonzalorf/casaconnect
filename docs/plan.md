@@ -78,6 +78,42 @@ Todo sale del inventario: DevKit, módulo de 8 relés, 2 PIR, LDR, OLED, Dupont.
 el test 1.4 existe justamente para averiguar si el filtro RC hace falta. Sin ningún
 capacitor podés ver el problema pero no verificar que se arregla.
 
+### Dos configuraciones de banco
+
+La fuente definitiva es **switching de 5 V / 2 A**. Alcanza: el pico de la v1 es
+~1.2 A (560 mA de bobinas + ~500 mA del ESP32 en ráfaga de TX + ~125 mA de sensores).
+
+⚠️ **Nunca el USB y la fuente a la vez** en el pin `5V`: en muchos DevKit ese pin va
+directo al VBUS del USB y tendrías dos fuentes enfrentadas. No hace falta, porque los
+tests se parten solos en dos grupos.
+
+**Configuración A — desarrollo** (tests 1.1 a 1.5 y toda la Fase 2)
+
+```
+  USB ──────────> ESP32            ← alimenta y da el monitor serie
+                    └─ 3V3 ──────> VCC del módulo (opto) · OLED · LDR
+  Fuente 5V ────> JD-VCC · PIR
+            └───> GND común ─────> GND del ESP32
+```
+
+**Configuración B — test 1.6** (y validación final)
+
+```
+  USB DESCONECTADO
+  Fuente 5V ──┬──> ESP32 pin 5V   ┐
+              ├──> JD-VCC          ├─ mismo riel, como en producción
+              └──> PIR             ┘
+```
+
+> ⚠️ **El test 1.6 solo vale en la configuración B.** Si el ESP32 está en el USB y las
+> bobinas en la fuente, son rieles distintos: el pico no puede alcanzar al ESP32 y el
+> test **pasa siempre, sin significar nada**. La pregunta es si 560 mA tirados del
+> *mismo* riel lo resetean — y para eso tienen que compartirlo.
+
+**Cómo leer el resultado sin monitor serie:** con el USB desconectado no hay consola.
+El sketch de banco guarda un **contador de arranques en NVS** y lo muestra en el OLED.
+Si después de conmutar los relés el número subió, hubo reset.
+
 ### Prerrequisitos que no son obvios
 
 - **Soldarle los pines macho a un DevKit.** Vienen sin soldar. No es trabajo perdido:
