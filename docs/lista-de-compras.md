@@ -4,13 +4,34 @@
 > todo THT, con compartición de GPIO (sin campo de patch).
 > Fases: [`plan.md`](plan.md) · Circuito: [`circuito-v1.md`](circuito-v1.md)
 
+## Dos versiones
+
+La PCB lleva **todos** los footprints. Lo que no se puebla en la v1 se suelda
+después sin rehacer nada — ver §12 de [`circuito-v1.md`](circuito-v1.md).
+
+| | **Mínima** ⭐ | Completa |
+|---|---:|---:|
+| Unidades a comprar | **~65** | ~130 |
+| Tipos distintos | **12** | 17 |
+| BAT85 | 0 | 30 |
+| PTC | 2 | 8 |
+
+**Comprá la mínima.** La diferencia es protección contra transitorios rápidos, y
+tu sistema actual lleva años sin nada de eso en las mismas condiciones. Si algún
+día aparece un problema, los pads ya están.
+
+> ⚠️ Al soldar: un footprint vacío **en serie** necesita puente; uno **en paralelo**
+> se deja pelado. Puentear un paralelo cortocircuita el riel. La tabla completa está
+> en §12 de `circuito-v1.md`.
+
 ## Resumen
 
 | | Ítems | Estado |
 |---|---:|---|
 | Ya tenés en el inventario | 7 | ✅ |
 | Hay que verificar antes de comprar | 2 | ⚠️ **bloquean parte del pedido** |
-| Hay que comprar | 17 | 🛒 |
+| Hay que comprar (versión mínima) | 12 | 🛒 |
+| Diferido — footprint sí, componente no | 5 | ⏸ |
 | Tenías pero **ya no hacen falta** | 5 | — |
 
 ---
@@ -131,34 +152,52 @@ No es que sobren: quedan para la v2 o para otros proyectos.
 
 ---
 
-## Resumen para llevar al negocio
+## ⏸ Diferido — footprint en la placa, componente después
+
+No comprar ahora. Si aparecen disparos fantasma o se daña una entrada, se sueldan
+**solo en la entrada afectada**: 2 diodos y 1 capacitor.
+
+| Componente | Cant. | Topología | Si no se puebla |
+|---|---:|---|---|
+| BAT85 | 24 | Paralelo | **Dejar vacío** |
+| C 100 nF de entrada | 12 | Paralelo | **Dejar vacío** |
+| R 10 kΩ pull-up conmutable | 4 | Paralelo | **Dejar vacío** |
+| Jumper shunt | 4 | — | — |
+| R 4.7 kΩ I²C | 2 | Paralelo | **Dejar vacío** — verificar si el OLED ya los trae |
+| PTC por puerto | 6 | **Serie** | **Puentear con alambre** |
+
+> Los pull-ups conmutables **hoy no hacen falta ninguno**: los 6 botones caen en
+> L1/L2, que tienen pull-up interno. Solo harían falta si ponés un botón en una L4.
+
+---
+
+## Resumen para llevar al negocio — versión mínima
 
 ```
-SEMICONDUCTORES
-  30  BAT85  (o BAT43 / 1N5819) — Schottky, NO 1N4148
-
 RESISTENCIAS 1/4 W
-  25  10 kΩ
-  25  1 kΩ
-  10  4.7 kΩ
+  25  10 kΩ      ← 8 pull-up de relé (NO son opcionales: sin ellos
+                    los 8 reles se activan en cada arranque)
+  25  1 kΩ       ← 12 en serie de entrada, la proteccion que mas rinde
 
 CAPACITORES
-  25  100 nF cerámico
-   2  1000 µF 16 V electrolítico
-
+  10  100 nF ceramico
+   2  1000 uF 16 V electrolitico   ← sin esto el ESP32 se resetea al
+                                     conmutar varios reles juntos
 CONECTORES
-   8  Jack RJ12 6P6C montaje PCB
+   8  Jack RJ12 6P6C montaje PCB     ← lo mas caro de la lista
   25  Ficha RJ12 6P6C para crimpear
-   8  PTC rearmable 500 mA
-   1  Portafusible PCB  +  3 fusibles 2 A
-  10  Jumper shunt 2.54 mm
-   1  Cable plano 16 vías  +  2 conectores IDC hembra 16
-  (2) Header hembra 1×19        ← solo si PRO-003 es macho
- (20) Dupont hembra-hembra      ← solo si PRO-004 no los trae
-  (1) Tira de pines macho 1×40  ← solo si PRO-003 es hembra
+   2  PTC rearmable 1 A              ← uno en el riel comun
+   1  Portafusible PCB + 3 fusibles 2 A
+   1  Cable plano 16 vias + 2 IDC hembra 16
+  (2) Header hembra 1x19        <- solo si PRO-003 es macho
+ (20) Dupont hembra-hembra      <- solo si PRO-004 no los trae
+  (1) Tira de pines macho 1x40  <- solo si PRO-003 es hembra
 
-FABRICACIÓN
+FABRICACION
    3  Placa virgen de cobre simple faz
-   1  Percloruro férrico
+   1  Percloruro ferrico
    1  Gabinete
 ```
+
+Las resistencias y los cerámicos van con repuestos a propósito: un pack cuesta
+centavos y recortar ahí no ahorra nada real.

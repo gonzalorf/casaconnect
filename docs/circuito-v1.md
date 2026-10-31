@@ -407,3 +407,70 @@ La documentación de la extensión es ambigua sobre si los campos van en minúsc
 **minúscula**. Si EasyEDA rechaza el archivo, cambiar esas dos claves en el método
 `Netlist.add()` y volver a generar.
 
+---
+
+## 12. Poblado opcional — qué se puentea y qué se deja vacío
+
+El diseño lleva **todos** los footprints, pero en la primera versión se pueblan solo
+los imprescindibles. Lo que falte se suelda después sin rehacer la placa.
+
+> ⚠️ **La regla crítica:** un footprint sin poblar se puentea **solo si el componente
+> iba en serie**. Si iba en paralelo (a GND o a 3V3), un puente lo **cortocircuita**.
+
+| Componente | Topología | Si no se puebla |
+|---|---|---|
+| **R 1 kΩ** serie de entrada | **Serie** | Necesita puente — sin él la señal no pasa |
+| **PTC** de puerto | **Serie** | Necesita puente — sin él el puerto se queda sin 5 V |
+| **C 100 nF** de entrada | Paralelo a GND | **Dejar vacío.** Un puente pone la señal a masa |
+| **BAT85** ×2 de recorte | Paralelo a 3V3 / GND | **Dejar vacío.** Un puente cortocircuita el riel |
+| **R 10 kΩ** pull-up conmutable | Paralelo a 3V3 | **Dejar vacío.** Un puente fija la entrada en alto |
+| **R 4.7 kΩ** pull-up I²C | Paralelo a 3V3 | **Dejar vacío** |
+
+De todo lo que se difiere en la v1, **solo el PTC va en serie**. Los demás se dejan con
+los pads pelados y listo.
+
+### Convención de serigrafía
+
+Para no tener que recordar esta tabla con el soldador en la mano:
+
+**Dibujar una línea fina de serigrafía entre los dos pads de cada footprint en serie.**
+
+```
+   SERIE                        PARALELO
+   ┌───┐                        ┌───┐
+   │ o─┼──── o │                │ o │   o
+   └───┘   línea                └───┘
+                                  sin línea
+   Si está vacío: PUENTEAR       Si está vacío: DEJAR ASÍ
+```
+
+Si ves la línea, ese hueco tiene que quedar cerrado sí o sí — con el componente o con
+un puente. Si no hay línea, vacío está bien.
+
+### Qué se puebla en la v1
+
+| Bloque | Se puebla | Se difiere |
+|---|---|---|
+| Alimentación | Fusible · 1000 µF · 2× 100 nF | — |
+| Relés | 8× 10 kΩ pull-up | — |
+| Entradas | 12× 1 kΩ serie | 12× 100 nF · 24× BAT85 |
+| Pull-ups conmutables | — | 4× 10 kΩ · 4× jumper |
+| I²C | — | 2× 4.7 kΩ *(verificar si el OLED ya los trae)* |
+| Puertos RJ12 | 1× PTC en el riel común · 6 puentes | 6× PTC por puerto |
+
+> **Los 8 pull-up de relé no son opcionales.** No son protección sino función: sin
+> ellos los relés se activan durante el arranque.
+
+### El PTC: protección base ahora, por puerto después
+
+Se dejan **las dos cosas**: un PTC de 1 A en el riel común (poblado) y los 6 footprints
+por puerto (puenteados con alambre).
+
+- **Hoy:** el PTC común protege contra un cable cruzado. Un corto apaga los 5 V de los
+  6 puertos — molesto, pero diagnosticable, y evita el cortocircuito franco contra una
+  fuente de 3 A, que es lo que realmente importa.
+- **Mañana:** cambiás el puente de un puerto por un PTC y ese puerto queda aislado.
+
+> No dejes los 6 puertos sin ningún PTC. Un corto sostenido con 3 A disponibles
+> calienta el cable telefónico dentro de la pared.
+
