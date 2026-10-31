@@ -1,0 +1,315 @@
+{
+  "gge1": {
+    "props": {
+      "Designator": "J1",
+      "device_name": "connector",
+      "value": "bornera 2 vias",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+5V_IN",
+      "2": "GND"
+    }
+  },
+  "gge2": {
+    "props": {
+      "Designator": "F1",
+      "device_name": "fuse",
+      "value": "2A",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+5V_IN",
+      "2": "+5V"
+    }
+  },
+  "gge3": {
+    "props": {
+      "Designator": "C1",
+      "device_name": "capacitor",
+      "value": "1000uF 16V",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+5V",
+      "2": "GND"
+    }
+  },
+  "gge4": {
+    "props": {
+      "Designator": "C2",
+      "device_name": "capacitor",
+      "value": "100nF",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+5V",
+      "2": "GND"
+    }
+  },
+  "gge5": {
+    "props": {
+      "Designator": "C3",
+      "device_name": "capacitor",
+      "value": "100nF",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    }
+  },
+  "gge6": {
+    "props": {
+      "Designator": "J2",
+      "device_name": "connector",
+      "value": "header hembra 1x19",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "3": "IN11",
+      "4": "IN12",
+      "5": "IN9",
+      "6": "IN10",
+      "7": "IN7",
+      "8": "IN8",
+      "9": "RLY7",
+      "10": "RLY8",
+      "11": "IN6",
+      "12": "IN4",
+      "14": "GND",
+      "15": "RLY1",
+      "19": "+5V"
+    }
+  },
+  "gge7": {
+    "props": {
+      "Designator": "J3",
+      "device_name": "connector",
+      "value": "header hembra 1x19",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "RLY6",
+      "3": "SCL",
+      "6": "SDA",
+      "7": "GND",
+      "8": "RLY5",
+      "9": "RLY4",
+      "10": "IN3",
+      "11": "RLY3",
+      "12": "RLY2",
+      "13": "IN2",
+      "15": "IN1",
+      "16": "IN5"
+    }
+  },
+  "gge8": {
+    "props": {
+      "Designator": "R1",
+      "device_name": "resistor",
+      "value": "10k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "RLY1"
+    }
+  },
+  "gge9": {
+    "props": {
+      "Designator": "R2",
+      "device_name": "resistor",
+      "value": "10k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "RLY2"
+    }
+  },
+  "gge10": {
+    "props": {
+      "Designator": "R3",
+      "device_name": "resistor",
+      "value": "10k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "RLY3"
+    }
+  },
+  "gge11": {
+    "props": {
+      "Designator": "R4",
+      "device_name": "resistor",
+      "value": "10k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "RLY4"
+    }
+  },
+  "gge12": {
+    "props": {
+      "Designator": "R5",
+      "device_name": "resistor",
+      "value": "10k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "RLY5"
+    }
+  },
+  "gge13": {
+    "props": {
+      "Designator": "R6",
+      "device_name": "resistor",
+      "value": "10k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "RLY6"
+    }
+  },
+  "gge14": {
+    "props": {
+      "Designator": "R7",
+      "device_name": "resistor",
+      "value": "10k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "RLY7"
+    }
+  },
+  "gge15": {
+    "props": {
+      "Designator": "R8",
+      "device_name": "resistor",
+      "value": "10k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "RLY8"
+    }
+  },
+  "gge16": {
+    "props": {
+      "Designator": "J4",
+      "device_name": "connector",
+      "value": "header macho 1x10",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "RLY1",
+      "3": "RLY2",
+      "4": "RLY3",
+      "5": "RLY4",
+      "6": "RLY5",
+      "7": "RLY6",
+      "8": "RLY7",
+      "9": "RLY8",
+      "10": "GND"
+    }
+  },
+  "gge17": {
+    "props": {
+      "Designator": "J5",
+      "device_name": "connector",
+      "value": "bornera 2 vias",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+5V",
+      "2": "GND"
+    }
+  },
+  "gge18": {
+    "props": {
+      "Designator": "J6",
+      "device_name": "connector",
+      "value": "header macho 1x4",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "+3V3",
+      "3": "SCL",
+      "4": "SDA"
+    }
+  },
+  "gge19": {
+    "props": {
+      "Designator": "R9",
+      "device_name": "resistor",
+      "value": "4.7k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "SDA"
+    }
+  },
+  "gge20": {
+    "props": {
+      "Designator": "R10",
+      "device_name": "resistor",
+      "value": "4.7k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "SCL"
+    }
+  },
+  "gge21": {
+    "props": {
+      "Designator": "J7",
+      "device_name": "connector",
+      "value": "header macho 1x4",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+3V3",
+      "2": "GND",
+      "3": "SDA",
+      "4": "SCL"
+    }
+  },
+  "gge22": {
+    "props": {
+      "Designator": "J8",
+      "device_name": "connector",
+      "value": "header macho 1x16",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+5V",
+      "2": "GND",
+      "3": "+3V3",
+      "4": "GND",
+      "5": "IN1",
+      "6": "IN2",
+      "7": "IN3",
+      "8": "IN4",
+      "9": "IN5",
+      "10": "IN6",
+      "11": "IN7",
+      "12": "IN8",
+      "13": "IN9",
+      "14": "IN10",
+      "15": "IN11",
+      "16": "IN12"
+    }
+  }
+}

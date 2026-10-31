@@ -1,0 +1,24 @@
+Puerto: COM7 (Silicon Labs CP210x USB to UART Bridge (COM7))
+
+esptool v5.6.0
+Serial port COM7:
+Connecting....
+Detecting chip type... ESP32
+Connected to ESP32 on COM7:
+Chip type:          ESP32-D0WD-V3 (revision v3.1)
+Features:           Wi-Fi, BT, Dual Core + LP Core, 240MHz, Vref calibration in eFuse, Coding Scheme None
+Crystal frequency:  40MHz
+MAC:                84:1f:e8:2b:24:5c
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+
+Flash Memory Information:
+=========================
+Manufacturer: 68
+Device: 4016
+Detected flash size: 4MB
+Flash voltage set by a strapping pin: 3.3V
+
+Hard resetting via RTS pin...
