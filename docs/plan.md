@@ -37,7 +37,8 @@ El carril lógico arranca **hoy**, sin esperar nada.
 |---|---|---|
 | 0.1 | **Buscar los 15 números LCSC** | Editar `PARTS` en [`../tools/generar-netlist.py`](../tools/generar-netlist.py). Hace doble función: habilita el netlist **y** es la lista de compras |
 | 0.2 | **Decidir dónde comprar** | Local vs. importación. Define si la Fase 3 arranca en una semana o en dos meses |
-| 0.3 | **Hacer el pedido** | Pedir **repuestos** de lo barato: resistencias, capacitores, BAT85. Un BAT85 de más cuesta centavos; esperar tres semanas por uno, no |
+| 0.3 | **Hacer el pedido** | Lista completa en [`lista-de-compras.md`](lista-de-compras.md). Pedir **repuestos** de lo barato |
+| 0.3b | **Identificar PRO-003 y PRO-004** | El género de la tira de pines y de los Dupont define si hay que comprar el zócalo del ESP32 y cables hembra-hembra. **Antes del pedido** |
 | 0.4 | **Medir el ancho de los dos DevKit** | Con calibre. 22.86 mm u 25.4 mm — y pueden diferir entre MCU-001 y MCU-002. Sin esto no se puede dibujar el zócalo |
 | 0.5 | **Verificar el amperaje de la fuente de 5 V** | Mínimo 2 A, ideal 3 A |
 | 0.6 | **Regenerar los netlists** | El script todavía produce la versión con campo de patch. Hay que pasarlo al esquema de parejas: la Placa B baja de 87 a 69 componentes |
