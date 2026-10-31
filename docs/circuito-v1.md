@@ -81,6 +81,49 @@ Sale del pin `3V3` del DevKit (regulador AMS1117 a bordo). Presupuesto:
 Entra sin problemas. El AMS1117 ya alimenta el ESP32 (picos de ~500 mA) y 47 mA más
 no lo mueven. **No hace falta un regulador adicional.**
 
+### Masa en estrella — obligatorio con GND común
+
+En la instalación final hay **una sola fuente**, así que el GND es común para todo: el
+ESP32, el lado lógico del módulo, las bobinas y los puertos RJ12. Está bien que así
+sea, pero obliga a cuidar **por dónde vuelve cada corriente**.
+
+El problema: las 8 bobinas pueden tirar **560 mA de golpe**. Si ese retorno comparte
+una pista fina con el GND del ESP32, la caída sobre esa pista aparece como un
+**desplazamiento de masa** que el ESP32 ve como ruido — y las entradas analógicas, que
+miden contra GND, se corren.
+
+```
+   MAL — en cadena                 BIEN — en estrella
+
+   Fuente(−)                       Fuente(−)
+      │                               │
+      ├── bobinas  ← 560 mA           ├────────── bobinas   ← pista GRUESA, directa
+      │                               │
+      ├── ESP32    ← ve el ruido      ├────────── ESP32 + lógica
+      │   de las bobinas              │
+      └── sensores                    └────────── sensores / RJ12
+```
+
+**Regla:** el retorno de las bobinas vuelve **directo al borne de entrada de la
+fuente**, por pista gruesa y por su propio camino. La masa del ESP32 y la de las
+entradas salen del mismo punto, pero cada una por su lado — nunca colgadas de la pista
+por donde pasan los 560 mA.
+
+Con el plano de masa de la §9 esto sale casi solo, **siempre que la bornera de entrada
+quede cerca del header de relés** y no en la punta opuesta de la placa. Es una decisión
+de ubicación de componentes más que de ruteo, así que conviene tenerla en cuenta al
+acomodar la placa, no después.
+
+### Programar por USB con la fuente conectada
+
+Una vez instalado, si alguna vez necesitás el USB (por ejemplo si se rompe el OTA),
+**desconectá primero la fuente de 5 V**. En muchos DevKit el pin `5V` está unido
+directamente al 5 V del puerto USB, y tendrías la fuente y la PC empujando una contra
+la otra.
+
+Para flashear alcanza con el USB solo: los relés no van a funcionar por falta de
+corriente, pero eso no afecta la carga del firmware.
+
 ---
 
 ## 2. Zócalo del ESP32
