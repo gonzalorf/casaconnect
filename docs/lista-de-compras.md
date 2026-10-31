@@ -80,17 +80,21 @@ los pines del módulo).
 
 ---
 
-## 🛒 Hay que comprar
+## Versión completa — referencia
+
+> Esta es la lista **completa**, para referencia. Lo marcado ⏸ está diferido:
+> va el footprint en la placa pero **no se compra ahora**. La lista real para
+> comprar está al final del documento.
 
 ### Semiconductores y pasivos
 
 | # | Componente | Necesario | Pedir | Dónde va |
 |---|---|---:|---:|---|
-| 1 | **BAT85** Schottky DO-35 | 24 | **30** | Recorte, 2 por entrada |
-| 2 | **R 10 kΩ** 1/4 W | 12 | **25** | 8 pull-up de relé + 4 pull-up conmutable |
+| 1 | ⏸ **BAT85** Schottky DO-35 | 24 | — | Recorte, 2 por entrada |
+| 2 | **R 10 kΩ** 1/4 W | 12 | **25** | 8 pull-up de relé ahora · ⏸ 4 conmutables diferidos |
 | 3 | **R 1 kΩ** 1/4 W | 12 | **25** | Serie de cada entrada |
-| 4 | **R 4.7 kΩ** 1/4 W | 2 | **10** | Pull-ups I²C |
-| 5 | **C 100 nF** cerámico | 14 | **25** | 12 filtro de entrada + 2 desacople |
+| 4 | ⏸ **R 4.7 kΩ** 1/4 W | 2 | — | Pull-ups I²C |
+| 5 | **C 100 nF** cerámico | 14 | **10** | 2 desacople ahora · ⏸ 12 de filtro diferidos |
 | 6 | **C 1000 µF / 16 V** electrolítico | 1 | **2** | Reservorio de la alimentación |
 
 > ⚠️ **No sustituyas el BAT85 por 1N4148.** El de silicio cae 0.7 V y recortaría en
@@ -106,9 +110,9 @@ los pines del módulo).
 |---|---|---:|---:|---|
 | 7 | **Jack RJ12 6P6C** montaje PCB | 6 | **8** | El componente más caro de la lista |
 | 8 | **Fichas RJ12 6P6C** para crimpear | 12+ | **25** | 2 por cable |
-| 9 | **PTC rearmable 500 mA** radial | 6 | **8** | Uno por puerto |
+| 9 | ⏸ **PTC** por puerto (1 A en el riel común sí se compra) | 6 | **2** | Uno por puerto |
 | 10 | **Portafusible PCB + fusible 2 A** | 1 | 1 + 3 | Entrada general |
-| 11 | **Jumper shunt 2.54 mm** | 4 | **10** | Pull-ups conmutables |
+| 11 | ⏸ **Jumper shunt 2.54 mm** | 4 | — | Pull-ups conmutables |
 | 12 | **Header hembra 1×19** | 2 | 2 | **Solo si PRO-003 es macho** — ver arriba |
 | 13 | **Cable plano 16 vías** + 2 IDC hembra 16 | 1 | 1 | Enlace entre placas |
 | 14 | Dupont **hembra-hembra** | ~12 | 20 | **Solo si PRO-004 no los incluye** |
