@@ -12,8 +12,8 @@
 | Alimentación | 2 | 2 |
 | Pantallas e Interfaz | 1 | 1 |
 | Actuadores y Salidas | 2 | 2 |
-| Prototipado, Cables y Herramientas | 6 | ~106 |
-| **Total** | **17** | **~118** |
+| Prototipado, Cables y Herramientas | 7 | ~108 |
+| **Total** | **18** | **~120** |
 
 ---
 
@@ -65,6 +65,7 @@
 | PRO-001 | Bornera de tornillo 2 vías | KF301 / KF128 (clon), azul | ~22 | Paso 5.08 mm · 2 posiciones · montaje PCB THT | Conteo **aproximado** desde la foto. Encastrables entre sí para formar tiras de N vías. |
 | PRO-002 | Tira de pines macho | Header macho 1×40, paso 2.54 mm | 1 tira (40 pines) | Pines cortos estándar | Cortable a medida. Sirve para soldar a MCU-001/002. |
 | PRO-003 | Tira de pines macho (pin largo) | Header 1×40, paso 2.54 mm, cuerpo alto | 1 tira (40 pines) | Cuerpo plástico más grueso y pines más largos que PRO-002 | *A confirmar*: header macho de pin largo ("stackable") o header hembra de perfil. |
+| PRO-007 | Multiplexor analógico 8 canales | **CD74HC4051E** (Texas Instruments, DIP-16) | 2 | 1 común ↔ 8 canales · 3 bits de select (S0-S2) + enable · VCC 2-6 V | Switch **bidireccional y analógico**: pasa tensiones, no solo lógica. Con los dos: **16 entradas analógicas gastando 5 pines** (3 de select compartido + 2 comunes). ⏳ **Fuera de la v1** — hoy se usa 1 sola entrada analógica. Reservados para expansión **analógica**; para expansión digital conviene MCP23017 por I²C, que tiene interrupción propia |
 | PRO-006 | Conversor de niveles lógicos 8 canales | **TXS0108E** (marcado `YF08E`), placa CJMCU | 1 | `VA` 1.4-3.6 V ↔ `VB` 1.65-5.5 V · 8 canales bidireccionales con detección automática de sentido · pin `OE` | Pull-ups internos ~10 kΩ en ambos lados. `OE` debe estar en alto para habilitar. ⚠️ **Solo señales digitales** — no sirve para la `AO` analógica del MQ-7. ⚠️ Baja capacidad de corriente: no puede excitar LEDs ni relés directo. ⚠️ El TXS0108E es conocido por dar problemas en I²C (sus aceleradores *one-shot* chocan con los pull-ups del bus) |
 | PRO-005 | Adaptador USB-Serie | **FTDI FT232RL** (`1412-G B890B572`) | 1 | Mini-USB · jumper selector **3.3 V / 5 V** · pines DTR RXI TXO VCC CTS GND | Necesario para programar MCU-003 (el Pro Mini no tiene USB). El DTR habilita el auto-reset. También sirve como segundo puerto serie para depurar la UART2 del ESP32. ⚠️ Poner el jumper en **5 V** si MCU-003 es la variante de 5 V. |
 | PRO-004 | Cables Dupont | Jumpers 2.54 mm, cinta multicolor | ~2 mazos (~40 unid.) | Largo aparente ~20 cm | *A confirmar* el género (M-H / H-H / M-M). |
@@ -285,3 +286,5 @@ es lo único que las distingue en runtime (útil para identificar nodos en red).
 | 6 | 2026-10-31 | LM2596S (buck), TXS0108E (niveles), MT3608 (boost) | 3 |
 | 7 | 2026-10-31 | Display OLED 0.96" SSD1306 I²C | 1 |
 | 8 | 2026-10-31 | MCU-001 cara inferior, pines soldados y pinout serigrafiado | — |
+| 9 | 2026-10-31 | Fuente de protoboard MB102 (no se usa: límite ~700 mA) | — |
+| 10 | 2026-10-31 | 2× CD74HC4051E, multiplexor analógico | 1 |
