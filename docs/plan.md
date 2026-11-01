@@ -85,9 +85,13 @@ capacitor podés ver el problema pero no verificar que se arregla.
 | 1.1 Conmutación con 3.3 V | ✅ | Clic seco en ambos sentidos. Sin zumbido ni pegado |
 | 1.2 Arranque sin disparo | ✅ | **20+ resets, ningún relé se activó.** El pull-up de 10 kΩ queda confirmado |
 | 1.3 Bus I²C | ⏳ | |
-| 1.4 Entradas con 10 m de cable | ⏳ | |
+| 1.4 Entradas — cable corto | ✅ | `GPIO2` lee bien con pull-up interno (**el LED de a bordo no interfiere**). Rebote: 4-5 transiciones en **menos de 10 ms**. Sin transiciones espurias en huecos de varios segundos |
+| 1.4b Entradas — **10 m de cable real** | ⏳ | Lo que de verdad decide si el RC de 1 kΩ + 100 nF es obligatorio |
 | 1.5 Lectura de ADC | ⏳ | |
 | 1.6 Los 8 relés a la vez | ⏳ | Requiere los 8 canales cableados |
+
+**Antirrebote:** con rebotes que se apagan en <10 ms, una ventana de **25 ms** por
+software los filtra entera sin que la tecla deje de sentirse instantánea.
 
 **Mediciones de referencia** (1 canal conectado, `VCC` del módulo a 3.3 V):
 

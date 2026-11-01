@@ -127,7 +127,8 @@ Orden de implementación (ver `docs/plan.md` §Fase 2):
    por USB, que es justo lo que OTA evita. Con 4 MB quedan ~1.3 MB por slot.
 2. WiFi + NTP
 3. Lógica botón → relé, **local y sin red** (tiene que andar con el WiFi caído)
-4. Antirrebote + pulsación larga (gesto de "mostrar estado")
+4. Antirrebote de **25 ms** + pulsación larga (gesto de "mostrar estado").
+   Medido en banco: los rebotes se apagan en menos de 10 ms
 5. OLED guiado por eventos
 6. PIR con **supresión del primer minuto** (el HC-SR501 da falsos positivos al arrancar)
 7. Sensor de luz con umbral por software
@@ -155,6 +156,10 @@ MCU-001.
 **Tests 1.1 y 1.2 pasados** (1 canal cableado): el relé conmuta limpio con 3.3 V y
 **el pull-up de 10 kΩ evita el disparo en el arranque** — 20+ resets sin activación.
 Ese valor queda decidido.
+
+**Test 1.4 parcial:** `GPIO2` lee bien con pull-up interno — el LED de a bordo no
+interfiere, así que el Botón 1 se queda ahí. Rebote medido: <10 ms. Falta repetirlo
+con los 10 m de cable real, que es lo que decide si el RC de entrada es obligatorio.
 
 Queda un test que puede cambiar el circuito:
 

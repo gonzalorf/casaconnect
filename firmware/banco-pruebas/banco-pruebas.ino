@@ -164,7 +164,9 @@ void testEntradas() {
         uint32_t delta = ultimo[i] ? ahora - ultimo[i] : 0;
         Serial.printf("  %7u ms  GPIO %2d  ->  %s", ahora, ENTRADAS_DIG[i],
                       v ? "ALTO " : "BAJO ");
-        if (delta && delta < 50) Serial.printf("  (+%u ms, rebote)", delta);
+        // El rebote mecanico se apaga en menos de ~10 ms. Mas lejos que eso
+        // ya es otro contacto, no rebote.
+        if (delta && delta < 15) Serial.printf("  (+%u ms, rebote)", delta);
         Serial.println();
         previo[i] = v;
         ultimo[i] = ahora;
