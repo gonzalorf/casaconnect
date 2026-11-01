@@ -28,7 +28,7 @@
       "Designator": "C1",
       "device_name": "capacitor",
       "value": "1000uF 16V",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C18214323"
     },
     "pins": {
       "1": "+5V",
