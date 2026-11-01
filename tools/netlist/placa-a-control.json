@@ -40,7 +40,7 @@
       "Designator": "C2",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "+5V",
@@ -52,7 +52,7 @@
       "Designator": "C3",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "+3V3",

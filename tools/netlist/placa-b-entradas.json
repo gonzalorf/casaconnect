@@ -222,7 +222,7 @@
       "Designator": "C1",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_2",
@@ -270,7 +270,7 @@
       "Designator": "C2",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_4",
@@ -318,7 +318,7 @@
       "Designator": "C3",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_32",
@@ -366,7 +366,7 @@
       "Designator": "C4",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_34",
@@ -438,7 +438,7 @@
       "Designator": "C5",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_5",
@@ -486,7 +486,7 @@
       "Designator": "C6",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_14",
@@ -534,7 +534,7 @@
       "Designator": "C7",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_33",
@@ -582,7 +582,7 @@
       "Designator": "C8",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_35",
@@ -654,7 +654,7 @@
       "Designator": "C9",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_15",
@@ -702,7 +702,7 @@
       "Designator": "C10",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_27",
@@ -750,7 +750,7 @@
       "Designator": "C11",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_36",
@@ -822,7 +822,7 @@
       "Designator": "C12",
       "device_name": "capacitor",
       "value": "100nF",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2169797"
     },
     "pins": {
       "1": "IN_39",

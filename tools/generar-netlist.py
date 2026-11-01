@@ -46,7 +46,7 @@ PARTS = {
                "filtros": "Buscar dentro: 100nF (o 104) | Package: THROUGH HOLE "
                           "| Voltage >=50V. Ojo: casi todos los de esa categoria "
                           "son SMD, el filtro de Package es imprescindible"},
-    "C1000U": {"lcsc": PENDIENTE, "device": "capacitor", "value": "1000uF 16V",
+    "C1000U": {"lcsc": "C18214323", "device": "capacitor", "value": "1000uF 16V",
                "cat": "Passives > Capacitors > Aluminum Electrolytic Capacitors",
                "filtros": "Buscar dentro: 1000uF | Package: THROUGH HOLE / Radial "
                           "| Voltage 16V o 25V. VERIFICACION DE TAMANO: un 1000uF/16V "
