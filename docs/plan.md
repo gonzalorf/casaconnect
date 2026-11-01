@@ -78,6 +78,32 @@ Todo sale del inventario: DevKit, módulo de 8 relés, 2 PIR, LDR, OLED, Dupont.
 el test 1.4 existe justamente para averiguar si el filtro RC hace falta. Sin ningún
 capacitor podés ver el problema pero no verificar que se arregla.
 
+### Resultados
+
+| Test | Estado | Resultado |
+|---|---|---|
+| 1.1 Conmutación con 3.3 V | ✅ | Clic seco en ambos sentidos. Sin zumbido ni pegado |
+| 1.2 Arranque sin disparo | ✅ | **20+ resets, ningún relé se activó.** El pull-up de 10 kΩ queda confirmado |
+| 1.3 Bus I²C | ⏳ | |
+| 1.4 Entradas con 10 m de cable | ⏳ | |
+| 1.5 Lectura de ADC | ⏳ | |
+| 1.6 Los 8 relés a la vez | ⏳ | Requiere los 8 canales cableados |
+
+**Mediciones de referencia** (1 canal conectado, `VCC` del módulo a 3.3 V):
+
+| Condición | `IN1` respecto de GND |
+|---|---|
+| Sin firmware — solo el pull-up, GPIO en alta impedancia | **2.54 V** |
+| Firmware corriendo, relé apagado — GPIO manejando el pin | **3.3 V** |
+
+Los 2.54 V implican una carga equivalente de ~33 kΩ dentro del módulo, y dejan
+0.76 V sobre el camino del opto: por debajo del umbral de ~1.1 V del LED, con
+0.34 V de margen. Sobre el papel es ajustado; los 20 resets confirman que alcanza.
+
+> Probado sobre **1 canal de 8**. Los ocho circuitos son idénticos y cada pull-up es
+> independiente, así que es una muestra sólida. Conviene repetirlo con los 8 cableados
+> como verificación final, pero el valor de 10 kΩ ya se puede dar por decidido.
+
 ### Dos configuraciones de banco
 
 La fuente definitiva es **switching de 5 V / 2 A**. Alcanza: el pico de la v1 es

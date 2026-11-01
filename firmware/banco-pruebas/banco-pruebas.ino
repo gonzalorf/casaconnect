@@ -24,6 +24,10 @@
 const int RELES[] = { 13, 16, 17, 18, 19, 23, 25, 26 };
 const int N_RELES = sizeof(RELES) / sizeof(RELES[0]);
 
+// Cuantos canales hay REALMENTE cableados al modulo, contando desde R1.
+// El test 1.6 (pico de corriente) no significa nada con menos de 8.
+const int N_CONECTADOS = 1;
+
 // Entradas digitales con pull-up interno (lineas L1 y L2 de cada pareja)
 const int ENTRADAS_DIG[] = { 2, 4, 5, 14, 15, 27 };
 const int N_ENTRADAS_DIG = sizeof(ENTRADAS_DIG) / sizeof(ENTRADAS_DIG[0]);
@@ -63,7 +67,7 @@ bool esperarEnter(uint32_t ms) {
 void testRelesUnoPorUno() {
   Serial.println(F("\n--- Reles uno por uno ---"));
   Serial.println(F("Mira y escucha: cada clic tiene que ser seco, sin zumbido."));
-  for (int i = 0; i < N_RELES; i++) {
+  for (int i = 0; i < N_CONECTADOS; i++) {
     Serial.printf("  R%d  (GPIO %2d)  ON ", i + 1, RELES[i]);
     digitalWrite(RELES[i], RELE_ON);
     delay(600);
@@ -78,6 +82,17 @@ void testRelesUnoPorUno() {
 // TEST 1.6 - los 8 a la vez, con y sin el capacitor de 1000 uF
 void testTodosALaVez() {
   Serial.println(F("\n--- Los 8 reles a la vez (test del reservorio) ---"));
+  if (N_CONECTADOS < N_RELES) {
+    Serial.printf("ABORTADO: hay %d canal(es) cableado(s) de %d.",
+                  N_CONECTADOS, N_RELES);
+    Serial.println();
+    Serial.printf("Con %d bobina(s) el pico es ~%d mA, no 560 mA:",
+                  N_CONECTADOS, N_CONECTADOS * 70);
+    Serial.println(F(" el test pasaria sin significar nada."));
+    Serial.println(F("Cablea los 8 canales y pone N_CONECTADOS = 8."));
+    return;
+  }
+
   Serial.println(F("Pico esperado: 8 x 70 mA = 560 mA de golpe."));
   Serial.println();
   Serial.println(F("IMPORTANTE: este test SOLO vale si el ESP32 y las bobinas"));
@@ -200,7 +215,7 @@ void testArranques() {
 // ------------------------------------------------------------------ menu
 void menu() {
   Serial.println(F("\n================ CasaConnect - banco ================"));
-  Serial.printf(  " arranques: %-4u          reles: todos apagados\n", arranques);
+  Serial.printf(  " arranques: %-4u   canales cableados: %d de %d\n", arranques, N_CONECTADOS, N_RELES);
   Serial.println(F("-----------------------------------------------------"));
   Serial.println(F("  1  Reles uno por uno            (test 1.1)"));
   Serial.println(F("  2  Los 8 reles a la vez         (test 1.6)"));

@@ -152,14 +152,16 @@ enumera en **COM7**.
 **Fase 1 en curso** — prototipo en protoboard. Los pines macho ya están soldados a
 MCU-001.
 
-Resultados pendientes que **pueden cambiar el circuito**:
+**Tests 1.1 y 1.2 pasados** (1 canal cableado): el relé conmuta limpio con 3.3 V y
+**el pull-up de 10 kΩ evita el disparo en el arranque** — 20+ resets sin activación.
+Ese valor queda decidido.
 
-- **Test 1.2** — si el pull-up de 10 kΩ no evita el disparo de relés en el arranque,
-  hay que bajar a 4.7 kΩ.
+Queda un test que puede cambiar el circuito:
+
 - **Test 1.6** — si el capacitor de 1000 µF no evita el reset al conmutar los 8 relés
-  a la vez, hay que repensar la distribución de alimentación.
-  **Solo vale si el ESP32 y las bobinas comparten el riel de 5 V** (USB desconectado);
-  si no, el test pasa siempre sin significar nada.
+  a la vez, hay que repensar la distribución de alimentación. Requiere los 8 canales
+  cableados, y **solo vale si el ESP32 y las bobinas comparten el riel de 5 V**
+  (USB desconectado); si no, pasa siempre sin significar nada.
 
 Tareas de desbloqueo abiertas (ver `docs/plan.md` §Fase 0):
 
