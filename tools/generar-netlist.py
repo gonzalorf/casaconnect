@@ -91,9 +91,19 @@ PARTS = {
                "filtros": "2 posiciones | paso 5.08mm | Through Hole"},
 }
 
-# Los pasivos genericos (R, C) son INTERCAMBIABLES: cualquier entrada de LCSC
-# con el valor y el encapsulado correctos sirve. No estas comprando el
-# componente, estas eligiendo un simbolo y un footprint de la libreria.
+# REGLA GENERAL PARA FILTRAR
+# --------------------------
+# TODO el diseno es THROUGH HOLE. Si la columna "Package" muestra un numero
+# de 4 cifras -- 0402, 0603, 0805, 1206 -- es SMD: DESCARTAR.
+# Lo correcto dice "Through Hole", "Radial", o un paso tipo "P=5mm".
+#
+# Ejemplos de lo que NO sirve, aunque el valor sea el correcto:
+#     CL10B104KB8NNNC  ->  CL10 = serie Samsung 0603, SMD
+#
+# Los pasivos genericos (R, C) son INTERCAMBIABLES **dentro del mismo
+# encapsulado**: con el valor y el formato correctos, cualquier entrada
+# sirve. No estas comprando el componente, estas eligiendo un simbolo y un
+# footprint de la libreria. Pero el encapsulado NO es intercambiable.
 #
 # La advertencia de irreversibilidad aplica de verdad solo a los distintivos:
 # RJ12, PTC, BAT85, portafusible, headers y bornera. Ahi si hay que mirar el
