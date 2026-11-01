@@ -90,6 +90,26 @@ capacitor podés ver el problema pero no verificar que se arregla.
 | 1.5 Lectura de ADC | ⏳ | |
 | 1.6 Los 8 relés a la vez | ⏳ | Requiere los 8 canales cableados |
 
+**Hallazgo lateral — el ESP32 ya trae pull-up interno en `GPIO13`:** sin la resistencia
+externa, 10 encendidos en frío (cortando la alimentación por completo, con la potencia
+de los relés conectada) **no dispararon el relé**. El AVR del sistema viejo sí lo hace,
+porque arranca con los pines en alta impedancia real y el pull-up interno desactivado;
+el ESP32 tiene pull-up activo en ese pad desde el reset.
+
+**La resistencia externa se mantiene en el diseño.** Tres razones:
+
+1. Los estados por defecto al reset son **distintos pin por pin**. Está verificado en
+   `GPIO13`; los otros siete (`16 17 18 19 23 25 26`) podrían flotar.
+2. Es un comportamiento que podría cambiar con una actualización del core.
+3. Cuesta ocho resistencias. El riesgo de sacarlas no es cero; el de dejarlas, sí.
+
+En `GPIO13` el resultado es que hay **doble protección**: el pull-up interno y el
+externo. Margen de sobra.
+
+> Nota sobre los "~33 kΩ equivalentes" calculados del divisor: es una **linealización
+> válida solo en ese punto de trabajo**. La carga real es el LED del opto, que es no
+> lineal, así que ese número no predice el comportamiento con otro valor de pull-up.
+
 **Antirrebote:** con rebotes que se apagan en <10 ms, una ventana de **25 ms** por
 software los filtra entera sin que la tecla deje de sentirse instantánea.
 

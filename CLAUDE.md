@@ -106,7 +106,7 @@ queda entonces en cero.
 | 2 | **Nunca** usar GPIO 12 | Strapping: en HIGH al arrancar, la placa **no bootea** |
 | 3 | Analógico **solo** en ADC1 (`32` `33` `34` `35` `36` `39`) | ADC2 no funciona con WiFi activo, y el WiFi está siempre activo |
 | 4 | GPIO `34` `35` `36` `39` **no tienen pull-up interno** | Un botón ahí lee basura sin resistencia externa |
-| 5 | Pull-up de 10 kΩ en **cada** línea de relé | Los módulos son activo-LOW: sin pull-up los 8 relés se activan ~300 ms en **cada** reset |
+| 5 | Pull-up de 10 kΩ en **cada** línea de relé | Los módulos son activo-LOW. Verificado que `GPIO13` tiene pull-up interno al reset y no dispara sin la externa, pero **los defaults varían pin por pin**: la externa se mantiene en los 8 |
 | 6 | Módulo de relés: jumper JD-VCC **fuera**, `VCC`=3.3 V, `JD-VCC`=5 V | 3.3 V contra un riel de 5 V puede no apagar el relé de forma confiable |
 | 7 | Recorte de entradas: **Schottky** (BAT85/BAT43/1N5819), nunca 1N4148 | El de silicio recorta en 4.0 V, por encima del máximo del ESP32 (3.6 V) — y después del diodo interno, así que no haría nada |
 | 8 | Cables RJ12 **derechos**, verificados con continuidad, + PTC en el 5 V | Los telefónicos comunes son cruzados: ponen 5 V contra GND |
