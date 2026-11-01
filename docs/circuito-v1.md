@@ -133,22 +133,42 @@ cables de 10 m entrando a la casa, puede pasar), lo cambiás en 30 segundos en v
 desoldar 38 pines.
 
 > ⚠️ **Las dos placas miden distinto.** Verificado contando agujeros de protoboard
-> (más exacto que una regla, porque el patrón es de 2.54 mm clavados):
+> (más exacto que una regla: el patrón es de 2.54 mm clavados).
 >
 > | Placa | Separación entre filas |
 > |---|---|
 > | **MCU-001** (la elegida) | **0.9" = 22.86 mm** |
-> | MCU-002 | 1.0" = 25.4 mm |
->
-> **El zócalo se diseña para 0.9".** MCU-002 no entra, y no hay forma de contemplar
-> las dos: quedarían a 1.27 mm entre tiras y los cuerpos plásticos se chocan.
->
-> **Perforá igual el segundo juego de agujeros a 1.0".** En una placa casera no cuesta
-> nada y te deja la salida de mover las tiras si algún día solo tenés la otra placa.
-> Serigrafiá cuál juego está en uso.
->
-> Como MCU-002 no sirve de repuesto directo, conviene **sumar un DevKit de 0.9" al
-> pedido de componentes**.
+> | MCU-002 | **1.0" = 25.4 mm** |
+
+### El zócalo acepta las dos: tres tiras, no dos
+
+La diferencia entre 0.9" y 1.0" es **exactamente 2.54 mm**. Dejando una fila fija, las
+dos posiciones de la otra quedan a esa distancia — y el cuerpo de una tira hembra
+estándar mide justo 2.54 mm de ancho, así que **entran pegadas**.
+
+```
+      J2                      J3        J3B
+   (fila fija)              (0.9")     (1.0")
+       │                       │  │
+       ●────── 22.86 mm ───────●  ●
+       ●────────── 25.4 mm ───────●
+                               └──┘
+                             2.54 mm
+```
+
+**J3 y J3B van cableadas en paralelo, pin a pin.** Entra cualquiera de las dos placas
+sin tocar nada: se enchufa en J2 más la tira de la derecha que corresponda.
+
+Beneficios:
+
+- **MCU-002 vuelve a ser repuesto real.** No hay que comprar otro DevKit.
+- La tira que queda libre es una **fila de puntos de prueba** con los 19 pines de ese
+  lado accesibles para el multímetro o el osciloscopio. Sale gratis.
+- Cuesta **una tira hembra de 1×19 más**.
+
+> Serigrafiá en la placa cuál tira corresponde a cada ancho — `0.9"` y `1.0"` al lado
+> de cada una. Enchufar la placa en la tira equivocada no rompe nada, pero no arranca
+> y es desconcertante.
 
 ---
 

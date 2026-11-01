@@ -187,9 +187,25 @@ def placa_a():
     nl.add("C2", "C100N",  {"1": "+5V",    "2": "GND"})
     nl.add("C3", "C100N",  {"1": "+3V3",   "2": "GND"})
 
-    # --- Zocalo del DevKit ESP32 (dos tiras hembra de 19) ---
-    nl.add("J2", "HDRF19", {str(i + 1): n for i, n in enumerate(SOCKET_IZQ)})
-    nl.add("J3", "HDRF19", {str(i + 1): n for i, n in enumerate(SOCKET_DER)})
+    # --- Zocalo del DevKit ESP32 ---
+    #
+    # TRES tiras hembra de 19, no dos. Las dos placas que tenemos miden
+    # distinto entre filas: MCU-001 = 0.9" (22.86 mm) y MCU-002 = 1.0"
+    # (25.4 mm). Con la fila izquierda fija, las dos opciones de la derecha
+    # quedan a 2.54 mm una de otra -- justo el ancho del cuerpo de una tira,
+    # asi que entran pegadas.
+    #
+    # J3 y J3B van cableadas en paralelo pin a pin: entra cualquiera de las
+    # dos placas. La tira que queda libre sirve de fila de puntos de prueba.
+    #
+    #        J2            J3 (0.9")  J3B (1.0")
+    #         |                 |  |
+    #         o---- 22.86 mm ---o  o
+    #         o------- 25.4 mm ----o
+    #
+    nl.add("J2",  "HDRF19", {str(i + 1): n for i, n in enumerate(SOCKET_IZQ)})
+    nl.add("J3",  "HDRF19", {str(i + 1): n for i, n in enumerate(SOCKET_DER)})
+    nl.add("J3B", "HDRF19", {str(i + 1): n for i, n in enumerate(SOCKET_DER)})
 
     # --- Pull-ups de rele: mantienen el rele APAGADO durante el boot ---
     for i in range(1, 9):

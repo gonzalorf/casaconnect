@@ -64,7 +64,7 @@ los pines del módulo).
 | ID | Componente | Necesario | Tenés |
 |---|---|---:|---:|
 | MCU-001 | DevKit ESP32 38 pines, **0.9"** | 1 | 1 |
-| MCU-002 | DevKit ESP32 38 pines, 1.0" | — | 1 *(no entra en el zócalo)* |
+| MCU-002 | DevKit ESP32 38 pines, 1.0" | repuesto | 1 *(el zócalo acepta las dos)* |
 | ACT-001 | Módulo relé 8 canales | 1 | 1 |
 | SEN-003 | PIR HC-SR501 | 2 | 2 |
 | SEN-001 | Módulo sensor de luz (LDR + LM393) | 1 | 1 |
@@ -114,7 +114,7 @@ los pines del módulo).
 | 9 | ⏸ **PTC** por puerto (1 A en el riel común sí se compra) | 6 | **2** | Uno por puerto |
 | 10 | **Portafusible PCB + fusible 2 A** | 1 | 1 + 3 | Entrada general |
 | 11 | ⏸ **Jumper shunt 2.54 mm** | 4 | — | Pull-ups conmutables |
-| 12 | **Header hembra 1×19** | 2 | 2 | **Solo si PRO-003 es macho** — ver arriba |
+| 12 | **Header hembra 1×19** | **3** | 3 | Zócalo de 3 tiras: 0.9" y 1.0". **Solo si PRO-003 es macho** |
 | 13 | **Cable plano 16 vías** + 2 IDC hembra 16 | 1 | 1 | Enlace entre placas |
 | 14 | Dupont **hembra-hembra** | ~12 | 20 | **Solo si PRO-004 no los incluye** |
 
@@ -149,10 +149,10 @@ No es que sobren: quedan para la v2 o para otros proyectos.
 | PWR-002 | MT3608 step-up | Sin rol: en este diseño todo baja de tensión |
 | PRO-006 | Conversor TXS0108E | Ninguna interfaz lo necesita |
 
-> ⚠️ **MCU-002 NO es repuesto directo.** Mide 1.0" entre filas contra los 0.9" de
-> MCU-001, así que no entra en el zócalo. Conviene **agregar al pedido un DevKit
-> ESP32 de 38 pines con separación de 0.9"** para tener un repuesto real — con
-> cables de 10 m entrando a la casa, vale la pena.
+> **MCU-002 sí sirve de repuesto.** Mide 1.0" entre filas contra los 0.9" de
+> MCU-001, pero el zócalo lleva **tres tiras hembra** (una fija + dos en paralelo a
+> 2.54 mm) y acepta las dos. No hace falta comprar otro DevKit — solo **una tira
+> hembra de 1×19 más**.
 
 > **PRO-005 (FTDI)** no va montado en nada, pero guardalo: es la única forma de
 > programar el Pro Mini, y sirve de segundo puerto serie para depurar.
@@ -196,7 +196,8 @@ CONECTORES
    2  PTC rearmable 1 A              ← uno en el riel comun
    1  Portafusible PCB + 3 fusibles 2 A
    1  Cable plano 16 vias + 2 IDC hembra 16
-  (2) Header hembra 1x19        <- solo si PRO-003 es macho
+  (3) Header hembra 1x19        <- zocalo de 3 tiras (0.9" y 1.0")
+                                   solo si PRO-003 es macho
  (20) Dupont hembra-hembra      <- solo si PRO-004 no los trae
   (1) Tira de pines macho 1x40  <- solo si PRO-003 es hembra
 

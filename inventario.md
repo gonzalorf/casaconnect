@@ -21,7 +21,7 @@
 
 | ID | Componente | Modelo / Chip | Cant. | Detalles clave | Notas |
 |---|---|---|---:|---|---|
-| MCU-001 | **NodeMCU ESP-32S v1.1** (serigrafía `ESP-32S V1.1 101010`) | **ESP32-D0WD-V3 rev v3.1** · 4 MB flash · sin PSRAM · MAC `84:1f:e8:2b:24:5c` | 1 | Dual core + LP core 240 MHz · WiFi + BT · cristal 40 MHz · Vref calibrada en eFuse | USB-UART **Silabs CP2102** (FPC03X 2433+) · micro-USB · botones **EN** y **BOOT**. ✅ **Pines macho ya soldados** (2026-10-31). Pinout serigrafiado en la cara inferior, verificado — idéntico a MCU-002. **Elegida para la v1.** ⚠️ Separación entre filas **0.9" (22.86 mm)** — distinta de MCU-002. |
+| MCU-001 | **NodeMCU ESP-32S v1.1** (serigrafía `ESP-32S V1.1 101010`) | **ESP32-D0WD-V3 rev v3.1** · 4 MB flash · sin PSRAM · MAC `84:1f:e8:2b:24:5c` | 1 | Dual core + LP core 240 MHz · WiFi + BT · cristal 40 MHz · Vref calibrada en eFuse | USB-UART **Silabs CP2102** (FPC03X 2433+) · micro-USB · botones **EN** y **BOOT**. ✅ **Pines macho ya soldados** (2026-10-31). Pinout serigrafiado en la cara inferior, verificado — idéntico a MCU-002. **Elegida para la v1.** Separación entre filas **0.9" (22.86 mm)**. |
 | MCU-002 | DevKit ESP32 38 pines | **ESP32-D0WD-V3 rev v3.1** · 4 MB flash · sin PSRAM · MAC `d4:e9:f4:64:c5:54` | 1 | Dual core + LP core 240 MHz · WiFi + BT · cristal 40 MHz · Vref calibrada en eFuse | Variante de serigrafía: botones **RST** y **BOOT**, 4 agujeros de montaje en esquinas. Regulador **AMS1117-3.3** (`1117 33 e447`) · CP2102 (FPC03X 2433+) · Q1/Q2 **J3Y (S8050)** para auto-reset · cap. 10 µF 16 V. **Pinout completo verificado — ver apéndice.** |
 
 | MCU-003 | Arduino Pro Mini | **ATmega328P-AU** (date code `1437`) | 1 | 8-bit AVR 16 MHz · 32 KB flash · 2 KB SRAM · 1 KB EEPROM | Regulador marcado `LG50` → **variante 5 V / 16 MHz** (*a confirmar midiendo VCC*). **Sin USB**: se programa con el adaptador FTDI (PRO-005). 14 I/O digitales + **8 entradas analógicas** (A0-A7). Todos los digitales con pull-up interno. |
@@ -30,11 +30,12 @@
 >
 > ✅ **Ambas identificadas por hardware** (ver Apéndice C). Son **funcionalmente idénticas** — mismo chip, misma flash, mismo pinout.
 >
-> ⚠️ **Pero NO son mecánicamente intercambiables.** Medido 2026-10-31 contando
-> agujeros de protoboard: **MCU-001 = 0.9" (22.86 mm)** y **MCU-002 = 1.0"
-> (25.4 mm)** entre filas. Un zócalo sirve para una sola de las dos, y no se pueden
-> poner las dos tiras (quedarían a 1.27 mm, se chocan). **MCU-002 no es repuesto
-> directo de MCU-001.**
+> ⚠️ **Miden distinto entre filas:** **MCU-001 = 0.9" (22.86 mm)** y
+> **MCU-002 = 1.0" (25.4 mm)**. Medido contando agujeros de protoboard.
+>
+> ✅ **El zócalo contempla las dos**: tres tiras hembra de 1×19, con las dos de la
+> derecha en paralelo a 2.54 mm una de otra. Entra cualquiera de las dos placas, así
+> que **MCU-002 sí es repuesto**. Ver §2 de `docs/circuito-v1.md`.
 
 ## Sensores
 

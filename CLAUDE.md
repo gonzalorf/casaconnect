@@ -40,10 +40,9 @@ está decidido** — no hay que re-abrirlo salvo que algo falle en las pruebas.
 
 **Microcontrolador (elegido: MCU-001).** NodeMCU ESP-32S v1.1 ·
 **ESP32-D0WD-V3 rev v3.1** · 4 MB flash · **sin PSRAM** · MAC `84:1f:e8:2b:24:5c`.
-Separación entre filas: **0.9" (22.86 mm)**.
-
-> ⚠️ **MCU-002 es eléctricamente idéntica pero mide 1.0" (25.4 mm)** entre filas,
-> así que **no entra en el mismo zócalo**. No es repuesto directo.
+Separación entre filas: **0.9" (22.86 mm)**. MCU-002 es idéntica eléctricamente
+pero mide **1.0" (25.4 mm)**; el zócalo contempla las dos con **tres tiras hembra**
+(las dos de la derecha en paralelo, a 2.54 mm), así que sí es repuesto.
 
 > **La serigrafía usa otros nombres:** `GPIO27` aparece como **`P27`**, `GPIO36` como
 > **`SVP`** y `GPIO39` como **`SVN`**.
@@ -115,7 +114,7 @@ queda entonces en cero.
 | 8 | Cables RJ12 **derechos**, verificados con continuidad, + PTC en el 5 V | Los telefónicos comunes son cruzados: ponen 5 V contra GND |
 | 9 | Masa **en estrella**: el retorno de las bobinas va directo a la fuente | 560 mA compartiendo pista con el GND del ESP32 corren las lecturas del ADC |
 | 10 | Nunca USB y fuente externa a la vez en el pin `5V` | En muchos DevKit ese pin va directo al VBUS del USB |
-| 12 | El zócalo se diseña para **0.9"** (MCU-001). Perforar también los agujeros de 1.0" | MCU-002 mide 1.0" y no entra; sin los agujeros extra habría que rehacer la placa |
+| 12 | Zócalo de **3 tiras** 1×19: una fija + dos en paralelo a 2.54 mm (0.9" y 1.0") | Las dos placas miden distinto; con dos tiras solas una de ellas no entraría |
 | 11 | Footprint sin poblar: **en serie** → puentear · **en paralelo** → dejar vacío | Puentear un paralelo cortocircuita el riel |
 
 ---

@@ -108,6 +108,29 @@
   },
   "gge8": {
     "props": {
+      "Designator": "J3B",
+      "device_name": "connector",
+      "value": "header hembra 1x19",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "RLY6",
+      "3": "SCL",
+      "6": "SDA",
+      "7": "GND",
+      "8": "RLY5",
+      "9": "RLY4",
+      "10": "IN_5",
+      "11": "RLY3",
+      "12": "RLY2",
+      "13": "IN_4",
+      "15": "IN_2",
+      "16": "IN_15"
+    }
+  },
+  "gge9": {
+    "props": {
       "Designator": "R1",
       "device_name": "resistor",
       "value": "10k",
@@ -118,7 +141,7 @@
       "2": "RLY1"
     }
   },
-  "gge9": {
+  "gge10": {
     "props": {
       "Designator": "R2",
       "device_name": "resistor",
@@ -130,7 +153,7 @@
       "2": "RLY2"
     }
   },
-  "gge10": {
+  "gge11": {
     "props": {
       "Designator": "R3",
       "device_name": "resistor",
@@ -142,7 +165,7 @@
       "2": "RLY3"
     }
   },
-  "gge11": {
+  "gge12": {
     "props": {
       "Designator": "R4",
       "device_name": "resistor",
@@ -154,7 +177,7 @@
       "2": "RLY4"
     }
   },
-  "gge12": {
+  "gge13": {
     "props": {
       "Designator": "R5",
       "device_name": "resistor",
@@ -166,7 +189,7 @@
       "2": "RLY5"
     }
   },
-  "gge13": {
+  "gge14": {
     "props": {
       "Designator": "R6",
       "device_name": "resistor",
@@ -178,7 +201,7 @@
       "2": "RLY6"
     }
   },
-  "gge14": {
+  "gge15": {
     "props": {
       "Designator": "R7",
       "device_name": "resistor",
@@ -190,7 +213,7 @@
       "2": "RLY7"
     }
   },
-  "gge15": {
+  "gge16": {
     "props": {
       "Designator": "R8",
       "device_name": "resistor",
@@ -202,7 +225,7 @@
       "2": "RLY8"
     }
   },
-  "gge16": {
+  "gge17": {
     "props": {
       "Designator": "J4",
       "device_name": "connector",
@@ -222,7 +245,7 @@
       "10": "GND"
     }
   },
-  "gge17": {
+  "gge18": {
     "props": {
       "Designator": "J5",
       "device_name": "connector",
@@ -234,7 +257,7 @@
       "2": "GND"
     }
   },
-  "gge18": {
+  "gge19": {
     "props": {
       "Designator": "J6",
       "device_name": "connector",
@@ -248,7 +271,7 @@
       "4": "SDA"
     }
   },
-  "gge19": {
+  "gge20": {
     "props": {
       "Designator": "R9",
       "device_name": "resistor",
@@ -260,7 +283,7 @@
       "2": "SDA"
     }
   },
-  "gge20": {
+  "gge21": {
     "props": {
       "Designator": "R10",
       "device_name": "resistor",
@@ -272,7 +295,7 @@
       "2": "SCL"
     }
   },
-  "gge21": {
+  "gge22": {
     "props": {
       "Designator": "J7",
       "device_name": "connector",
@@ -286,7 +309,7 @@
       "4": "SCL"
     }
   },
-  "gge22": {
+  "gge23": {
     "props": {
       "Designator": "J8",
       "device_name": "connector",
