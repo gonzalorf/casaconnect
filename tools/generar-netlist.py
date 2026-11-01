@@ -41,7 +41,7 @@ PARTS = {
     "R4K7":   {"lcsc": "C119339", "device": "resistor",  "value": "4.7k",
                "cat": "Passives > Resistors > Through Hole Resistors",
                "filtros": "Resistance 4.7kOhm | Power 250mW | In Stock"},
-    "C100N":  {"lcsc": PENDIENTE, "device": "capacitor", "value": "100nF",
+    "C100N":  {"lcsc": "C2169797", "device": "capacitor", "value": "100nF",
                "cat": "Passives > Capacitors > Ceramic Capacitors",
                "filtros": "Buscar dentro: 100nF (o 104) | Package: THROUGH HOLE "
                           "| Voltage >=50V. Ojo: casi todos los de esa categoria "
@@ -49,8 +49,10 @@ PARTS = {
     "C1000U": {"lcsc": PENDIENTE, "device": "capacitor", "value": "1000uF 16V",
                "cat": "Passives > Capacitors > Aluminum Electrolytic Capacitors",
                "filtros": "Buscar dentro: 1000uF | Package: THROUGH HOLE / Radial "
-                          "| Voltage 16V o 25V. Anotar el diametro: ocupa lugar "
-                          "en la placa"},
+                          "| Voltage 16V o 25V. VERIFICACION DE TAMANO: un 1000uF/16V "
+                          "mide ~10mm de diametro x 16-20mm de alto. Si el codigo "
+                          "termina en 6.3X11 o parecido, es demasiado chico y el "
+                          "valor esta mal leido (ej: 35ZLH100M son 100uF, no 1000)"},
     "BAT85":  {"lcsc": PENDIENTE, "device": "diode",     "value": "BAT85",
                "cat": "Diodes > Schottky Diodes",
                "filtros": "Buscar el MPN directo: BAT85 / BAT43 / 1N5819 | "
