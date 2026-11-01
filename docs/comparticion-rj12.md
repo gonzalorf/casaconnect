@@ -249,11 +249,11 @@ Si se adopta, la Placa B pierde el campo de patch entero:
 | | Antes | Después |
 |---|---:|---:|
 | Borneras KF301 | 18 | **0** |
-| Componentes Placa B | 87 | **69** |
+| Componentes Placa B | 87 | **71** |
 | Cables internos | hasta 12 | **0** |
 
 Las 12 redes de protección **no cambian** — siguen una por GPIO, del lado del enlace a
 la Placa A.
 
-> ⚠️ Hay que regenerar los netlists: [`../tools/generar-netlist.py`](../tools/generar-netlist.py)
-> todavía produce la versión con campo de patch.
+> ✅ Los netlists ya reflejan este esquema — generados con
+> [`../tools/generar-netlist.py`](../tools/generar-netlist.py).

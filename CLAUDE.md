@@ -31,7 +31,7 @@ está decidido** — no hay que re-abrirlo salvo que algo falle en las pruebas.
 | Script | Para qué |
 |---|---|
 | `tools/identificar-esp32.py` | Lee chip, revisión, flash y MAC de una placa conectada |
-| `tools/generar-netlist.py` | Genera los netlists JSON para EasyEDA Pro |
+| `tools/generar-netlist.py` | Genera los netlists JSON para EasyEDA Pro. **Editar `PARTS` con los números LCSC antes de usarlo** |
 | `tools/reportes/` | Salida cruda de esptool de cada DevKit |
 
 ---
@@ -170,10 +170,10 @@ Queda un test que puede cambiar el circuito:
 
 Tareas de desbloqueo abiertas (ver `docs/plan.md` §Fase 0):
 
-- [ ] Buscar los 15 números LCSC para el netlist (**irreversible**: un número
+- [ ] Buscar los 17 números LCSC para el netlist (**irreversible**: un número
       equivocado carga un componente incorrecto que no se puede corregir)
 - [ ] Medir con calibre la separación entre filas del DevKit (22.86 mm vs 25.4 mm)
 - [ ] Identificar el género de PRO-003 (tira de pines) y PRO-004 (Dupont)
-- [ ] Regenerar los netlists con el esquema de parejas (el script todavía produce la
-      versión con campo de patch)
+- [x] ~~Regenerar los netlists con el esquema de parejas~~ → hecho.
+      Placa A: 22 componentes · Placa B: 71
 - [ ] Decidir: ¿el sistema viejo de Arduino convive o se reemplaza?

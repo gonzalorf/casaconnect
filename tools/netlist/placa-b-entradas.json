@@ -11,21 +11,33 @@
       "2": "GND",
       "3": "+3V3",
       "4": "GND",
-      "5": "IN1",
-      "6": "IN2",
-      "7": "IN3",
-      "8": "IN4",
-      "9": "IN5",
-      "10": "IN6",
-      "11": "IN7",
-      "12": "IN8",
-      "13": "IN9",
-      "14": "IN10",
-      "15": "IN11",
-      "16": "IN12"
+      "5": "IN_2",
+      "6": "IN_4",
+      "7": "IN_32",
+      "8": "IN_34",
+      "9": "IN_5",
+      "10": "IN_14",
+      "11": "IN_33",
+      "12": "IN_35",
+      "13": "IN_15",
+      "14": "IN_27",
+      "15": "IN_36",
+      "16": "IN_39"
     }
   },
   "gge2": {
+    "props": {
+      "Designator": "F0",
+      "device_name": "fuse",
+      "value": "PTC 1A",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "+5V",
+      "2": "+5V_PUERTOS"
+    }
+  },
+  "gge3": {
     "props": {
       "Designator": "F1",
       "device_name": "fuse",
@@ -33,11 +45,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "+5V",
+      "1": "+5V_PUERTOS",
       "2": "P1_5V"
     }
   },
-  "gge3": {
+  "gge4": {
     "props": {
       "Designator": "J2",
       "device_name": "connector",
@@ -46,14 +58,14 @@
     },
     "pins": {
       "1": "GND",
-      "2": "P1_1",
-      "3": "P1_2",
-      "4": "P1_3",
-      "5": "P1_4",
-      "6": "P1_5V"
+      "6": "P1_5V",
+      "2": "RJ_2",
+      "3": "RJ_4",
+      "4": "RJ_32",
+      "5": "RJ_34"
     }
   },
-  "gge4": {
+  "gge5": {
     "props": {
       "Designator": "F2",
       "device_name": "fuse",
@@ -61,11 +73,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "+5V",
-      "2": "P2_5V"
+      "1": "+5V_PUERTOS",
+      "2": "P4_5V"
     }
   },
-  "gge5": {
+  "gge6": {
     "props": {
       "Designator": "J3",
       "device_name": "connector",
@@ -74,14 +86,14 @@
     },
     "pins": {
       "1": "GND",
-      "2": "P2_1",
-      "3": "P2_2",
-      "4": "P2_3",
-      "5": "P2_4",
-      "6": "P2_5V"
+      "6": "P4_5V",
+      "2": "RJ_2",
+      "3": "RJ_4",
+      "4": "RJ_32",
+      "5": "RJ_34"
     }
   },
-  "gge6": {
+  "gge7": {
     "props": {
       "Designator": "F3",
       "device_name": "fuse",
@@ -89,11 +101,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "+5V",
-      "2": "P3_5V"
+      "1": "+5V_PUERTOS",
+      "2": "P2_5V"
     }
   },
-  "gge7": {
+  "gge8": {
     "props": {
       "Designator": "J4",
       "device_name": "connector",
@@ -102,14 +114,14 @@
     },
     "pins": {
       "1": "GND",
-      "2": "P3_1",
-      "3": "P3_2",
-      "4": "P3_3",
-      "5": "P3_4",
-      "6": "P3_5V"
+      "6": "P2_5V",
+      "2": "RJ_5",
+      "3": "RJ_14",
+      "4": "RJ_33",
+      "5": "RJ_35"
     }
   },
-  "gge8": {
+  "gge9": {
     "props": {
       "Designator": "F4",
       "device_name": "fuse",
@@ -117,11 +129,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "+5V",
-      "2": "P4_5V"
+      "1": "+5V_PUERTOS",
+      "2": "P5_5V"
     }
   },
-  "gge9": {
+  "gge10": {
     "props": {
       "Designator": "J5",
       "device_name": "connector",
@@ -130,14 +142,14 @@
     },
     "pins": {
       "1": "GND",
-      "2": "P4_1",
-      "3": "P4_2",
-      "4": "P4_3",
-      "5": "P4_4",
-      "6": "P4_5V"
+      "6": "P5_5V",
+      "2": "RJ_5",
+      "3": "RJ_14",
+      "4": "RJ_33",
+      "5": "RJ_35"
     }
   },
-  "gge10": {
+  "gge11": {
     "props": {
       "Designator": "F5",
       "device_name": "fuse",
@@ -145,11 +157,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "+5V",
-      "2": "P5_5V"
+      "1": "+5V_PUERTOS",
+      "2": "P3_5V"
     }
   },
-  "gge11": {
+  "gge12": {
     "props": {
       "Designator": "J6",
       "device_name": "connector",
@@ -158,14 +170,14 @@
     },
     "pins": {
       "1": "GND",
-      "2": "P5_1",
-      "3": "P5_2",
-      "4": "P5_3",
-      "5": "P5_4",
-      "6": "P5_5V"
+      "6": "P3_5V",
+      "2": "RJ_15",
+      "3": "RJ_27",
+      "4": "RJ_36",
+      "5": "RJ_39"
     }
   },
-  "gge12": {
+  "gge13": {
     "props": {
       "Designator": "F6",
       "device_name": "fuse",
@@ -173,11 +185,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "+5V",
+      "1": "+5V_PUERTOS",
       "2": "P6_5V"
     }
   },
-  "gge13": {
+  "gge14": {
     "props": {
       "Designator": "J7",
       "device_name": "connector",
@@ -186,242 +198,26 @@
     },
     "pins": {
       "1": "GND",
-      "2": "P6_1",
-      "3": "P6_2",
-      "4": "P6_3",
-      "5": "P6_4",
-      "6": "P6_5V"
-    }
-  },
-  "gge14": {
-    "props": {
-      "Designator": "TB1",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P1_1",
-      "2": "P1_2"
+      "6": "P6_5V",
+      "2": "RJ_15",
+      "3": "RJ_27",
+      "4": "RJ_36",
+      "5": "RJ_39"
     }
   },
   "gge15": {
     "props": {
-      "Designator": "TB2",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P1_3",
-      "2": "P1_4"
-    }
-  },
-  "gge16": {
-    "props": {
-      "Designator": "TB3",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P2_1",
-      "2": "P2_2"
-    }
-  },
-  "gge17": {
-    "props": {
-      "Designator": "TB4",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P2_3",
-      "2": "P2_4"
-    }
-  },
-  "gge18": {
-    "props": {
-      "Designator": "TB5",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P3_1",
-      "2": "P3_2"
-    }
-  },
-  "gge19": {
-    "props": {
-      "Designator": "TB6",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P3_3",
-      "2": "P3_4"
-    }
-  },
-  "gge20": {
-    "props": {
-      "Designator": "TB7",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P4_1",
-      "2": "P4_2"
-    }
-  },
-  "gge21": {
-    "props": {
-      "Designator": "TB8",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P4_3",
-      "2": "P4_4"
-    }
-  },
-  "gge22": {
-    "props": {
-      "Designator": "TB9",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P5_1",
-      "2": "P5_2"
-    }
-  },
-  "gge23": {
-    "props": {
-      "Designator": "TB10",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P5_3",
-      "2": "P5_4"
-    }
-  },
-  "gge24": {
-    "props": {
-      "Designator": "TB11",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P6_1",
-      "2": "P6_2"
-    }
-  },
-  "gge25": {
-    "props": {
-      "Designator": "TB12",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "P6_3",
-      "2": "P6_4"
-    }
-  },
-  "gge26": {
-    "props": {
-      "Designator": "TB13",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA1",
-      "2": "INA2"
-    }
-  },
-  "gge27": {
-    "props": {
-      "Designator": "TB14",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA3",
-      "2": "INA4"
-    }
-  },
-  "gge28": {
-    "props": {
-      "Designator": "TB15",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA5",
-      "2": "INA6"
-    }
-  },
-  "gge29": {
-    "props": {
-      "Designator": "TB16",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA7",
-      "2": "INA8"
-    }
-  },
-  "gge30": {
-    "props": {
-      "Designator": "TB17",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA9",
-      "2": "INA10"
-    }
-  },
-  "gge31": {
-    "props": {
-      "Designator": "TB18",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA11",
-      "2": "INA12"
-    }
-  },
-  "gge32": {
-    "props": {
-      "Designator": "R11",
+      "Designator": "R1",
       "device_name": "resistor",
       "value": "1k",
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "INA1",
-      "2": "IN1"
+      "1": "RJ_2",
+      "2": "IN_2"
     }
   },
-  "gge33": {
+  "gge16": {
     "props": {
       "Designator": "C1",
       "device_name": "capacitor",
@@ -429,11 +225,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "IN1",
+      "1": "IN_2",
       "2": "GND"
     }
   },
-  "gge34": {
+  "gge17": {
     "props": {
       "Designator": "D1A",
       "device_name": "diode",
@@ -441,11 +237,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "IN1",
+      "1": "IN_2",
       "2": "+3V3"
     }
   },
-  "gge35": {
+  "gge18": {
     "props": {
       "Designator": "D1B",
       "device_name": "diode",
@@ -454,22 +250,22 @@
     },
     "pins": {
       "1": "GND",
-      "2": "IN1"
+      "2": "IN_2"
     }
   },
-  "gge36": {
+  "gge19": {
     "props": {
-      "Designator": "R12",
+      "Designator": "R2",
       "device_name": "resistor",
       "value": "1k",
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "INA2",
-      "2": "IN2"
+      "1": "RJ_4",
+      "2": "IN_4"
     }
   },
-  "gge37": {
+  "gge20": {
     "props": {
       "Designator": "C2",
       "device_name": "capacitor",
@@ -477,11 +273,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "IN2",
+      "1": "IN_4",
       "2": "GND"
     }
   },
-  "gge38": {
+  "gge21": {
     "props": {
       "Designator": "D2A",
       "device_name": "diode",
@@ -489,11 +285,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "IN2",
+      "1": "IN_4",
       "2": "+3V3"
     }
   },
-  "gge39": {
+  "gge22": {
     "props": {
       "Designator": "D2B",
       "device_name": "diode",
@@ -502,22 +298,22 @@
     },
     "pins": {
       "1": "GND",
-      "2": "IN2"
+      "2": "IN_4"
     }
   },
-  "gge40": {
+  "gge23": {
     "props": {
-      "Designator": "R13",
+      "Designator": "R3",
       "device_name": "resistor",
       "value": "1k",
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "INA3",
-      "2": "IN3"
+      "1": "RJ_32",
+      "2": "IN_32"
     }
   },
-  "gge41": {
+  "gge24": {
     "props": {
       "Designator": "C3",
       "device_name": "capacitor",
@@ -525,11 +321,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "IN3",
+      "1": "IN_32",
       "2": "GND"
     }
   },
-  "gge42": {
+  "gge25": {
     "props": {
       "Designator": "D3A",
       "device_name": "diode",
@@ -537,11 +333,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "IN3",
+      "1": "IN_32",
       "2": "+3V3"
     }
   },
-  "gge43": {
+  "gge26": {
     "props": {
       "Designator": "D3B",
       "device_name": "diode",
@@ -550,22 +346,22 @@
     },
     "pins": {
       "1": "GND",
-      "2": "IN3"
+      "2": "IN_32"
     }
   },
-  "gge44": {
+  "gge27": {
     "props": {
-      "Designator": "R14",
+      "Designator": "R4",
       "device_name": "resistor",
       "value": "1k",
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "INA4",
-      "2": "IN4"
+      "1": "RJ_34",
+      "2": "IN_34"
     }
   },
-  "gge45": {
+  "gge28": {
     "props": {
       "Designator": "C4",
       "device_name": "capacitor",
@@ -573,11 +369,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "IN4",
+      "1": "IN_34",
       "2": "GND"
     }
   },
-  "gge46": {
+  "gge29": {
     "props": {
       "Designator": "D4A",
       "device_name": "diode",
@@ -585,11 +381,11 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "IN4",
+      "1": "IN_34",
       "2": "+3V3"
     }
   },
-  "gge47": {
+  "gge30": {
     "props": {
       "Designator": "D4B",
       "device_name": "diode",
@@ -598,394 +394,10 @@
     },
     "pins": {
       "1": "GND",
-      "2": "IN4"
+      "2": "IN_34"
     }
   },
-  "gge48": {
-    "props": {
-      "Designator": "R15",
-      "device_name": "resistor",
-      "value": "1k",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA5",
-      "2": "IN5"
-    }
-  },
-  "gge49": {
-    "props": {
-      "Designator": "C5",
-      "device_name": "capacitor",
-      "value": "100nF",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN5",
-      "2": "GND"
-    }
-  },
-  "gge50": {
-    "props": {
-      "Designator": "D5A",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN5",
-      "2": "+3V3"
-    }
-  },
-  "gge51": {
-    "props": {
-      "Designator": "D5B",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "GND",
-      "2": "IN5"
-    }
-  },
-  "gge52": {
-    "props": {
-      "Designator": "R16",
-      "device_name": "resistor",
-      "value": "1k",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA6",
-      "2": "IN6"
-    }
-  },
-  "gge53": {
-    "props": {
-      "Designator": "C6",
-      "device_name": "capacitor",
-      "value": "100nF",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN6",
-      "2": "GND"
-    }
-  },
-  "gge54": {
-    "props": {
-      "Designator": "D6A",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN6",
-      "2": "+3V3"
-    }
-  },
-  "gge55": {
-    "props": {
-      "Designator": "D6B",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "GND",
-      "2": "IN6"
-    }
-  },
-  "gge56": {
-    "props": {
-      "Designator": "R17",
-      "device_name": "resistor",
-      "value": "1k",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA7",
-      "2": "IN7"
-    }
-  },
-  "gge57": {
-    "props": {
-      "Designator": "C7",
-      "device_name": "capacitor",
-      "value": "100nF",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN7",
-      "2": "GND"
-    }
-  },
-  "gge58": {
-    "props": {
-      "Designator": "D7A",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN7",
-      "2": "+3V3"
-    }
-  },
-  "gge59": {
-    "props": {
-      "Designator": "D7B",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "GND",
-      "2": "IN7"
-    }
-  },
-  "gge60": {
-    "props": {
-      "Designator": "R18",
-      "device_name": "resistor",
-      "value": "1k",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA8",
-      "2": "IN8"
-    }
-  },
-  "gge61": {
-    "props": {
-      "Designator": "C8",
-      "device_name": "capacitor",
-      "value": "100nF",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN8",
-      "2": "GND"
-    }
-  },
-  "gge62": {
-    "props": {
-      "Designator": "D8A",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN8",
-      "2": "+3V3"
-    }
-  },
-  "gge63": {
-    "props": {
-      "Designator": "D8B",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "GND",
-      "2": "IN8"
-    }
-  },
-  "gge64": {
-    "props": {
-      "Designator": "R19",
-      "device_name": "resistor",
-      "value": "1k",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA9",
-      "2": "IN9"
-    }
-  },
-  "gge65": {
-    "props": {
-      "Designator": "C9",
-      "device_name": "capacitor",
-      "value": "100nF",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN9",
-      "2": "GND"
-    }
-  },
-  "gge66": {
-    "props": {
-      "Designator": "D9A",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN9",
-      "2": "+3V3"
-    }
-  },
-  "gge67": {
-    "props": {
-      "Designator": "D9B",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "GND",
-      "2": "IN9"
-    }
-  },
-  "gge68": {
-    "props": {
-      "Designator": "R20",
-      "device_name": "resistor",
-      "value": "1k",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA10",
-      "2": "IN10"
-    }
-  },
-  "gge69": {
-    "props": {
-      "Designator": "C10",
-      "device_name": "capacitor",
-      "value": "100nF",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN10",
-      "2": "GND"
-    }
-  },
-  "gge70": {
-    "props": {
-      "Designator": "D10A",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN10",
-      "2": "+3V3"
-    }
-  },
-  "gge71": {
-    "props": {
-      "Designator": "D10B",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "GND",
-      "2": "IN10"
-    }
-  },
-  "gge72": {
-    "props": {
-      "Designator": "R21",
-      "device_name": "resistor",
-      "value": "1k",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA11",
-      "2": "IN11"
-    }
-  },
-  "gge73": {
-    "props": {
-      "Designator": "C11",
-      "device_name": "capacitor",
-      "value": "100nF",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN11",
-      "2": "GND"
-    }
-  },
-  "gge74": {
-    "props": {
-      "Designator": "D11A",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN11",
-      "2": "+3V3"
-    }
-  },
-  "gge75": {
-    "props": {
-      "Designator": "D11B",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "GND",
-      "2": "IN11"
-    }
-  },
-  "gge76": {
-    "props": {
-      "Designator": "R22",
-      "device_name": "resistor",
-      "value": "1k",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "INA12",
-      "2": "IN12"
-    }
-  },
-  "gge77": {
-    "props": {
-      "Designator": "C12",
-      "device_name": "capacitor",
-      "value": "100nF",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN12",
-      "2": "GND"
-    }
-  },
-  "gge78": {
-    "props": {
-      "Designator": "D12A",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "IN12",
-      "2": "+3V3"
-    }
-  },
-  "gge79": {
-    "props": {
-      "Designator": "D12B",
-      "device_name": "diode",
-      "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
-    },
-    "pins": {
-      "1": "GND",
-      "2": "IN12"
-    }
-  },
-  "gge80": {
+  "gge31": {
     "props": {
       "Designator": "R31",
       "device_name": "resistor",
@@ -994,10 +406,10 @@
     },
     "pins": {
       "1": "+3V3",
-      "2": "PU9"
+      "2": "PU_34"
     }
   },
-  "gge81": {
+  "gge32": {
     "props": {
       "Designator": "JP1",
       "device_name": "connector",
@@ -1005,11 +417,203 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "PU9",
-      "2": "IN9"
+      "1": "PU_34",
+      "2": "IN_34"
     }
   },
-  "gge82": {
+  "gge33": {
+    "props": {
+      "Designator": "R5",
+      "device_name": "resistor",
+      "value": "1k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "RJ_5",
+      "2": "IN_5"
+    }
+  },
+  "gge34": {
+    "props": {
+      "Designator": "C5",
+      "device_name": "capacitor",
+      "value": "100nF",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_5",
+      "2": "GND"
+    }
+  },
+  "gge35": {
+    "props": {
+      "Designator": "D5A",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_5",
+      "2": "+3V3"
+    }
+  },
+  "gge36": {
+    "props": {
+      "Designator": "D5B",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "IN_5"
+    }
+  },
+  "gge37": {
+    "props": {
+      "Designator": "R6",
+      "device_name": "resistor",
+      "value": "1k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "RJ_14",
+      "2": "IN_14"
+    }
+  },
+  "gge38": {
+    "props": {
+      "Designator": "C6",
+      "device_name": "capacitor",
+      "value": "100nF",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_14",
+      "2": "GND"
+    }
+  },
+  "gge39": {
+    "props": {
+      "Designator": "D6A",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_14",
+      "2": "+3V3"
+    }
+  },
+  "gge40": {
+    "props": {
+      "Designator": "D6B",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "IN_14"
+    }
+  },
+  "gge41": {
+    "props": {
+      "Designator": "R7",
+      "device_name": "resistor",
+      "value": "1k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "RJ_33",
+      "2": "IN_33"
+    }
+  },
+  "gge42": {
+    "props": {
+      "Designator": "C7",
+      "device_name": "capacitor",
+      "value": "100nF",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_33",
+      "2": "GND"
+    }
+  },
+  "gge43": {
+    "props": {
+      "Designator": "D7A",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_33",
+      "2": "+3V3"
+    }
+  },
+  "gge44": {
+    "props": {
+      "Designator": "D7B",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "IN_33"
+    }
+  },
+  "gge45": {
+    "props": {
+      "Designator": "R8",
+      "device_name": "resistor",
+      "value": "1k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "RJ_35",
+      "2": "IN_35"
+    }
+  },
+  "gge46": {
+    "props": {
+      "Designator": "C8",
+      "device_name": "capacitor",
+      "value": "100nF",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_35",
+      "2": "GND"
+    }
+  },
+  "gge47": {
+    "props": {
+      "Designator": "D8A",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_35",
+      "2": "+3V3"
+    }
+  },
+  "gge48": {
+    "props": {
+      "Designator": "D8B",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "IN_35"
+    }
+  },
+  "gge49": {
     "props": {
       "Designator": "R32",
       "device_name": "resistor",
@@ -1018,10 +622,10 @@
     },
     "pins": {
       "1": "+3V3",
-      "2": "PU10"
+      "2": "PU_35"
     }
   },
-  "gge83": {
+  "gge50": {
     "props": {
       "Designator": "JP2",
       "device_name": "connector",
@@ -1029,11 +633,155 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "PU10",
-      "2": "IN10"
+      "1": "PU_35",
+      "2": "IN_35"
     }
   },
-  "gge84": {
+  "gge51": {
+    "props": {
+      "Designator": "R9",
+      "device_name": "resistor",
+      "value": "1k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "RJ_15",
+      "2": "IN_15"
+    }
+  },
+  "gge52": {
+    "props": {
+      "Designator": "C9",
+      "device_name": "capacitor",
+      "value": "100nF",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_15",
+      "2": "GND"
+    }
+  },
+  "gge53": {
+    "props": {
+      "Designator": "D9A",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_15",
+      "2": "+3V3"
+    }
+  },
+  "gge54": {
+    "props": {
+      "Designator": "D9B",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "IN_15"
+    }
+  },
+  "gge55": {
+    "props": {
+      "Designator": "R10",
+      "device_name": "resistor",
+      "value": "1k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "RJ_27",
+      "2": "IN_27"
+    }
+  },
+  "gge56": {
+    "props": {
+      "Designator": "C10",
+      "device_name": "capacitor",
+      "value": "100nF",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_27",
+      "2": "GND"
+    }
+  },
+  "gge57": {
+    "props": {
+      "Designator": "D10A",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_27",
+      "2": "+3V3"
+    }
+  },
+  "gge58": {
+    "props": {
+      "Designator": "D10B",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "IN_27"
+    }
+  },
+  "gge59": {
+    "props": {
+      "Designator": "R11",
+      "device_name": "resistor",
+      "value": "1k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "RJ_36",
+      "2": "IN_36"
+    }
+  },
+  "gge60": {
+    "props": {
+      "Designator": "C11",
+      "device_name": "capacitor",
+      "value": "100nF",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_36",
+      "2": "GND"
+    }
+  },
+  "gge61": {
+    "props": {
+      "Designator": "D11A",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_36",
+      "2": "+3V3"
+    }
+  },
+  "gge62": {
+    "props": {
+      "Designator": "D11B",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "IN_36"
+    }
+  },
+  "gge63": {
     "props": {
       "Designator": "R33",
       "device_name": "resistor",
@@ -1042,10 +790,10 @@
     },
     "pins": {
       "1": "+3V3",
-      "2": "PU11"
+      "2": "PU_36"
     }
   },
-  "gge85": {
+  "gge64": {
     "props": {
       "Designator": "JP3",
       "device_name": "connector",
@@ -1053,11 +801,59 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "PU11",
-      "2": "IN11"
+      "1": "PU_36",
+      "2": "IN_36"
     }
   },
-  "gge86": {
+  "gge65": {
+    "props": {
+      "Designator": "R12",
+      "device_name": "resistor",
+      "value": "1k",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "RJ_39",
+      "2": "IN_39"
+    }
+  },
+  "gge66": {
+    "props": {
+      "Designator": "C12",
+      "device_name": "capacitor",
+      "value": "100nF",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_39",
+      "2": "GND"
+    }
+  },
+  "gge67": {
+    "props": {
+      "Designator": "D12A",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_39",
+      "2": "+3V3"
+    }
+  },
+  "gge68": {
+    "props": {
+      "Designator": "D12B",
+      "device_name": "diode",
+      "value": "BAT85",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "GND",
+      "2": "IN_39"
+    }
+  },
+  "gge69": {
     "props": {
       "Designator": "R34",
       "device_name": "resistor",
@@ -1066,10 +862,10 @@
     },
     "pins": {
       "1": "+3V3",
-      "2": "PU12"
+      "2": "PU_39"
     }
   },
-  "gge87": {
+  "gge70": {
     "props": {
       "Designator": "JP4",
       "device_name": "connector",
@@ -1077,8 +873,30 @@
       "Supplier Part": "PENDIENTE"
     },
     "pins": {
-      "1": "PU12",
-      "2": "IN12"
+      "1": "PU_39",
+      "2": "IN_39"
+    }
+  },
+  "gge71": {
+    "props": {
+      "Designator": "J8",
+      "device_name": "connector",
+      "value": "header macho 1x12",
+      "Supplier Part": "PENDIENTE"
+    },
+    "pins": {
+      "1": "IN_2",
+      "2": "IN_4",
+      "3": "IN_32",
+      "4": "IN_34",
+      "5": "IN_5",
+      "6": "IN_14",
+      "7": "IN_33",
+      "8": "IN_35",
+      "9": "IN_15",
+      "10": "IN_27",
+      "11": "IN_36",
+      "12": "IN_39"
     }
   }
 }

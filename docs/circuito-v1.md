@@ -328,7 +328,7 @@ Si el módulo ya tiene, dejá los footprints sin poblar.
 | Placa | Contenido | Componentes |
 |---|---|---:|
 | **A — Control** | Zócalo ESP32 · alimentación · pull-ups de relé · header a relés · OLED · I²C de expansión | 22 |
-| **B — Entradas** | 6 jacks RJ12 · PTCs · campo de patch · 12 redes de protección | 87 |
+| **B — Entradas** | 6 jacks RJ12 · PTCs · 12 redes de protección · header de emergencia | 71 |
 
 Se unen con un **cable plano de 16 vías**: `+5V` `GND` `+3V3` `GND` + `IN1`..`IN12`.
 
@@ -401,7 +401,7 @@ OLED.
 
 ## 11. Generar el esquemático en EasyEDA
 
-No hace falta colocar los 109 componentes a mano. EasyEDA **Pro** tiene una extensión
+No hace falta colocar los 93 componentes a mano. EasyEDA **Pro** tiene una extensión
 que arma el esquemático completo desde un netlist en JSON.
 
 ### Pasos
@@ -409,7 +409,7 @@ que arma el esquemático completo desde un netlist en JSON.
 1. **Completar los números LCSC.** Abrir
    [`tools/generar-netlist.py`](../tools/generar-netlist.py) y reemplazar cada
    `PENDIENTE` del diccionario `PARTS` por el C-number correspondiente, buscándolo en
-   [lcsc.com](https://www.lcsc.com). Son **15 búsquedas**; cada componente se repite
+   [lcsc.com](https://www.lcsc.com). Son **17 búsquedas**; cada componente se repite
    muchas veces pero se define una sola.
 
 2. **Generar:**
@@ -422,7 +422,7 @@ que arma el esquemático completo desde un netlist en JSON.
 
    ```
    tools/netlist/placa-a-control.json     22 componentes
-   tools/netlist/placa-b-entradas.json    87 componentes
+   tools/netlist/placa-b-entradas.json    71 componentes
    ```
 
 3. **En EasyEDA Pro:** marketplace → instalar
@@ -441,7 +441,7 @@ que arma el esquemático completo desde un netlist en JSON.
 > - **Número equivocado** → carga un componente incorrecto, **y no se puede corregir
 >   después de importar**
 >
-> Verificá los 15 antes de generar. Es el único paso del proceso sin vuelta atrás.
+> Verificá los 17 antes de generar. Es el único paso del proceso sin vuelta atrás.
 
 ### Si la importación falla
 
