@@ -132,11 +132,23 @@ corriente, pero eso no afecta la carga del firmware.
 cables de 10 m entrando a la casa, puede pasar), lo cambiás en 30 segundos en vez de
 desoldar 38 pines.
 
-> ⚠️ **Medí la separación entre filas de TU placa antes de dibujar el footprint.**
-> Los DevKit de 38 pines vienen en anchos distintos: **22.86 mm (0.9")** y **25.4 mm
-> (1.0")** son los dos habituales. Y tenemos **dos placas de serigrafía diferente**
-> (MCU-001 y MCU-002) — **pueden no medir lo mismo**. Medí las dos con calibre. Si
-> difieren, diseñá para una y anotá cuál en la serigrafía de la placa.
+> ⚠️ **Las dos placas miden distinto.** Verificado contando agujeros de protoboard
+> (más exacto que una regla, porque el patrón es de 2.54 mm clavados):
+>
+> | Placa | Separación entre filas |
+> |---|---|
+> | **MCU-001** (la elegida) | **0.9" = 22.86 mm** |
+> | MCU-002 | 1.0" = 25.4 mm |
+>
+> **El zócalo se diseña para 0.9".** MCU-002 no entra, y no hay forma de contemplar
+> las dos: quedarían a 1.27 mm entre tiras y los cuerpos plásticos se chocan.
+>
+> **Perforá igual el segundo juego de agujeros a 1.0".** En una placa casera no cuesta
+> nada y te deja la salida de mover las tiras si algún día solo tenés la otra placa.
+> Serigrafiá cuál juego está en uso.
+>
+> Como MCU-002 no sirve de repuesto directo, conviene **sumar un DevKit de 0.9" al
+> pedido de componentes**.
 
 ---
 

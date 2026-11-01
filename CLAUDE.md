@@ -40,7 +40,10 @@ está decidido** — no hay que re-abrirlo salvo que algo falle en las pruebas.
 
 **Microcontrolador (elegido: MCU-001).** NodeMCU ESP-32S v1.1 ·
 **ESP32-D0WD-V3 rev v3.1** · 4 MB flash · **sin PSRAM** · MAC `84:1f:e8:2b:24:5c`.
-MCU-002 es idéntica y queda de repuesto.
+Separación entre filas: **0.9" (22.86 mm)**.
+
+> ⚠️ **MCU-002 es eléctricamente idéntica pero mide 1.0" (25.4 mm)** entre filas,
+> así que **no entra en el mismo zócalo**. No es repuesto directo.
 
 > **La serigrafía usa otros nombres:** `GPIO27` aparece como **`P27`**, `GPIO36` como
 > **`SVP`** y `GPIO39` como **`SVN`**.
@@ -112,6 +115,7 @@ queda entonces en cero.
 | 8 | Cables RJ12 **derechos**, verificados con continuidad, + PTC en el 5 V | Los telefónicos comunes son cruzados: ponen 5 V contra GND |
 | 9 | Masa **en estrella**: el retorno de las bobinas va directo a la fuente | 560 mA compartiendo pista con el GND del ESP32 corren las lecturas del ADC |
 | 10 | Nunca USB y fuente externa a la vez en el pin `5V` | En muchos DevKit ese pin va directo al VBUS del USB |
+| 12 | El zócalo se diseña para **0.9"** (MCU-001). Perforar también los agujeros de 1.0" | MCU-002 mide 1.0" y no entra; sin los agujeros extra habría que rehacer la placa |
 | 11 | Footprint sin poblar: **en serie** → puentear · **en paralelo** → dejar vacío | Puentear un paralelo cortocircuita el riel |
 
 ---
@@ -172,7 +176,7 @@ Tareas de desbloqueo abiertas (ver `docs/plan.md` §Fase 0):
 
 - [ ] Buscar los 17 números LCSC para el netlist (**irreversible**: un número
       equivocado carga un componente incorrecto que no se puede corregir)
-- [ ] Medir con calibre la separación entre filas del DevKit (22.86 mm vs 25.4 mm)
+- [x] ~~Medir la separación entre filas~~ → **MCU-001 = 0.9" · MCU-002 = 1.0"**
 - [ ] Identificar el género de PRO-003 (tira de pines) y PRO-004 (Dupont)
 - [x] ~~Regenerar los netlists con el esquema de parejas~~ → hecho.
       Placa A: 22 componentes · Placa B: 71

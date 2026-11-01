@@ -63,7 +63,8 @@ los pines del módulo).
 
 | ID | Componente | Necesario | Tenés |
 |---|---|---:|---:|
-| MCU-001/002 | DevKit ESP32 38 pines | 1 | **2** |
+| MCU-001 | DevKit ESP32 38 pines, **0.9"** | 1 | 1 |
+| MCU-002 | DevKit ESP32 38 pines, 1.0" | — | 1 *(no entra en el zócalo)* |
 | ACT-001 | Módulo relé 8 canales | 1 | 1 |
 | SEN-003 | PIR HC-SR501 | 2 | 2 |
 | SEN-001 | Módulo sensor de luz (LDR + LM393) | 1 | 1 |
@@ -148,8 +149,10 @@ No es que sobren: quedan para la v2 o para otros proyectos.
 | PWR-002 | MT3608 step-up | Sin rol: en este diseño todo baja de tensión |
 | PRO-006 | Conversor TXS0108E | Ninguna interfaz lo necesita |
 
-> **MCU-002** queda como repuesto del ESP32. Con cables de 10 m entrando a la casa,
-> tener la segunda placa es buena noticia — y por eso el zócalo en lugar de soldar.
+> ⚠️ **MCU-002 NO es repuesto directo.** Mide 1.0" entre filas contra los 0.9" de
+> MCU-001, así que no entra en el zócalo. Conviene **agregar al pedido un DevKit
+> ESP32 de 38 pines con separación de 0.9"** para tener un repuesto real — con
+> cables de 10 m entrando a la casa, vale la pena.
 
 > **PRO-005 (FTDI)** no va montado en nada, pero guardalo: es la única forma de
 > programar el Pro Mini, y sirve de segundo puerto serie para depurar.
