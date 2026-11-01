@@ -32,21 +32,25 @@ PENDIENTE = "PENDIENTE"
 # ---------------------------------------------------------------------------
 
 PARTS = {
-    "R10K":   {"lcsc": PENDIENTE, "device": "resistor",  "value": "10k",
-               "cat": "Resistors > Through Hole Resistors",
+    "R10K":   {"lcsc": "C2894649", "device": "resistor",  "value": "10k",
+               "cat": "Passives > Resistors > Through Hole Resistors",
                "filtros": "Resistance 10kOhm | Power 250mW | In Stock"},
-    "R1K":    {"lcsc": PENDIENTE, "device": "resistor",  "value": "1k",
-               "cat": "Resistors > Through Hole Resistors",
+    "R1K":    {"lcsc": "C2894660", "device": "resistor",  "value": "1k",
+               "cat": "Passives > Resistors > Through Hole Resistors",
                "filtros": "Resistance 1kOhm | Power 250mW | In Stock"},
-    "R4K7":   {"lcsc": PENDIENTE, "device": "resistor",  "value": "4.7k",
-               "cat": "Resistors > Through Hole Resistors",
+    "R4K7":   {"lcsc": "C119339", "device": "resistor",  "value": "4.7k",
+               "cat": "Passives > Resistors > Through Hole Resistors",
                "filtros": "Resistance 4.7kOhm | Power 250mW | In Stock"},
     "C100N":  {"lcsc": PENDIENTE, "device": "capacitor", "value": "100nF",
-               "cat": "Capacitors > Multilayer Ceramic Capacitors MLCC - Leaded",
-               "filtros": "Capacitance 100nF | Voltage >=50V | Pitch 5.08mm"},
+               "cat": "Passives > Capacitors > Ceramic Capacitors",
+               "filtros": "Buscar dentro: 100nF (o 104) | Package: THROUGH HOLE "
+                          "| Voltage >=50V. Ojo: casi todos los de esa categoria "
+                          "son SMD, el filtro de Package es imprescindible"},
     "C1000U": {"lcsc": PENDIENTE, "device": "capacitor", "value": "1000uF 16V",
-               "cat": "Capacitors > Aluminum Electrolytic Capacitors - Leaded",
-               "filtros": "Capacitance 1000uF | Voltage 16V o 25V | Radial"},
+               "cat": "Passives > Capacitors > Aluminum Electrolytic Capacitors",
+               "filtros": "Buscar dentro: 1000uF | Package: THROUGH HOLE / Radial "
+                          "| Voltage 16V o 25V. Anotar el diametro: ocupa lugar "
+                          "en la placa"},
     "BAT85":  {"lcsc": PENDIENTE, "device": "diode",     "value": "BAT85",
                "cat": "Diodes > Schottky Diodes",
                "filtros": "Buscar el MPN directo: BAT85 / BAT43 / 1N5819 | "

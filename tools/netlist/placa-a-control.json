@@ -134,7 +134,7 @@
       "Designator": "R1",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -146,7 +146,7 @@
       "Designator": "R2",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -158,7 +158,7 @@
       "Designator": "R3",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -170,7 +170,7 @@
       "Designator": "R4",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -182,7 +182,7 @@
       "Designator": "R5",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -194,7 +194,7 @@
       "Designator": "R6",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -206,7 +206,7 @@
       "Designator": "R7",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -218,7 +218,7 @@
       "Designator": "R8",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -276,7 +276,7 @@
       "Designator": "R9",
       "device_name": "resistor",
       "value": "4.7k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C119339"
     },
     "pins": {
       "1": "+3V3",
@@ -288,7 +288,7 @@
       "Designator": "R10",
       "device_name": "resistor",
       "value": "4.7k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C119339"
     },
     "pins": {
       "1": "+3V3",

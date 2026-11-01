@@ -210,7 +210,7 @@
       "Designator": "R1",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_2",
@@ -258,7 +258,7 @@
       "Designator": "R2",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_4",
@@ -306,7 +306,7 @@
       "Designator": "R3",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_32",
@@ -354,7 +354,7 @@
       "Designator": "R4",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_34",
@@ -402,7 +402,7 @@
       "Designator": "R31",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -426,7 +426,7 @@
       "Designator": "R5",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_5",
@@ -474,7 +474,7 @@
       "Designator": "R6",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_14",
@@ -522,7 +522,7 @@
       "Designator": "R7",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_33",
@@ -570,7 +570,7 @@
       "Designator": "R8",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_35",
@@ -618,7 +618,7 @@
       "Designator": "R32",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -642,7 +642,7 @@
       "Designator": "R9",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_15",
@@ -690,7 +690,7 @@
       "Designator": "R10",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_27",
@@ -738,7 +738,7 @@
       "Designator": "R11",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_36",
@@ -786,7 +786,7 @@
       "Designator": "R33",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
@@ -810,7 +810,7 @@
       "Designator": "R12",
       "device_name": "resistor",
       "value": "1k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894660"
     },
     "pins": {
       "1": "RJ_39",
@@ -858,7 +858,7 @@
       "Designator": "R34",
       "device_name": "resistor",
       "value": "10k",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2894649"
     },
     "pins": {
       "1": "+3V3",
