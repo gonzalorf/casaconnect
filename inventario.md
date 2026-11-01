@@ -42,7 +42,7 @@
 
 | ID | Componente | Modelo | Cant. | Especificaciones | Notas |
 |---|---|---|---:|---|---|
-| ACT-001 | Módulo relé 8 canales | PCB `HL-58S v1.2`, relés SONGLE **SRD-05VDC-SL-C** | 1 | Bobina 5 V DC · Contactos 10 A @ 250 VAC / 10 A @ 30 VDC · SPDT (NO/NC/COM) | **Optoacoplado**. Jumper **JD-VCC** presente → permite alimentar bobinas con fuente separada. Entradas activas en **LOW**. Borneras de tornillo por canal. Consumo ~70 mA por bobina activa. |
+| ACT-001 | Módulo relé 8 canales | PCB `HL-58S v1.2`, relés SONGLE **SRD-05VDC-SL-C** | 1 | Bobina 5 V DC · Contactos 10 A @ 250 VAC / 10 A @ 30 VDC · SPDT (NO/NC/COM) | **Optoacoplado**. Jumper **JD-VCC** presente → permite alimentar el lado lógico con 3.3 V y las bobinas con 5 V. Entradas activas en **LOW**. Borneras de tornillo por canal. ~70 mA por bobina activa. ✅ **Medido 2026-10-31: los dos GND (señales y potencia) están unidos** → **sin aislamiento galvánico**. Quitar el jumper sirve para el **nivel lógico**, no para aislar. Cableado: un solo GND común. |
 | ACT-002 | Módulo relé 4 canales | Relés SONGLE **SRD-05VDC-SL-C** | 1 | Bobina 5 V DC · Contactos 10 A @ 250 VAC / 10 A @ 30 VDC · SPDT | **Optoacoplado**. Jumper JD-VCC presente. Pines: `VCC / IN1 / IN2 / IN3 / IN4 / GND`. Entradas activas en LOW. |
 
 ## Pantallas e Interfaz
@@ -84,6 +84,7 @@
 | 7 | Variante del Pro Mini (MCU-003): ¿5 V/16 MHz o 3.3 V/8 MHz? | **5 V / 16 MHz** — el regulador dice `LG50` (`LG33` sería el de 3.3 V) | Medir VCC con el multímetro, o leer el marcado del resonador |
 | ~~9~~ | ~~Modelo del sensor de gas~~ | — | ✅ **Resuelto: MQ-7 (monóxido de carbono)** |
 | ~~10~~ | ~~Modelo del conversor de nivel~~ | — | ✅ **Resuelto: TXS0108E, 8 canales** |
+| ~~11~~ | ~~¿Los GND del módulo de relés están aislados?~~ | — | ✅ **Resuelto: unidos. Masa común, sin aislamiento** |
 | 8 | ¿El FT232RL (PRO-005) es FTDI genuino o clon? | Indeterminado — los clones son muy comunes y reportan el mismo VID/PID | Conectarlo: si enumera y transmite bien, es funcional (genuino o clon aceptable) |
 | ~~5~~ | ~~Cantidad de pines del DevKit ESP32~~ | — | ✅ **Resuelto: 38 pines (19/lado)** |
 
