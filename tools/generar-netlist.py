@@ -33,40 +33,68 @@ PENDIENTE = "PENDIENTE"
 
 PARTS = {
     "R10K":   {"lcsc": PENDIENTE, "device": "resistor",  "value": "10k",
-               "que_buscar": "resistor 10k 1/4W axial through hole"},
+               "cat": "Resistors > Through Hole Resistors",
+               "filtros": "Resistance 10kOhm | Power 250mW | In Stock"},
     "R1K":    {"lcsc": PENDIENTE, "device": "resistor",  "value": "1k",
-               "que_buscar": "resistor 1k 1/4W axial through hole"},
+               "cat": "Resistors > Through Hole Resistors",
+               "filtros": "Resistance 1kOhm | Power 250mW | In Stock"},
     "R4K7":   {"lcsc": PENDIENTE, "device": "resistor",  "value": "4.7k",
-               "que_buscar": "resistor 4.7k 1/4W axial through hole"},
+               "cat": "Resistors > Through Hole Resistors",
+               "filtros": "Resistance 4.7kOhm | Power 250mW | In Stock"},
     "C100N":  {"lcsc": PENDIENTE, "device": "capacitor", "value": "100nF",
-               "que_buscar": "capacitor 100nF 50V ceramic through hole 2.54mm"},
+               "cat": "Capacitors > Multilayer Ceramic Capacitors MLCC - Leaded",
+               "filtros": "Capacitance 100nF | Voltage >=50V | Pitch 5.08mm"},
     "C1000U": {"lcsc": PENDIENTE, "device": "capacitor", "value": "1000uF 16V",
-               "que_buscar": "electrolytic capacitor 1000uF 16V radial"},
+               "cat": "Capacitors > Aluminum Electrolytic Capacitors - Leaded",
+               "filtros": "Capacitance 1000uF | Voltage 16V o 25V | Radial"},
     "BAT85":  {"lcsc": PENDIENTE, "device": "diode",     "value": "BAT85",
-               "que_buscar": "BAT85 schottky diode DO-35 (o BAT43 / 1N5819)"},
+               "cat": "Diodes > Schottky Diodes",
+               "filtros": "Buscar el MPN directo: BAT85 / BAT43 / 1N5819 | "
+                          "DO-35 o DO-41 | NO sirve el 1N4148"},
     "PTC1A":  {"lcsc": PENDIENTE, "device": "fuse",      "value": "PTC 1A",
-               "que_buscar": "resettable fuse PTC 1A 30V radial"},
+               "cat": "Circuit Protection > PTC Resettable Fuses",
+               "filtros": "Hold Current 1A | Radial / Through Hole"},
     "PTC500": {"lcsc": PENDIENTE, "device": "fuse",      "value": "PTC 500mA",
-               "que_buscar": "resettable fuse PTC 500mA 30V radial"},
+               "cat": "Circuit Protection > PTC Resettable Fuses",
+               "filtros": "Hold Current 0.5A | Radial / Through Hole"},
     "FUSE2A": {"lcsc": PENDIENTE, "device": "fuse",      "value": "2A",
-               "que_buscar": "fuse holder 5x20mm PCB mount + fuse 2A"},
+               "cat": "Circuit Protection > Fuse Holders",
+               "filtros": "Portafusible 5x20mm montaje PCB. El fusible se "
+                          "compra aparte, no va en el netlist"},
     "RJ12":   {"lcsc": PENDIENTE, "device": "connector", "value": "RJ12 6P6C",
-               "que_buscar": "RJ12 6P6C jack PCB mount through hole"},
+               "cat": "Connectors > Ethernet / Modular Connectors",
+               "filtros": "6P6C | Through Hole | sin transformador ni LEDs"},
     "HDRF19": {"lcsc": PENDIENTE, "device": "connector", "value": "header hembra 1x19",
-               "que_buscar": "female header 1x20 2.54mm (cortar a 19)"},
+               "cat": "Connectors > Female Headers",
+               "filtros": "1x20 | 2.54mm | 1 fila | Through Hole (se corta a 19)"},
     "HDRM2":  {"lcsc": PENDIENTE, "device": "connector", "value": "header macho 1x2",
-               "que_buscar": "male pin header 1x2 2.54mm"},
+               "cat": "Connectors > Pin Headers",
+               "filtros": "1x2 | 2.54mm | 1 fila | Through Hole"},
     "HDRM4":  {"lcsc": PENDIENTE, "device": "connector", "value": "header macho 1x4",
-               "que_buscar": "male pin header 1x4 2.54mm"},
+               "cat": "Connectors > Pin Headers",
+               "filtros": "1x4 | 2.54mm | 1 fila | Through Hole"},
     "HDRM10": {"lcsc": PENDIENTE, "device": "connector", "value": "header macho 1x10",
-               "que_buscar": "male pin header 1x10 2.54mm"},
+               "cat": "Connectors > Pin Headers",
+               "filtros": "1x10 | 2.54mm | 1 fila | Through Hole"},
     "HDRM12": {"lcsc": PENDIENTE, "device": "connector", "value": "header macho 1x12",
-               "que_buscar": "male pin header 1x12 2.54mm"},
+               "cat": "Connectors > Pin Headers",
+               "filtros": "1x12 | 2.54mm | 1 fila | Through Hole"},
     "HDRM16": {"lcsc": PENDIENTE, "device": "connector", "value": "header macho 1x16",
-               "que_buscar": "male pin header 1x16 2.54mm"},
+               "cat": "Connectors > Pin Headers",
+               "filtros": "1x16 | 2.54mm | 1 fila | Through Hole"},
     "TB2":    {"lcsc": PENDIENTE, "device": "connector", "value": "bornera 2 vias",
-               "que_buscar": "screw terminal block 2 position 5.08mm PCB"},
+               "cat": "Connectors > Screw Terminal / Barrier Blocks",
+               "filtros": "2 posiciones | paso 5.08mm | Through Hole"},
 }
+
+# Los pasivos genericos (R, C) son INTERCAMBIABLES: cualquier entrada de LCSC
+# con el valor y el encapsulado correctos sirve. No estas comprando el
+# componente, estas eligiendo un simbolo y un footprint de la libreria.
+#
+# La advertencia de irreversibilidad aplica de verdad solo a los distintivos:
+# RJ12, PTC, BAT85, portafusible, headers y bornera. Ahi si hay que mirar el
+# footprint antes de anotar el numero.
+GENERICOS = {"R10K", "R1K", "R4K7", "C100N", "C1000U"}
 
 # ---------------------------------------------------------------------------
 # ESQUEMA DE COMPARTICION
@@ -317,14 +345,35 @@ def main():
         print(f"{nl.nombre:24}  {nl.dump(ruta):3} componentes  ->  {ruta}")
 
     faltantes = [k for k, v in PARTS.items() if v["lcsc"] == PENDIENTE]
-    if faltantes:
-        print(f"\n!!  Faltan {len(faltantes)} numeros LCSC. NO importar todavia:\n")
-        ancho = max(len(k) for k in faltantes)
-        for k in faltantes:
-            print(f"    {k:<{ancho}}  buscar: {PARTS[k]['que_buscar']}")
-        print("\n    Completalos en PARTS y volve a correr este script.")
-    else:
-        print("\nOK: todos los componentes tienen numero LCSC.")
+    if not faltantes:
+        print()
+        print("OK: todos los componentes tienen numero LCSC.")
+        return
+
+    print()
+    print(f"!!  Faltan {len(faltantes)} numeros LCSC. NO importar todavia.")
+    print()
+    print("    El buscador libre de LCSC no sirve para esto: con frases largas")
+    print("    devuelve cualquier cosa. Entra por CATALOG, elegi la categoria")
+    print("    y usa los filtros parametricos de la izquierda.")
+    print()
+
+    for es_generico, titulo in [
+        (True,  "GENERICOS - cualquiera que coincida sirve"),
+        (False, "DISTINTIVOS - mirar el footprint antes de anotar"),
+    ]:
+        items = [k for k in faltantes if (k in GENERICOS) == es_generico]
+        if not items:
+            continue
+        print(f"  {titulo}")
+        print(f"  {'-' * len(titulo)}")
+        for k in items:
+            print(f"    {k}")
+            print(f"       categoria: {PARTS[k]['cat']}")
+            print(f"       filtros:   {PARTS[k]['filtros']}")
+        print()
+
+    print("    Completalos en PARTS y volve a correr este script.")
 
 
 if __name__ == "__main__":
