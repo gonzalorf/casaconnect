@@ -27,72 +27,76 @@ from pathlib import Path
 
 PENDIENTE = "PENDIENTE"
 
+# Si la extension resuelve por MPN en vez de por C-number, poner True
+# (o correr el script con el argumento --mpn).
+USAR_MPN = "--mpn" in __import__("sys").argv
+
 # ---------------------------------------------------------------------------
 # CATALOGO DE COMPONENTES  <-- EDITAR SOLO ESTO
 # ---------------------------------------------------------------------------
 
 PARTS = {
-    "R10K":   {"lcsc": "C2894649", "device": "resistor",  "value": "10k",
+    "R10K":   {"lcsc": "C2894649", "mpn": "CR1/4W-10K±5%-ST52", "device": "resistor",  "value": "10k",
                "cat": "Passives > Resistors > Through Hole Resistors",
                "filtros": "Resistance 10kOhm | Power 250mW | In Stock"},
-    "R1K":    {"lcsc": "C2894660", "device": "resistor",  "value": "1k",
+    "R1K":    {"lcsc": "C2894660", "mpn": "CR1/4W-1K±5%-ST52", "device": "resistor",  "value": "1k",
                "cat": "Passives > Resistors > Through Hole Resistors",
                "filtros": "Resistance 1kOhm | Power 250mW | In Stock"},
-    "R4K7":   {"lcsc": "C119339", "device": "resistor",  "value": "4.7k",
+    "R4K7":   {"lcsc": "C119339", "mpn": "MF1/4W-4.7KΩ±1% T", "device": "resistor",  "value": "4.7k",
                "cat": "Passives > Resistors > Through Hole Resistors",
                "filtros": "Resistance 4.7kOhm | Power 250mW | In Stock"},
-    "C100N":  {"lcsc": "C2169797", "device": "capacitor", "value": "100nF",
+    "C100N":  {"lcsc": "C2169797", "mpn": "C315C104M5U5TA7303", "device": "capacitor", "value": "100nF",
                "cat": "Passives > Capacitors > Ceramic Capacitors",
                "filtros": "Buscar dentro: 100nF (o 104) | Package: THROUGH HOLE "
                           "| Voltage >=50V. Ojo: casi todos los de esa categoria "
                           "son SMD, el filtro de Package es imprescindible"},
-    "C1000U": {"lcsc": "C18214323", "device": "capacitor", "value": "1000uF 16V",
+    "C1000U": {"lcsc": "C18214323", "mpn": "RD1C108M10016PA160", "device": "capacitor", "value": "1000uF 16V",
                "cat": "Passives > Capacitors > Aluminum Electrolytic Capacitors",
                "filtros": "Buscar dentro: 1000uF | Package: THROUGH HOLE / Radial "
                           "| Voltage 16V o 25V. VERIFICACION DE TAMANO: un 1000uF/16V "
                           "mide ~10mm de diametro x 16-20mm de alto. Si el codigo "
                           "termina en 6.3X11 o parecido, es demasiado chico y el "
                           "valor esta mal leido (ej: 35ZLH100M son 100uF, no 1000)"},
-    "BAT85":  {"lcsc": "C3312828", "device": "diode",     "value": "BAT85",
+    "BAT85":  {"lcsc": "C3312828", "mpn": "BAT85S-TAP", "device": "diode",     "value": "BAT85",
                "cat": "Diodes > Schottky Diodes",
                "filtros": "Buscar el MPN directo: BAT85 / BAT43 / 1N5819 | "
                           "DO-35 o DO-41 | NO sirve el 1N4148"},
-    "PTC1A":  {"lcsc": "C3760872", "device": "fuse",      "value": "PTC 1A",
+    "PTC1A":  {"lcsc": "C3760872", "mpn": "RXEF110", "device": "fuse",      "value": "PTC 1A",
                "cat": "Circuit Protection > PTC Resettable Fuses",
                "filtros": "Hold Current 1A | Radial / Through Hole"},
-    "PTC500": {"lcsc": "C76399", "device": "fuse",      "value": "PTC 500mA",
+    "PTC500": {"lcsc": "C76399", "mpn": "RXEF050", "device": "fuse",      "value": "PTC 500mA",
                "cat": "Circuit Protection > PTC Resettable Fuses",
                "filtros": "Hold Current 0.5A | Radial / Through Hole"},
     "FUSE2A": {"lcsc": "C3130", "device": "fuse",      "value": "2A",
                "cat": "Circuit Protection > Fuse Holders",
                "filtros": "Portafusible 5x20mm montaje PCB. El fusible se "
                           "compra aparte, no va en el netlist"},
-    "RJ12":   {"lcsc": "C189750", "device": "connector", "value": "RJ12 6P6C",
+    "RJ12":   {"lcsc": "C189750", "mpn": "R-RJ11R06P-A800", "device": "connector", "value": "RJ12 6P6C",
                "cat": "Connectors > Modular Connectors (si no, Modular/Ethernet)",
                "filtros": "6P6C -- NO 6P4C: usa el mismo hueco pero trae solo 4 "
                           "contactos montados y perderias 2 lineas por puerto. "
                           "Through Hole | sin transformador (magnetics) ni LEDs"},
-    "HDRF19": {"lcsc": "C2932678", "device": "connector", "value": "header hembra 1x19",
+    "HDRF19": {"lcsc": "C2932678", "mpn": "KH-2.54FH-1X19P-H8.5", "device": "connector", "value": "header hembra 1x19",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x20 | 2.54mm | 1 fila | Through Hole (se corta a 19)"},
-    "HDRM2":  {"lcsc": "C358684", "device": "connector", "value": "header macho 1x2",
+    "HDRM2":  {"lcsc": "C358684", "mpn": "MTP125-1102S1", "device": "connector", "value": "header macho 1x2",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x2 | 2.54mm | 1 fila | Through Hole"},
-    "HDRM4":  {"lcsc": "C32713270", "device": "connector", "value": "header macho 1x4",
+    "HDRM4":  {"lcsc": "C32713270", "mpn": "HX PZ2.54-1x4P ZZ", "device": "connector", "value": "header macho 1x4",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x4 | 2.54mm | 1 fila | Through Hole"},
-    "HDRM10": {"lcsc": "C48641757", "device": "connector", "value": "header macho 1x10",
+    "HDRM10": {"lcsc": "C48641757", "mpn": "HX PM2.54-1x10P TP H8.5-ZQ", "device": "connector", "value": "header macho 1x10",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x10 | 2.54mm | 1 fila | Through Hole"},
-    "HDRM12": {"lcsc": "C54803345", "device": "connector", "value": "header macho 1x12",
+    "HDRM12": {"lcsc": "C54803345", "mpn": "JXT-PZ2.54-1X12P-A1", "device": "connector", "value": "header macho 1x12",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x12 | 2.54mm | 1 fila | Through Hole"},
-    "HDRM20": {"lcsc": "C50981", "device": "connector", "value": "header macho 1x20",
+    "HDRM20": {"lcsc": "C50981", "mpn": "2.54-1*20P直针", "device": "connector", "value": "header macho 1x20",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x20 | 2.54mm | 1 fila | Through Hole. No existe 1x16 de "
                           "fila simple en el catalogo, asi que el enlace usa 20 vias "
                           "y las 4 de sobra van a masas intercaladas"},
-    "TB2":    {"lcsc": "C474952", "device": "connector", "value": "bornera 2 vias",
+    "TB2":    {"lcsc": "C474952", "mpn": "KF128-5.08-2P-AA", "device": "connector", "value": "bornera 2 vias",
                "cat": "Connectors > Terminal Blocks",
                "filtros": "2 posiciones | paso 5.08mm | Through Hole"},
 }
@@ -232,7 +236,8 @@ class Netlist:
                 "Designator": designator,
                 "DeviceName": part["device"],
                 "Value": part["value"],
-                "Supplier Part": part["lcsc"],
+                "Supplier Part": (part.get("mpn") or part["lcsc"])
+                                 if USAR_MPN else part["lcsc"],
             },
             "pins": {p: net for p, net in pins.items() if net != "NC"},
         }
@@ -374,12 +379,30 @@ def placa_b():
 
 
 def prueba_minima(destino):
-    """Un solo componente, para aislar si el problema es el formato o la red."""
-    nl = Netlist("Prueba - 1 componente")
-    nl.add("R1", "R10K", {"1": "VCC", "2": "GND"})
-    ruta = destino / "prueba-1-componente.json"
-    nl.dump(ruta)
-    print(f"{nl.nombre:24}    1 componentes  ->  {ruta}")
+    """Cuatro resistencias identicas, variando las dos cosas que sospechamos.
+
+    Cada una combina un valor distinto de "Supplier Part" (C-number o MPN)
+    con un "DeviceName" distinto (CapitalCase o minuscula). La que la
+    extension logre importar nos dice que espera en los dos campos.
+    """
+    import json
+    combos = [
+        ("R1", PARTS["R10K"]["lcsc"], "Resistor"),   # C-number + CapitalCase
+        ("R2", PARTS["R10K"]["mpn"],  "Resistor"),   # MPN      + CapitalCase
+        ("R3", PARTS["R10K"]["lcsc"], "resistor"),   # C-number + minuscula
+        ("R4", PARTS["R10K"]["mpn"],  "resistor"),   # MPN      + minuscula
+    ]
+    datos = {
+        d: {"props": {"Designator": d, "DeviceName": dev,
+                      "Value": "10k", "Supplier Part": sp},
+            "pins": {"1": "VCC", "2": "GND"}}
+        for d, sp, dev in combos
+    }
+    ruta = destino / "prueba-4-variantes.json"
+    ruta.write_text(json.dumps(datos, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"{'Prueba - 4 variantes':24}    4 componentes  ->  {ruta}")
+    for d, sp, dev in combos:
+        print(f"      {d}  Supplier Part={sp:22} DeviceName={dev}")
 
 
 def main():

@@ -1,0 +1,50 @@
+{
+  "R1": {
+    "props": {
+      "Designator": "R1",
+      "DeviceName": "Resistor",
+      "Value": "10k",
+      "Supplier Part": "C2894649"
+    },
+    "pins": {
+      "1": "VCC",
+      "2": "GND"
+    }
+  },
+  "R2": {
+    "props": {
+      "Designator": "R2",
+      "DeviceName": "Resistor",
+      "Value": "10k",
+      "Supplier Part": "CR1/4W-10K±5%-ST52"
+    },
+    "pins": {
+      "1": "VCC",
+      "2": "GND"
+    }
+  },
+  "R3": {
+    "props": {
+      "Designator": "R3",
+      "DeviceName": "resistor",
+      "Value": "10k",
+      "Supplier Part": "C2894649"
+    },
+    "pins": {
+      "1": "VCC",
+      "2": "GND"
+    }
+  },
+  "R4": {
+    "props": {
+      "Designator": "R4",
+      "DeviceName": "resistor",
+      "Value": "10k",
+      "Supplier Part": "CR1/4W-10K±5%-ST52"
+    },
+    "pins": {
+      "1": "VCC",
+      "2": "GND"
+    }
+  }
+}
