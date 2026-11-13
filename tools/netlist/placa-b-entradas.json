@@ -3,8 +3,8 @@
     "props": {
       "Designator": "J1",
       "device_name": "connector",
-      "value": "header macho 1x16",
-      "Supplier Part": "PENDIENTE"
+      "value": "header macho 1x20",
+      "Supplier Part": "C50981"
     },
     "pins": {
       "1": "+5V",
@@ -15,14 +15,17 @@
       "6": "IN_4",
       "7": "IN_32",
       "8": "IN_34",
-      "9": "IN_5",
-      "10": "IN_14",
-      "11": "IN_33",
-      "12": "IN_35",
-      "13": "IN_15",
-      "14": "IN_27",
-      "15": "IN_36",
-      "16": "IN_39"
+      "9": "GND",
+      "10": "IN_5",
+      "11": "IN_14",
+      "12": "IN_33",
+      "13": "IN_35",
+      "14": "GND",
+      "15": "IN_15",
+      "16": "IN_27",
+      "17": "IN_36",
+      "18": "IN_39",
+      "19": "GND"
     }
   },
   "gge2": {
@@ -30,7 +33,7 @@
       "Designator": "F0",
       "device_name": "fuse",
       "value": "PTC 1A",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3760872"
     },
     "pins": {
       "1": "+5V",
@@ -42,7 +45,7 @@
       "Designator": "F1",
       "device_name": "fuse",
       "value": "PTC 500mA",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C76399"
     },
     "pins": {
       "1": "+5V_PUERTOS",
@@ -70,7 +73,7 @@
       "Designator": "F2",
       "device_name": "fuse",
       "value": "PTC 500mA",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C76399"
     },
     "pins": {
       "1": "+5V_PUERTOS",
@@ -98,7 +101,7 @@
       "Designator": "F3",
       "device_name": "fuse",
       "value": "PTC 500mA",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C76399"
     },
     "pins": {
       "1": "+5V_PUERTOS",
@@ -126,7 +129,7 @@
       "Designator": "F4",
       "device_name": "fuse",
       "value": "PTC 500mA",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C76399"
     },
     "pins": {
       "1": "+5V_PUERTOS",
@@ -154,7 +157,7 @@
       "Designator": "F5",
       "device_name": "fuse",
       "value": "PTC 500mA",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C76399"
     },
     "pins": {
       "1": "+5V_PUERTOS",
@@ -182,7 +185,7 @@
       "Designator": "F6",
       "device_name": "fuse",
       "value": "PTC 500mA",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C76399"
     },
     "pins": {
       "1": "+5V_PUERTOS",
@@ -234,7 +237,7 @@
       "Designator": "D1A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_2",
@@ -246,7 +249,7 @@
       "Designator": "D1B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -282,7 +285,7 @@
       "Designator": "D2A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_4",
@@ -294,7 +297,7 @@
       "Designator": "D2B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -330,7 +333,7 @@
       "Designator": "D3A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_32",
@@ -342,7 +345,7 @@
       "Designator": "D3B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -378,7 +381,7 @@
       "Designator": "D4A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_34",
@@ -390,7 +393,7 @@
       "Designator": "D4B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -414,7 +417,7 @@
       "Designator": "JP1",
       "device_name": "connector",
       "value": "header macho 1x2",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C358684"
     },
     "pins": {
       "1": "PU_34",
@@ -450,7 +453,7 @@
       "Designator": "D5A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_5",
@@ -462,7 +465,7 @@
       "Designator": "D5B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -498,7 +501,7 @@
       "Designator": "D6A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_14",
@@ -510,7 +513,7 @@
       "Designator": "D6B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -546,7 +549,7 @@
       "Designator": "D7A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_33",
@@ -558,7 +561,7 @@
       "Designator": "D7B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -594,7 +597,7 @@
       "Designator": "D8A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_35",
@@ -606,7 +609,7 @@
       "Designator": "D8B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -630,7 +633,7 @@
       "Designator": "JP2",
       "device_name": "connector",
       "value": "header macho 1x2",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C358684"
     },
     "pins": {
       "1": "PU_35",
@@ -666,7 +669,7 @@
       "Designator": "D9A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_15",
@@ -678,7 +681,7 @@
       "Designator": "D9B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -714,7 +717,7 @@
       "Designator": "D10A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_27",
@@ -726,7 +729,7 @@
       "Designator": "D10B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -762,7 +765,7 @@
       "Designator": "D11A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_36",
@@ -774,7 +777,7 @@
       "Designator": "D11B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -798,7 +801,7 @@
       "Designator": "JP3",
       "device_name": "connector",
       "value": "header macho 1x2",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C358684"
     },
     "pins": {
       "1": "PU_36",
@@ -834,7 +837,7 @@
       "Designator": "D12A",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "IN_39",
@@ -846,7 +849,7 @@
       "Designator": "D12B",
       "device_name": "diode",
       "value": "BAT85",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3312828"
     },
     "pins": {
       "1": "GND",
@@ -870,7 +873,7 @@
       "Designator": "JP4",
       "device_name": "connector",
       "value": "header macho 1x2",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C358684"
     },
     "pins": {
       "1": "PU_39",
@@ -882,7 +885,7 @@
       "Designator": "J8",
       "device_name": "connector",
       "value": "header macho 1x12",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C54803345"
     },
     "pins": {
       "1": "IN_2",

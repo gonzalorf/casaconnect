@@ -362,7 +362,14 @@ Si el módulo ya tiene, dejá los footprints sin poblar.
 | **A — Control** | Zócalo ESP32 · alimentación · pull-ups de relé · header a relés · OLED · I²C de expansión | 22 |
 | **B — Entradas** | 6 jacks RJ12 · PTCs · 12 redes de protección · header de emergencia | 71 |
 
-Se unen con un **cable plano de 16 vías**: `+5V` `GND` `+3V3` `GND` + `IN1`..`IN12`.
+Se unen con un **cable plano de 20 vías**: `+5V` `GND` `+3V3` `GND`, más las 12
+entradas agrupadas de a 4 (una pareja de puertos cada grupo) con **GND intercalado**
+entre grupos, y 1 vía de reserva.
+
+> Las masas intercaladas no son relleno: un cable plano que lleva 12 entradas
+> analógicas y digitales juntas tiene menos diafonía si cada grupo queda flanqueado
+> por masa. Salieron gratis porque **no existe header 1×16 de fila simple** en el
+> catálogo y había que ir a 1×20 de todos modos.
 
 La Placa B parece la pesada por el conteo, pero su ruteo es **casi todo paralelo y
 repetitivo** (12 redes idénticas en fila), que es lo más fácil de hacer a una cara.

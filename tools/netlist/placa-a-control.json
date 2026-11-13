@@ -4,7 +4,7 @@
       "Designator": "J1",
       "device_name": "connector",
       "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C474952"
     },
     "pins": {
       "1": "+5V_IN",
@@ -16,7 +16,7 @@
       "Designator": "F1",
       "device_name": "fuse",
       "value": "2A",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C3130"
     },
     "pins": {
       "1": "+5V_IN",
@@ -64,7 +64,7 @@
       "Designator": "J2",
       "device_name": "connector",
       "value": "header hembra 1x19",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2932678"
     },
     "pins": {
       "1": "+3V3",
@@ -88,7 +88,7 @@
       "Designator": "J3",
       "device_name": "connector",
       "value": "header hembra 1x19",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2932678"
     },
     "pins": {
       "1": "GND",
@@ -111,7 +111,7 @@
       "Designator": "J3B",
       "device_name": "connector",
       "value": "header hembra 1x19",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C2932678"
     },
     "pins": {
       "1": "GND",
@@ -230,7 +230,7 @@
       "Designator": "J4",
       "device_name": "connector",
       "value": "header macho 1x10",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C48641757"
     },
     "pins": {
       "1": "+3V3",
@@ -250,7 +250,7 @@
       "Designator": "J5",
       "device_name": "connector",
       "value": "bornera 2 vias",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C474952"
     },
     "pins": {
       "1": "+5V",
@@ -262,7 +262,7 @@
       "Designator": "J6",
       "device_name": "connector",
       "value": "header macho 1x4",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C32713270"
     },
     "pins": {
       "1": "GND",
@@ -300,7 +300,7 @@
       "Designator": "J7",
       "device_name": "connector",
       "value": "header macho 1x4",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C32713270"
     },
     "pins": {
       "1": "+3V3",
@@ -313,8 +313,8 @@
     "props": {
       "Designator": "J8",
       "device_name": "connector",
-      "value": "header macho 1x16",
-      "Supplier Part": "PENDIENTE"
+      "value": "header macho 1x20",
+      "Supplier Part": "C50981"
     },
     "pins": {
       "1": "+5V",
@@ -325,14 +325,17 @@
       "6": "IN_4",
       "7": "IN_32",
       "8": "IN_34",
-      "9": "IN_5",
-      "10": "IN_14",
-      "11": "IN_33",
-      "12": "IN_35",
-      "13": "IN_15",
-      "14": "IN_27",
-      "15": "IN_36",
-      "16": "IN_39"
+      "9": "GND",
+      "10": "IN_5",
+      "11": "IN_14",
+      "12": "IN_33",
+      "13": "IN_35",
+      "14": "GND",
+      "15": "IN_15",
+      "16": "IN_27",
+      "17": "IN_36",
+      "18": "IN_39",
+      "19": "GND"
     }
   }
 }

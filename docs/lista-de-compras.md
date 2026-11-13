@@ -115,7 +115,7 @@ los pines del módulo).
 | 10 | **Portafusible PCB + fusible 2 A** | 1 | 1 + 3 | Entrada general |
 | 11 | ⏸ **Jumper shunt 2.54 mm** | 4 | — | Pull-ups conmutables |
 | 12 | **Header hembra 1×19** | **3** | 3 | Zócalo de 3 tiras: 0.9" y 1.0". **Solo si PRO-003 es macho** |
-| 13 | **Cable plano 16 vías** + 2 IDC hembra 16 | 1 | 1 | Enlace entre placas |
+| 13 | **Cable plano 20 vías** + 2 IDC hembra 20 | 1 | 1 | Enlace entre placas |
 | 14 | Dupont **hembra-hembra** | ~12 | 20 | **Solo si PRO-004 no los incluye** |
 
 ### Para fabricar las placas
@@ -195,7 +195,7 @@ CONECTORES
   25  Ficha RJ12 6P6C para crimpear
    2  PTC rearmable 1 A              ← uno en el riel comun
    1  Portafusible PCB + 3 fusibles 2 A
-   1  Cable plano 16 vias + 2 IDC hembra 16
+   1  Cable plano 20 vias + 2 IDC hembra 20
   (3) Header hembra 1x19        <- zocalo de 3 tiras (0.9" y 1.0")
                                    solo si PRO-003 es macho
  (20) Dupont hembra-hembra      <- solo si PRO-004 no los trae

@@ -53,17 +53,17 @@ PARTS = {
                           "mide ~10mm de diametro x 16-20mm de alto. Si el codigo "
                           "termina en 6.3X11 o parecido, es demasiado chico y el "
                           "valor esta mal leido (ej: 35ZLH100M son 100uF, no 1000)"},
-    "BAT85":  {"lcsc": PENDIENTE, "device": "diode",     "value": "BAT85",
+    "BAT85":  {"lcsc": "C3312828", "device": "diode",     "value": "BAT85",
                "cat": "Diodes > Schottky Diodes",
                "filtros": "Buscar el MPN directo: BAT85 / BAT43 / 1N5819 | "
                           "DO-35 o DO-41 | NO sirve el 1N4148"},
-    "PTC1A":  {"lcsc": PENDIENTE, "device": "fuse",      "value": "PTC 1A",
+    "PTC1A":  {"lcsc": "C3760872", "device": "fuse",      "value": "PTC 1A",
                "cat": "Circuit Protection > PTC Resettable Fuses",
                "filtros": "Hold Current 1A | Radial / Through Hole"},
-    "PTC500": {"lcsc": PENDIENTE, "device": "fuse",      "value": "PTC 500mA",
+    "PTC500": {"lcsc": "C76399", "device": "fuse",      "value": "PTC 500mA",
                "cat": "Circuit Protection > PTC Resettable Fuses",
                "filtros": "Hold Current 0.5A | Radial / Through Hole"},
-    "FUSE2A": {"lcsc": PENDIENTE, "device": "fuse",      "value": "2A",
+    "FUSE2A": {"lcsc": "C3130", "device": "fuse",      "value": "2A",
                "cat": "Circuit Protection > Fuse Holders",
                "filtros": "Portafusible 5x20mm montaje PCB. El fusible se "
                           "compra aparte, no va en el netlist"},
@@ -72,25 +72,27 @@ PARTS = {
                "filtros": "6P6C -- NO 6P4C: usa el mismo hueco pero trae solo 4 "
                           "contactos montados y perderias 2 lineas por puerto. "
                           "Through Hole | sin transformador (magnetics) ni LEDs"},
-    "HDRF19": {"lcsc": PENDIENTE, "device": "connector", "value": "header hembra 1x19",
+    "HDRF19": {"lcsc": "C2932678", "device": "connector", "value": "header hembra 1x19",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x20 | 2.54mm | 1 fila | Through Hole (se corta a 19)"},
-    "HDRM2":  {"lcsc": PENDIENTE, "device": "connector", "value": "header macho 1x2",
+    "HDRM2":  {"lcsc": "C358684", "device": "connector", "value": "header macho 1x2",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x2 | 2.54mm | 1 fila | Through Hole"},
-    "HDRM4":  {"lcsc": PENDIENTE, "device": "connector", "value": "header macho 1x4",
+    "HDRM4":  {"lcsc": "C32713270", "device": "connector", "value": "header macho 1x4",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x4 | 2.54mm | 1 fila | Through Hole"},
-    "HDRM10": {"lcsc": PENDIENTE, "device": "connector", "value": "header macho 1x10",
+    "HDRM10": {"lcsc": "C48641757", "device": "connector", "value": "header macho 1x10",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x10 | 2.54mm | 1 fila | Through Hole"},
-    "HDRM12": {"lcsc": PENDIENTE, "device": "connector", "value": "header macho 1x12",
+    "HDRM12": {"lcsc": "C54803345", "device": "connector", "value": "header macho 1x12",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
                "filtros": "1x12 | 2.54mm | 1 fila | Through Hole"},
-    "HDRM16": {"lcsc": PENDIENTE, "device": "connector", "value": "header macho 1x16",
+    "HDRM20": {"lcsc": "C50981", "device": "connector", "value": "header macho 1x20",
                "cat": "Connectors > Rectangular Connectors > subcat. de headers",
-               "filtros": "1x16 | 2.54mm | 1 fila | Through Hole"},
-    "TB2":    {"lcsc": PENDIENTE, "device": "connector", "value": "bornera 2 vias",
+               "filtros": "1x20 | 2.54mm | 1 fila | Through Hole. No existe 1x16 de "
+                          "fila simple en el catalogo, asi que el enlace usa 20 vias "
+                          "y las 4 de sobra van a masas intercaladas"},
+    "TB2":    {"lcsc": "C474952", "device": "connector", "value": "bornera 2 vias",
                "cat": "Connectors > Terminal Blocks",
                "filtros": "2 posiciones | paso 5.08mm | Through Hole"},
 }
@@ -140,8 +142,22 @@ GPIOS_ENTRADA = [g for p in PAREJAS for g in p["gpios"]]
 def net_crudo(gpio):     return f"RJ_{gpio}"   # del jack, antes de proteger
 def net_limpio(gpio):    return f"IN_{gpio}"   # ya protegido, al ESP32
 
-# Enlace entre placas: header 1x16
-LINK = ["+5V", "GND", "+3V3", "GND"] + [net_limpio(g) for g in GPIOS_ENTRADA]
+# Enlace entre placas: header 1x20.
+#
+# Son 16 senales (4 de alimentacion + 12 entradas) en 20 vias. Las 4 de
+# sobra van a GND INTERCALADO: un cable plano que lleva 12 entradas analogicas
+# y digitales juntas tiene menos diafonia si cada grupo queda flanqueado por
+# masa. Ademas no existe header 1x16 de fila simple en el catalogo.
+#
+# Cada grupo de 4 entradas es justo las 4 lineas de una pareja de puertos.
+LINK = (
+    ["+5V", "GND", "+3V3", "GND"]
+    + [net_limpio(g) for g in PAREJAS[0]["gpios"]] + ["GND"]
+    + [net_limpio(g) for g in PAREJAS[1]["gpios"]] + ["GND"]
+    + [net_limpio(g) for g in PAREJAS[2]["gpios"]] + ["GND"]
+    + ["NC"]          # 1 via de reserva
+)
+assert len(LINK) == 20, len(LINK)
 
 # ---------------------------------------------------------------------------
 # MAPA DE PINES DEL DEVKIT ESP32 38 PINES
@@ -276,7 +292,7 @@ def placa_a():
     nl.add("J7", "HDRM4", {"1": "+3V3", "2": "GND", "3": "SDA", "4": "SCL"})
 
     # --- Enlace a la Placa B ---
-    nl.add("J8", "HDRM16", {str(i + 1): n for i, n in enumerate(LINK)})
+    nl.add("J8", "HDRM20", {str(i + 1): n for i, n in enumerate(LINK)})
 
     return nl
 
@@ -286,7 +302,7 @@ def placa_b():
     nl = Netlist("Placa B - Entradas")
 
     # --- Enlace a la Placa A ---
-    nl.add("J1", "HDRM16", {str(i + 1): n for i, n in enumerate(LINK)})
+    nl.add("J1", "HDRM20", {str(i + 1): n for i, n in enumerate(LINK)})
 
     # --- PTC comun del riel de 5 V de los puertos (poblado en la v1) ---
     nl.add("F0", "PTC1A", {"1": "+5V", "2": "+5V_PUERTOS"})
