@@ -31,7 +31,9 @@ está decidido** — no hay que re-abrirlo salvo que algo falle en las pruebas.
 | Script | Para qué |
 |---|---|
 | `tools/identificar-esp32.py` | Lee chip, revisión, flash y MAC de una placa conectada |
-| `tools/generar-netlist.py` | Genera los netlists JSON para EasyEDA Pro. `PARTS` ya tiene los 17 números LCSC |
+| `tools/generar-netlist.py` | Diseño de las dos placas + netlist JSON para EasyEDA Pro. `PARTS` tiene los 17 números LCSC |
+| `tools/generar-netlist-kicad.py` | **Netlist `.net` para KiCad.** Sin dependencias de librería externa — es el camino elegido |
+| `tools/verificar-modelos-eda.py` | Chequea que los C-number tengan modelo en EasyEDA |
 | `tools/buscar-lcsc.py` | Busca candidatos de número LCSC vía la API jlcsearch |
 | `tools/reportes/` | Salida cruda de esptool de cada DevKit |
 
@@ -116,6 +118,7 @@ queda entonces en cero.
 | 9 | Masa **en estrella**: el retorno de las bobinas va directo a la fuente | 560 mA compartiendo pista con el GND del ESP32 corren las lecturas del ADC |
 | 10 | Nunca USB y fuente externa a la vez en el pin `5V` | En muchos DevKit ese pin va directo al VBUS del USB |
 | 12 | Zócalo de **3 tiras** 1×19: una fija + dos en paralelo a 2.54 mm (0.9" y 1.0") | Las dos placas miden distinto; con dos tiras solas una de ellas no entraría |
+| 13 | Diodos de recorte: **el pad 1 es el CÁTODO** (la banda) | Invertidos, el diodo superior conduce siempre de 3.3 V a la señal y clava todas las entradas en alto |
 | 11 | Footprint sin poblar: **en serie** → puentear · **en paralelo** → dejar vacío | Puentear un paralelo cortocircuita el riel |
 
 ---
@@ -154,9 +157,10 @@ enumera en **COM7**.
 
 ## Estado actual
 
-**Fases 1 y 0 en curso.** Netlists completos y validados (sin nets colgados, sin
-componentes sin número LCSC): **listos para importar en EasyEDA Pro**.
-Placa A 23 componentes · Placa B 71.
+**Fases 1 y 0 en curso.** Netlists completos y validados. **Se pasó de EasyEDA a KiCad**: la
+extensión de importación no resolvía ningún componente contra la librería de Pro.
+El `.net` de KiCad no depende de librerías externas. Placa A 23 componentes ·
+Placa B 71. Los 17 números LCSC siguen sirviendo como lista de compras.
 
 **Fase 1** — prototipo en protoboard. Los pines macho ya están soldados a
 MCU-001.

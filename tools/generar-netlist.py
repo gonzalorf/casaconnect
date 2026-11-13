@@ -219,6 +219,7 @@ class Netlist:
     def __init__(self, nombre):
         self.nombre = nombre
         self.items = {}
+        self.orden = []      # [(designador, clave_de_parte, pins)] para otros backends
         self.n = 0
 
     def add(self, designator, part_key, pins):
@@ -231,6 +232,8 @@ class Netlist:
         part = PARTS[part_key]
         self.n += 1
         assert designator not in self.items, f"designador repetido: {designator}"
+        self.orden.append((designator, part_key,
+                           {p: n for p, n in pins.items() if n != "NC"}))
         self.items[designator] = {
             "props": {
                 "Designator": designator,
@@ -361,10 +364,15 @@ def placa_b():
         crudo, limpio = net_crudo(gpio), net_limpio(gpio)
         nl.add(f"R{i}",   "R1K",   {"1": crudo,  "2": limpio})
         nl.add(f"C{i}",   "C100N", {"1": limpio, "2": "GND"})
-        # Recorte: anodo a la senal, catodo a +3V3 (conduce si sube de 3.6 V)
-        nl.add(f"D{i}A",  "BAT85", {"1": limpio, "2": "+3V3"})
-        # Recorte: anodo a GND, catodo a la senal (conduce si baja de -0.3 V)
-        nl.add(f"D{i}B",  "BAT85", {"1": "GND",  "2": limpio})
+        # OJO con la polaridad: en las huellas DO-35 (y en el simbolo de
+        # KiCad) el PAD 1 es el CATODO, la punta con la banda.
+        #
+        # Recorte superior: catodo a +3V3, anodo a la senal.
+        # Conduce si la senal sube por encima de 3.6 V.
+        nl.add(f"D{i}A",  "BAT85", {"1": "+3V3", "2": limpio})
+        # Recorte inferior: catodo a la senal, anodo a GND.
+        # Conduce si la senal baja por debajo de -0.3 V.
+        nl.add(f"D{i}B",  "BAT85", {"1": limpio, "2": "GND"})
 
         if gpio in SIN_PULLUP_INTERNO:
             nl.add(f"R{30 + ref_pu}", "R10K",  {"1": "+3V3", "2": f"PU_{gpio}"})
