@@ -218,14 +218,20 @@ class Netlist:
         self.n = 0
 
     def add(self, designator, part_key, pins):
-        """pins: dict {numero_de_pin(str): nombre_de_net}. 'NC' se omite."""
+        """pins: dict {numero_de_pin(str): nombre_de_net}. 'NC' se omite.
+
+        Formato segun el README oficial de la extension: la clave de cada
+        componente es su DESIGNADOR, y los campos van en CapitalCase
+        (DeviceName, Value), no en minuscula.
+        """
         part = PARTS[part_key]
         self.n += 1
-        self.items[f"gge{self.n}"] = {
+        assert designator not in self.items, f"designador repetido: {designator}"
+        self.items[designator] = {
             "props": {
                 "Designator": designator,
-                "device_name": part["device"],
-                "value": part["value"],
+                "DeviceName": part["device"],
+                "Value": part["value"],
                 "Supplier Part": part["lcsc"],
             },
             "pins": {p: net for p, net in pins.items() if net != "NC"},
@@ -367,9 +373,19 @@ def placa_b():
     return nl
 
 
+def prueba_minima(destino):
+    """Un solo componente, para aislar si el problema es el formato o la red."""
+    nl = Netlist("Prueba - 1 componente")
+    nl.add("R1", "R10K", {"1": "VCC", "2": "GND"})
+    ruta = destino / "prueba-1-componente.json"
+    nl.dump(ruta)
+    print(f"{nl.nombre:24}    1 componentes  ->  {ruta}")
+
+
 def main():
     destino = Path(__file__).parent / "netlist"
     destino.mkdir(exist_ok=True)
+    prueba_minima(destino)
 
     for nl, archivo in [
         (placa_a(), "placa-a-control.json"),

@@ -1,9 +1,9 @@
 {
-  "gge1": {
+  "J1": {
     "props": {
       "Designator": "J1",
-      "device_name": "connector",
-      "value": "header macho 1x20",
+      "DeviceName": "connector",
+      "Value": "header macho 1x20",
       "Supplier Part": "C50981"
     },
     "pins": {
@@ -28,11 +28,11 @@
       "19": "GND"
     }
   },
-  "gge2": {
+  "F0": {
     "props": {
       "Designator": "F0",
-      "device_name": "fuse",
-      "value": "PTC 1A",
+      "DeviceName": "fuse",
+      "Value": "PTC 1A",
       "Supplier Part": "C3760872"
     },
     "pins": {
@@ -40,11 +40,11 @@
       "2": "+5V_PUERTOS"
     }
   },
-  "gge3": {
+  "F1": {
     "props": {
       "Designator": "F1",
-      "device_name": "fuse",
-      "value": "PTC 500mA",
+      "DeviceName": "fuse",
+      "Value": "PTC 500mA",
       "Supplier Part": "C76399"
     },
     "pins": {
@@ -52,11 +52,11 @@
       "2": "P1_5V"
     }
   },
-  "gge4": {
+  "J2": {
     "props": {
       "Designator": "J2",
-      "device_name": "connector",
-      "value": "RJ12 6P6C",
+      "DeviceName": "connector",
+      "Value": "RJ12 6P6C",
       "Supplier Part": "C189750"
     },
     "pins": {
@@ -68,11 +68,11 @@
       "5": "RJ_34"
     }
   },
-  "gge5": {
+  "F2": {
     "props": {
       "Designator": "F2",
-      "device_name": "fuse",
-      "value": "PTC 500mA",
+      "DeviceName": "fuse",
+      "Value": "PTC 500mA",
       "Supplier Part": "C76399"
     },
     "pins": {
@@ -80,11 +80,11 @@
       "2": "P4_5V"
     }
   },
-  "gge6": {
+  "J3": {
     "props": {
       "Designator": "J3",
-      "device_name": "connector",
-      "value": "RJ12 6P6C",
+      "DeviceName": "connector",
+      "Value": "RJ12 6P6C",
       "Supplier Part": "C189750"
     },
     "pins": {
@@ -96,11 +96,11 @@
       "5": "RJ_34"
     }
   },
-  "gge7": {
+  "F3": {
     "props": {
       "Designator": "F3",
-      "device_name": "fuse",
-      "value": "PTC 500mA",
+      "DeviceName": "fuse",
+      "Value": "PTC 500mA",
       "Supplier Part": "C76399"
     },
     "pins": {
@@ -108,11 +108,11 @@
       "2": "P2_5V"
     }
   },
-  "gge8": {
+  "J4": {
     "props": {
       "Designator": "J4",
-      "device_name": "connector",
-      "value": "RJ12 6P6C",
+      "DeviceName": "connector",
+      "Value": "RJ12 6P6C",
       "Supplier Part": "C189750"
     },
     "pins": {
@@ -124,11 +124,11 @@
       "5": "RJ_35"
     }
   },
-  "gge9": {
+  "F4": {
     "props": {
       "Designator": "F4",
-      "device_name": "fuse",
-      "value": "PTC 500mA",
+      "DeviceName": "fuse",
+      "Value": "PTC 500mA",
       "Supplier Part": "C76399"
     },
     "pins": {
@@ -136,11 +136,11 @@
       "2": "P5_5V"
     }
   },
-  "gge10": {
+  "J5": {
     "props": {
       "Designator": "J5",
-      "device_name": "connector",
-      "value": "RJ12 6P6C",
+      "DeviceName": "connector",
+      "Value": "RJ12 6P6C",
       "Supplier Part": "C189750"
     },
     "pins": {
@@ -152,11 +152,11 @@
       "5": "RJ_35"
     }
   },
-  "gge11": {
+  "F5": {
     "props": {
       "Designator": "F5",
-      "device_name": "fuse",
-      "value": "PTC 500mA",
+      "DeviceName": "fuse",
+      "Value": "PTC 500mA",
       "Supplier Part": "C76399"
     },
     "pins": {
@@ -164,11 +164,11 @@
       "2": "P3_5V"
     }
   },
-  "gge12": {
+  "J6": {
     "props": {
       "Designator": "J6",
-      "device_name": "connector",
-      "value": "RJ12 6P6C",
+      "DeviceName": "connector",
+      "Value": "RJ12 6P6C",
       "Supplier Part": "C189750"
     },
     "pins": {
@@ -180,11 +180,11 @@
       "5": "RJ_39"
     }
   },
-  "gge13": {
+  "F6": {
     "props": {
       "Designator": "F6",
-      "device_name": "fuse",
-      "value": "PTC 500mA",
+      "DeviceName": "fuse",
+      "Value": "PTC 500mA",
       "Supplier Part": "C76399"
     },
     "pins": {
@@ -192,11 +192,11 @@
       "2": "P6_5V"
     }
   },
-  "gge14": {
+  "J7": {
     "props": {
       "Designator": "J7",
-      "device_name": "connector",
-      "value": "RJ12 6P6C",
+      "DeviceName": "connector",
+      "Value": "RJ12 6P6C",
       "Supplier Part": "C189750"
     },
     "pins": {
@@ -208,11 +208,11 @@
       "5": "RJ_39"
     }
   },
-  "gge15": {
+  "R1": {
     "props": {
       "Designator": "R1",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -220,11 +220,11 @@
       "2": "IN_2"
     }
   },
-  "gge16": {
+  "C1": {
     "props": {
       "Designator": "C1",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -232,11 +232,11 @@
       "2": "GND"
     }
   },
-  "gge17": {
+  "D1A": {
     "props": {
       "Designator": "D1A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -244,11 +244,11 @@
       "2": "+3V3"
     }
   },
-  "gge18": {
+  "D1B": {
     "props": {
       "Designator": "D1B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -256,11 +256,11 @@
       "2": "IN_2"
     }
   },
-  "gge19": {
+  "R2": {
     "props": {
       "Designator": "R2",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -268,11 +268,11 @@
       "2": "IN_4"
     }
   },
-  "gge20": {
+  "C2": {
     "props": {
       "Designator": "C2",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -280,11 +280,11 @@
       "2": "GND"
     }
   },
-  "gge21": {
+  "D2A": {
     "props": {
       "Designator": "D2A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -292,11 +292,11 @@
       "2": "+3V3"
     }
   },
-  "gge22": {
+  "D2B": {
     "props": {
       "Designator": "D2B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -304,11 +304,11 @@
       "2": "IN_4"
     }
   },
-  "gge23": {
+  "R3": {
     "props": {
       "Designator": "R3",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -316,11 +316,11 @@
       "2": "IN_32"
     }
   },
-  "gge24": {
+  "C3": {
     "props": {
       "Designator": "C3",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -328,11 +328,11 @@
       "2": "GND"
     }
   },
-  "gge25": {
+  "D3A": {
     "props": {
       "Designator": "D3A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -340,11 +340,11 @@
       "2": "+3V3"
     }
   },
-  "gge26": {
+  "D3B": {
     "props": {
       "Designator": "D3B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -352,11 +352,11 @@
       "2": "IN_32"
     }
   },
-  "gge27": {
+  "R4": {
     "props": {
       "Designator": "R4",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -364,11 +364,11 @@
       "2": "IN_34"
     }
   },
-  "gge28": {
+  "C4": {
     "props": {
       "Designator": "C4",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -376,11 +376,11 @@
       "2": "GND"
     }
   },
-  "gge29": {
+  "D4A": {
     "props": {
       "Designator": "D4A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -388,11 +388,11 @@
       "2": "+3V3"
     }
   },
-  "gge30": {
+  "D4B": {
     "props": {
       "Designator": "D4B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -400,11 +400,11 @@
       "2": "IN_34"
     }
   },
-  "gge31": {
+  "R31": {
     "props": {
       "Designator": "R31",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -412,11 +412,11 @@
       "2": "PU_34"
     }
   },
-  "gge32": {
+  "JP1": {
     "props": {
       "Designator": "JP1",
-      "device_name": "connector",
-      "value": "header macho 1x2",
+      "DeviceName": "connector",
+      "Value": "header macho 1x2",
       "Supplier Part": "C358684"
     },
     "pins": {
@@ -424,11 +424,11 @@
       "2": "IN_34"
     }
   },
-  "gge33": {
+  "R5": {
     "props": {
       "Designator": "R5",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -436,11 +436,11 @@
       "2": "IN_5"
     }
   },
-  "gge34": {
+  "C5": {
     "props": {
       "Designator": "C5",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -448,11 +448,11 @@
       "2": "GND"
     }
   },
-  "gge35": {
+  "D5A": {
     "props": {
       "Designator": "D5A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -460,11 +460,11 @@
       "2": "+3V3"
     }
   },
-  "gge36": {
+  "D5B": {
     "props": {
       "Designator": "D5B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -472,11 +472,11 @@
       "2": "IN_5"
     }
   },
-  "gge37": {
+  "R6": {
     "props": {
       "Designator": "R6",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -484,11 +484,11 @@
       "2": "IN_14"
     }
   },
-  "gge38": {
+  "C6": {
     "props": {
       "Designator": "C6",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -496,11 +496,11 @@
       "2": "GND"
     }
   },
-  "gge39": {
+  "D6A": {
     "props": {
       "Designator": "D6A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -508,11 +508,11 @@
       "2": "+3V3"
     }
   },
-  "gge40": {
+  "D6B": {
     "props": {
       "Designator": "D6B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -520,11 +520,11 @@
       "2": "IN_14"
     }
   },
-  "gge41": {
+  "R7": {
     "props": {
       "Designator": "R7",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -532,11 +532,11 @@
       "2": "IN_33"
     }
   },
-  "gge42": {
+  "C7": {
     "props": {
       "Designator": "C7",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -544,11 +544,11 @@
       "2": "GND"
     }
   },
-  "gge43": {
+  "D7A": {
     "props": {
       "Designator": "D7A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -556,11 +556,11 @@
       "2": "+3V3"
     }
   },
-  "gge44": {
+  "D7B": {
     "props": {
       "Designator": "D7B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -568,11 +568,11 @@
       "2": "IN_33"
     }
   },
-  "gge45": {
+  "R8": {
     "props": {
       "Designator": "R8",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -580,11 +580,11 @@
       "2": "IN_35"
     }
   },
-  "gge46": {
+  "C8": {
     "props": {
       "Designator": "C8",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -592,11 +592,11 @@
       "2": "GND"
     }
   },
-  "gge47": {
+  "D8A": {
     "props": {
       "Designator": "D8A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -604,11 +604,11 @@
       "2": "+3V3"
     }
   },
-  "gge48": {
+  "D8B": {
     "props": {
       "Designator": "D8B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -616,11 +616,11 @@
       "2": "IN_35"
     }
   },
-  "gge49": {
+  "R32": {
     "props": {
       "Designator": "R32",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -628,11 +628,11 @@
       "2": "PU_35"
     }
   },
-  "gge50": {
+  "JP2": {
     "props": {
       "Designator": "JP2",
-      "device_name": "connector",
-      "value": "header macho 1x2",
+      "DeviceName": "connector",
+      "Value": "header macho 1x2",
       "Supplier Part": "C358684"
     },
     "pins": {
@@ -640,11 +640,11 @@
       "2": "IN_35"
     }
   },
-  "gge51": {
+  "R9": {
     "props": {
       "Designator": "R9",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -652,11 +652,11 @@
       "2": "IN_15"
     }
   },
-  "gge52": {
+  "C9": {
     "props": {
       "Designator": "C9",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -664,11 +664,11 @@
       "2": "GND"
     }
   },
-  "gge53": {
+  "D9A": {
     "props": {
       "Designator": "D9A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -676,11 +676,11 @@
       "2": "+3V3"
     }
   },
-  "gge54": {
+  "D9B": {
     "props": {
       "Designator": "D9B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -688,11 +688,11 @@
       "2": "IN_15"
     }
   },
-  "gge55": {
+  "R10": {
     "props": {
       "Designator": "R10",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -700,11 +700,11 @@
       "2": "IN_27"
     }
   },
-  "gge56": {
+  "C10": {
     "props": {
       "Designator": "C10",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -712,11 +712,11 @@
       "2": "GND"
     }
   },
-  "gge57": {
+  "D10A": {
     "props": {
       "Designator": "D10A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -724,11 +724,11 @@
       "2": "+3V3"
     }
   },
-  "gge58": {
+  "D10B": {
     "props": {
       "Designator": "D10B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -736,11 +736,11 @@
       "2": "IN_27"
     }
   },
-  "gge59": {
+  "R11": {
     "props": {
       "Designator": "R11",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -748,11 +748,11 @@
       "2": "IN_36"
     }
   },
-  "gge60": {
+  "C11": {
     "props": {
       "Designator": "C11",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -760,11 +760,11 @@
       "2": "GND"
     }
   },
-  "gge61": {
+  "D11A": {
     "props": {
       "Designator": "D11A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -772,11 +772,11 @@
       "2": "+3V3"
     }
   },
-  "gge62": {
+  "D11B": {
     "props": {
       "Designator": "D11B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -784,11 +784,11 @@
       "2": "IN_36"
     }
   },
-  "gge63": {
+  "R33": {
     "props": {
       "Designator": "R33",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -796,11 +796,11 @@
       "2": "PU_36"
     }
   },
-  "gge64": {
+  "JP3": {
     "props": {
       "Designator": "JP3",
-      "device_name": "connector",
-      "value": "header macho 1x2",
+      "DeviceName": "connector",
+      "Value": "header macho 1x2",
       "Supplier Part": "C358684"
     },
     "pins": {
@@ -808,11 +808,11 @@
       "2": "IN_36"
     }
   },
-  "gge65": {
+  "R12": {
     "props": {
       "Designator": "R12",
-      "device_name": "resistor",
-      "value": "1k",
+      "DeviceName": "resistor",
+      "Value": "1k",
       "Supplier Part": "C2894660"
     },
     "pins": {
@@ -820,11 +820,11 @@
       "2": "IN_39"
     }
   },
-  "gge66": {
+  "C12": {
     "props": {
       "Designator": "C12",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -832,11 +832,11 @@
       "2": "GND"
     }
   },
-  "gge67": {
+  "D12A": {
     "props": {
       "Designator": "D12A",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -844,11 +844,11 @@
       "2": "+3V3"
     }
   },
-  "gge68": {
+  "D12B": {
     "props": {
       "Designator": "D12B",
-      "device_name": "diode",
-      "value": "BAT85",
+      "DeviceName": "diode",
+      "Value": "BAT85",
       "Supplier Part": "C3312828"
     },
     "pins": {
@@ -856,11 +856,11 @@
       "2": "IN_39"
     }
   },
-  "gge69": {
+  "R34": {
     "props": {
       "Designator": "R34",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -868,11 +868,11 @@
       "2": "PU_39"
     }
   },
-  "gge70": {
+  "JP4": {
     "props": {
       "Designator": "JP4",
-      "device_name": "connector",
-      "value": "header macho 1x2",
+      "DeviceName": "connector",
+      "Value": "header macho 1x2",
       "Supplier Part": "C358684"
     },
     "pins": {
@@ -880,11 +880,11 @@
       "2": "IN_39"
     }
   },
-  "gge71": {
+  "J8": {
     "props": {
       "Designator": "J8",
-      "device_name": "connector",
-      "value": "header macho 1x12",
+      "DeviceName": "connector",
+      "Value": "header macho 1x12",
       "Supplier Part": "C54803345"
     },
     "pins": {

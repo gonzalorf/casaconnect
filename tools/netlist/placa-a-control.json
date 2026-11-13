@@ -1,9 +1,9 @@
 {
-  "gge1": {
+  "J1": {
     "props": {
       "Designator": "J1",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
+      "DeviceName": "connector",
+      "Value": "bornera 2 vias",
       "Supplier Part": "C474952"
     },
     "pins": {
@@ -11,11 +11,11 @@
       "2": "GND"
     }
   },
-  "gge2": {
+  "F1": {
     "props": {
       "Designator": "F1",
-      "device_name": "fuse",
-      "value": "2A",
+      "DeviceName": "fuse",
+      "Value": "2A",
       "Supplier Part": "C3130"
     },
     "pins": {
@@ -23,11 +23,11 @@
       "2": "+5V"
     }
   },
-  "gge3": {
+  "C1": {
     "props": {
       "Designator": "C1",
-      "device_name": "capacitor",
-      "value": "1000uF 16V",
+      "DeviceName": "capacitor",
+      "Value": "1000uF 16V",
       "Supplier Part": "C18214323"
     },
     "pins": {
@@ -35,11 +35,11 @@
       "2": "GND"
     }
   },
-  "gge4": {
+  "C2": {
     "props": {
       "Designator": "C2",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -47,11 +47,11 @@
       "2": "GND"
     }
   },
-  "gge5": {
+  "C3": {
     "props": {
       "Designator": "C3",
-      "device_name": "capacitor",
-      "value": "100nF",
+      "DeviceName": "capacitor",
+      "Value": "100nF",
       "Supplier Part": "C2169797"
     },
     "pins": {
@@ -59,11 +59,11 @@
       "2": "GND"
     }
   },
-  "gge6": {
+  "J2": {
     "props": {
       "Designator": "J2",
-      "device_name": "connector",
-      "value": "header hembra 1x19",
+      "DeviceName": "connector",
+      "Value": "header hembra 1x19",
       "Supplier Part": "C2932678"
     },
     "pins": {
@@ -83,11 +83,11 @@
       "19": "+5V"
     }
   },
-  "gge7": {
+  "J3": {
     "props": {
       "Designator": "J3",
-      "device_name": "connector",
-      "value": "header hembra 1x19",
+      "DeviceName": "connector",
+      "Value": "header hembra 1x19",
       "Supplier Part": "C2932678"
     },
     "pins": {
@@ -106,11 +106,11 @@
       "16": "IN_15"
     }
   },
-  "gge8": {
+  "J3B": {
     "props": {
       "Designator": "J3B",
-      "device_name": "connector",
-      "value": "header hembra 1x19",
+      "DeviceName": "connector",
+      "Value": "header hembra 1x19",
       "Supplier Part": "C2932678"
     },
     "pins": {
@@ -129,11 +129,11 @@
       "16": "IN_15"
     }
   },
-  "gge9": {
+  "R1": {
     "props": {
       "Designator": "R1",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -141,11 +141,11 @@
       "2": "RLY1"
     }
   },
-  "gge10": {
+  "R2": {
     "props": {
       "Designator": "R2",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -153,11 +153,11 @@
       "2": "RLY2"
     }
   },
-  "gge11": {
+  "R3": {
     "props": {
       "Designator": "R3",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -165,11 +165,11 @@
       "2": "RLY3"
     }
   },
-  "gge12": {
+  "R4": {
     "props": {
       "Designator": "R4",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -177,11 +177,11 @@
       "2": "RLY4"
     }
   },
-  "gge13": {
+  "R5": {
     "props": {
       "Designator": "R5",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -189,11 +189,11 @@
       "2": "RLY5"
     }
   },
-  "gge14": {
+  "R6": {
     "props": {
       "Designator": "R6",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -201,11 +201,11 @@
       "2": "RLY6"
     }
   },
-  "gge15": {
+  "R7": {
     "props": {
       "Designator": "R7",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -213,11 +213,11 @@
       "2": "RLY7"
     }
   },
-  "gge16": {
+  "R8": {
     "props": {
       "Designator": "R8",
-      "device_name": "resistor",
-      "value": "10k",
+      "DeviceName": "resistor",
+      "Value": "10k",
       "Supplier Part": "C2894649"
     },
     "pins": {
@@ -225,11 +225,11 @@
       "2": "RLY8"
     }
   },
-  "gge17": {
+  "J4": {
     "props": {
       "Designator": "J4",
-      "device_name": "connector",
-      "value": "header macho 1x10",
+      "DeviceName": "connector",
+      "Value": "header macho 1x10",
       "Supplier Part": "C48641757"
     },
     "pins": {
@@ -245,11 +245,11 @@
       "10": "GND"
     }
   },
-  "gge18": {
+  "J5": {
     "props": {
       "Designator": "J5",
-      "device_name": "connector",
-      "value": "bornera 2 vias",
+      "DeviceName": "connector",
+      "Value": "bornera 2 vias",
       "Supplier Part": "C474952"
     },
     "pins": {
@@ -257,11 +257,11 @@
       "2": "GND"
     }
   },
-  "gge19": {
+  "J6": {
     "props": {
       "Designator": "J6",
-      "device_name": "connector",
-      "value": "header macho 1x4",
+      "DeviceName": "connector",
+      "Value": "header macho 1x4",
       "Supplier Part": "C32713270"
     },
     "pins": {
@@ -271,11 +271,11 @@
       "4": "SDA"
     }
   },
-  "gge20": {
+  "R9": {
     "props": {
       "Designator": "R9",
-      "device_name": "resistor",
-      "value": "4.7k",
+      "DeviceName": "resistor",
+      "Value": "4.7k",
       "Supplier Part": "C119339"
     },
     "pins": {
@@ -283,11 +283,11 @@
       "2": "SDA"
     }
   },
-  "gge21": {
+  "R10": {
     "props": {
       "Designator": "R10",
-      "device_name": "resistor",
-      "value": "4.7k",
+      "DeviceName": "resistor",
+      "Value": "4.7k",
       "Supplier Part": "C119339"
     },
     "pins": {
@@ -295,11 +295,11 @@
       "2": "SCL"
     }
   },
-  "gge22": {
+  "J7": {
     "props": {
       "Designator": "J7",
-      "device_name": "connector",
-      "value": "header macho 1x4",
+      "DeviceName": "connector",
+      "Value": "header macho 1x4",
       "Supplier Part": "C32713270"
     },
     "pins": {
@@ -309,11 +309,11 @@
       "4": "SCL"
     }
   },
-  "gge23": {
+  "J8": {
     "props": {
       "Designator": "J8",
-      "device_name": "connector",
-      "value": "header macho 1x20",
+      "DeviceName": "connector",
+      "Value": "header macho 1x20",
       "Supplier Part": "C50981"
     },
     "pins": {

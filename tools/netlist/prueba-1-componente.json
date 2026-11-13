@@ -1,0 +1,14 @@
+{
+  "R1": {
+    "props": {
+      "Designator": "R1",
+      "DeviceName": "resistor",
+      "Value": "10k",
+      "Supplier Part": "C2894649"
+    },
+    "pins": {
+      "1": "VCC",
+      "2": "GND"
+    }
+  }
+}
