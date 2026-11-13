@@ -67,7 +67,7 @@ PARTS = {
                "cat": "Circuit Protection > Fuse Holders",
                "filtros": "Portafusible 5x20mm montaje PCB. El fusible se "
                           "compra aparte, no va en el netlist"},
-    "RJ12":   {"lcsc": PENDIENTE, "device": "connector", "value": "RJ12 6P6C",
+    "RJ12":   {"lcsc": "C189750", "device": "connector", "value": "RJ12 6P6C",
                "cat": "Connectors > Modular Connectors (si no, Modular/Ethernet)",
                "filtros": "6P6C -- NO 6P4C: usa el mismo hueco pero trae solo 4 "
                           "contactos montados y perderias 2 lineas por puerto. "

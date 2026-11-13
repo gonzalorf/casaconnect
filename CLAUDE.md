@@ -31,7 +31,8 @@ está decidido** — no hay que re-abrirlo salvo que algo falle en las pruebas.
 | Script | Para qué |
 |---|---|
 | `tools/identificar-esp32.py` | Lee chip, revisión, flash y MAC de una placa conectada |
-| `tools/generar-netlist.py` | Genera los netlists JSON para EasyEDA Pro. **Editar `PARTS` con los números LCSC antes de usarlo** |
+| `tools/generar-netlist.py` | Genera los netlists JSON para EasyEDA Pro. `PARTS` ya tiene los 17 números LCSC |
+| `tools/buscar-lcsc.py` | Busca candidatos de número LCSC vía la API jlcsearch |
 | `tools/reportes/` | Salida cruda de esptool de cada DevKit |
 
 ---
@@ -153,7 +154,11 @@ enumera en **COM7**.
 
 ## Estado actual
 
-**Fase 1 en curso** — prototipo en protoboard. Los pines macho ya están soldados a
+**Fases 1 y 0 en curso.** Netlists completos y validados (sin nets colgados, sin
+componentes sin número LCSC): **listos para importar en EasyEDA Pro**.
+Placa A 23 componentes · Placa B 71.
+
+**Fase 1** — prototipo en protoboard. Los pines macho ya están soldados a
 MCU-001.
 
 **Tests 1.1 y 1.2 pasados** (1 canal cableado): el relé conmuta limpio con 3.3 V y
@@ -173,8 +178,8 @@ Queda un test que puede cambiar el circuito:
 
 Tareas de desbloqueo abiertas (ver `docs/plan.md` §Fase 0):
 
-- [ ] Buscar los 17 números LCSC para el netlist (**irreversible**: un número
-      equivocado carga un componente incorrecto que no se puede corregir)
+- [x] ~~Buscar los 17 números LCSC~~ → **completos.** Los netlists están listos
+      para importar en EasyEDA Pro
 - [x] ~~Medir la separación entre filas~~ → **MCU-001 = 0.9" · MCU-002 = 1.0"**
 - [ ] Identificar el género de PRO-003 (tira de pines) y PRO-004 (Dupont)
 - [x] ~~Regenerar los netlists con el esquema de parejas~~ → hecho.

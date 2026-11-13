@@ -57,7 +57,7 @@
       "Designator": "J2",
       "device_name": "connector",
       "value": "RJ12 6P6C",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C189750"
     },
     "pins": {
       "1": "GND",
@@ -85,7 +85,7 @@
       "Designator": "J3",
       "device_name": "connector",
       "value": "RJ12 6P6C",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C189750"
     },
     "pins": {
       "1": "GND",
@@ -113,7 +113,7 @@
       "Designator": "J4",
       "device_name": "connector",
       "value": "RJ12 6P6C",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C189750"
     },
     "pins": {
       "1": "GND",
@@ -141,7 +141,7 @@
       "Designator": "J5",
       "device_name": "connector",
       "value": "RJ12 6P6C",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C189750"
     },
     "pins": {
       "1": "GND",
@@ -169,7 +169,7 @@
       "Designator": "J6",
       "device_name": "connector",
       "value": "RJ12 6P6C",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C189750"
     },
     "pins": {
       "1": "GND",
@@ -197,7 +197,7 @@
       "Designator": "J7",
       "device_name": "connector",
       "value": "RJ12 6P6C",
-      "Supplier Part": "PENDIENTE"
+      "Supplier Part": "C189750"
     },
     "pins": {
       "1": "GND",
