@@ -24,17 +24,19 @@ rutea.
 
 SOBRE LAS HUELLAS
 -----------------
-Las marcadas VERIFICAR son las que no pude dar por seguras. Si KiCad
-avisa que no encuentra alguna, abrí el visor de huellas (el icono de
-Footprint Library Browser), buscá la correcta y corregí el nombre en
-HUELLAS, aca abajo. El .net es texto plano, tambien se puede editar a
-mano.
+Todos los nombres estan verificados contra la instalacion real de KiCad.
+Al generar, el script los vuelve a chequear uno por uno y aborta si
+alguno no existe o le falta un pad que el netlist usa. Los nombres
+cambian entre versiones, asi que la verificacion corre siempre.
 """
 
 import datetime
 import importlib.util
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from verificar_huellas import verificar  # noqa: E402
 
 AQUI = Path(__file__).parent
 
@@ -66,10 +68,11 @@ HUELLAS = {
 
     # El PTC radial no tiene huella dedicada en KiCad. Un disco de 2 patas
     # con paso 5 mm es geometricamente lo mismo.
-    "PTC1A":  ("Device:Polyfuse", "Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm", True),
-    "PTC500": ("Device:Polyfuse", "Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm", True),
-    "FUSE2A": ("Device:Fuse", "Fuse:Fuseholder_Clip_5x20mm_Horizontal", True),
-    "RJ12":   ("Connector_Generic:Conn_01x06", "Connector_RJ:RJ12_Amphenol_54601_Horizontal", True),
+    "PTC1A":  ("Device:Polyfuse", "Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm", False),
+    "PTC500": ("Device:Polyfuse", "Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm", False),
+    "FUSE2A": ("Device:Fuse", "Fuse:Fuseholder_Cylinder-5x20mm_Bulgin_FX0457"
+               "_Horizontal_Closed", False),
+    "RJ12":   ("Connector_Generic:Conn_01x06", "Connector_RJ:RJ12_Amphenol_54601-x06_Horizontal", False),
 
     "HDRF19": ("Connector_Generic:Conn_01x19",
                "Connector_PinSocket_2.54mm:PinSocket_1x19_P2.54mm_Vertical", False),
@@ -84,7 +87,8 @@ HUELLAS = {
     "HDRM20": ("Connector_Generic:Conn_01x20",
                "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical", False),
     "TB2":    ("Connector_Generic:Conn_01x02",
-               "TerminalBlock:TerminalBlock_bornier-2_P5.08mm", False),
+               "TerminalBlock_Phoenix:TerminalBlock_Phoenix"
+               "_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal", False),
 }
 
 
@@ -143,6 +147,7 @@ def main():
     destino = AQUI / "netlist"
     destino.mkdir(exist_ok=True)
 
+    hechos = []
     for constructor, archivo in [
         (diseno.placa_a, "placa-a-control.net"),
         (diseno.placa_b, "placa-b-entradas.net"),
@@ -151,14 +156,11 @@ def main():
         ruta = destino / archivo
         comp, nets = generar(nl, diseno, ruta)
         print(f"{nl.nombre:24}  {comp:3} componentes · {nets:2} redes  ->  {ruta}")
+        hechos.append(nl)
 
-    verificar = [k for k, (_s, _h, v) in HUELLAS.items() if v]
-    if verificar:
-        print("\nHuellas a VERIFICAR en KiCad (las demas son estandar y seguras):\n")
-        for k in verificar:
-            print(f"    {k:8} {HUELLAS[k][1]}")
-        print("\n  Si KiCad avisa que no encuentra alguna, busca la correcta en el")
-        print("  Footprint Library Browser y corregi el nombre en HUELLAS.")
+    print()
+    if not verificar(hechos, HUELLAS):
+        sys.exit(1)
 
 
 if __name__ == "__main__":

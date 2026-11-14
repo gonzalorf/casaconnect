@@ -33,7 +33,8 @@ está decidido** — no hay que re-abrirlo salvo que algo falle en las pruebas.
 | `tools/identificar-esp32.py` | Lee chip, revisión, flash y MAC de una placa conectada |
 | `tools/generar-netlist.py` | Diseño de las dos placas + netlist JSON para EasyEDA Pro. `PARTS` tiene los 17 números LCSC |
 | `tools/generar-netlist-kicad.py` | **Netlist `.net` para KiCad.** Sin dependencias de librería externa — es el camino elegido |
-| `tools/verificar-modelos-eda.py` | Chequea que los C-number tengan modelo en EasyEDA |
+| `tools/verificar_huellas.py` | Chequea los nombres de huella contra la instalación real de KiCad. Lo corre el generador solo |
+| `tools/verificar-modelos-eda.py` | Chequea que los C-number tengan modelo en EasyEDA *(del camino abandonado)* |
 | `tools/buscar-lcsc.py` | Busca candidatos de número LCSC vía la API jlcsearch |
 | `tools/reportes/` | Salida cruda de esptool de cada DevKit |
 

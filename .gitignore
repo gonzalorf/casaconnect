@@ -1,2 +1,9 @@
 __pycache__/
 *.pyc
+
+# KiCad: historial local (es un repo git anidado) y archivos temporales
+.history/
+*-backups/
+*.kicad_prl
+*.lck
+fp-info-cache
