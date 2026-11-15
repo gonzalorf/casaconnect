@@ -362,9 +362,17 @@ Si el módulo ya tiene, dejá los footprints sin poblar.
 | **A — Control** | Zócalo ESP32 · alimentación · pull-ups de relé · header a relés · OLED · I²C de expansión | 22 |
 | **B — Entradas** | 6 jacks RJ12 · PTCs · 12 redes de protección · header de emergencia | 71 |
 
-Se unen con un **cable plano de 20 vías**: `+5V` `GND` `+3V3` `GND`, más las 12
-entradas agrupadas de a 4 (una pareja de puertos cada grupo) con **GND intercalado**
-entre grupos, y 1 vía de reserva.
+Se unen con un **cable plano de 20 vías**.
+
+⚠️ **El orden de los pines del enlace sigue el orden físico del zócalo del ESP32**, no
+el agrupamiento por parejas de puertos. Es deliberado: `J8` queda pegado a la columna
+izquierda del zócalo, donde caen **8 de las 12 entradas**, así que esas ocho salen en
+pistas paralelas sin un solo cruce. Las otras cuatro están en la columna lejana y
+cruzan por debajo del ESP32 — espacio libre, porque el módulo va zocalado y elevado.
+
+Ordenarlo por parejas es más prolijo de leer pero genera una maraña de cruces del lado
+de la Placa A. Las 4 vías sobrantes van a **GND intercalado**, que reduce la diafonía
+en el cable plano.
 
 > Las masas intercaladas no son relleno: un cable plano que lleva 12 entradas
 > analógicas y digitales juntas tiene menos diafonía si cada grupo queda flanqueado

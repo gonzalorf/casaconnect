@@ -146,23 +146,6 @@ GPIOS_ENTRADA = [g for p in PAREJAS for g in p["gpios"]]
 def net_crudo(gpio):     return f"RJ_{gpio}"   # del jack, antes de proteger
 def net_limpio(gpio):    return f"IN_{gpio}"   # ya protegido, al ESP32
 
-# Enlace entre placas: header 1x20.
-#
-# Son 16 senales (4 de alimentacion + 12 entradas) en 20 vias. Las 4 de
-# sobra van a GND INTERCALADO: un cable plano que lleva 12 entradas analogicas
-# y digitales juntas tiene menos diafonia si cada grupo queda flanqueado por
-# masa. Ademas no existe header 1x16 de fila simple en el catalogo.
-#
-# Cada grupo de 4 entradas es justo las 4 lineas de una pareja de puertos.
-LINK = (
-    ["+5V", "GND", "+3V3", "GND"]
-    + [net_limpio(g) for g in PAREJAS[0]["gpios"]] + ["GND"]
-    + [net_limpio(g) for g in PAREJAS[1]["gpios"]] + ["GND"]
-    + [net_limpio(g) for g in PAREJAS[2]["gpios"]] + ["GND"]
-    + ["NC"]          # 1 via de reserva
-)
-assert len(LINK) == 20, len(LINK)
-
 # ---------------------------------------------------------------------------
 # MAPA DE PINES DEL DEVKIT ESP32 38 PINES
 # ---------------------------------------------------------------------------
@@ -211,6 +194,35 @@ SOCKET_DER = [
     "NC",              # 18 SD0
     "NC",              # 19 CLK
 ]
+
+# Enlace entre placas: header 1x20.
+#
+# El orden NO es arbitrario: sigue el orden FISICO de los pines del ESP32,
+# no el agrupamiento por parejas de puertos. J8 queda pegado a la columna
+# izquierda del zocalo, donde caen 8 de las 12 entradas, asi que esas 8
+# salen en pistas paralelas sin un solo cruce.
+#
+# Las 4 de la columna derecha van al final y cruzan por debajo del ESP32.
+# Ese espacio esta libre: el modulo va zocalado y la placa queda elevada
+# sobre las pistas.
+#
+# Ordenarlo por parejas (como estaba antes) es mas prolijo de leer pero
+# genera una maraña de cruces del lado de la Placa A.
+#
+# Son 16 senales en 20 vias; las 4 de sobra van a GND intercalado, que
+# reduce la diafonia en el cable plano.
+
+_ENTRADAS_IZQ = [n for n in SOCKET_IZQ if n.startswith("IN_")]
+_ENTRADAS_DER = [n for n in SOCKET_DER if n.startswith("IN_")]
+
+LINK = (
+    ["+3V3", "GND"]
+    + _ENTRADAS_IZQ[:6] + ["GND"]       # las que caen mas arriba
+    + _ENTRADAS_IZQ[6:] + ["GND"]       # las dos de mas abajo
+    + _ENTRADAS_DER + ["GND"]           # cruzan por debajo del ESP32
+    + ["+5V", "GND", "NC"]
+)
+assert len(LINK) == 20, len(LINK)
 
 
 class Netlist:
