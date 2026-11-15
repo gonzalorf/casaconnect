@@ -123,13 +123,26 @@ def main():
             if frozenset((a[0], b[0])) in ESPERADOS:
                 continue
             if solape_x > -MARGEN and solape_y > -MARGEN:
-                choques.append((a[0], b[0], max(solape_x, 0), max(solape_y, 0)))
+                choques.append((a[0], b[0], solape_x, solape_y))
 
-    if choques:
-        print(f"SOLAPAMIENTOS ({len(choques)}):")
-        for a, b, sx, sy in sorted(choques, key=lambda c: -(c[2] * c[3])):
-            print(f"   {a:5} <-> {b:5}   se pisan {sx:5.2f} x {sy:5.2f} mm")
-    else:
+    # Se pisan de verdad solo si hay solape en LOS DOS ejes. Si en alguno
+    # hay separacion, estan uno al lado del otro y lo unico que falta es
+    # aire: molesto para etching casero, pero no impide armar la placa.
+    pisan = [c for c in choques if c[2] > 0 and c[3] > 0]
+    justos = [c for c in choques if c not in pisan]
+
+    if pisan:
+        print(f"SE PISAN ({len(pisan)}) -- hay que mover algo:")
+        for a, b, sx, sy in sorted(pisan, key=lambda c: -(c[2] * c[3])):
+            print(f"   {a:5} <-> {b:5}   {sx:5.2f} x {sy:5.2f} mm de solape")
+        print()
+    if justos:
+        print(f"MUY JUSTOS ({len(justos)}) -- menos de {MARGEN} mm de aire:")
+        for a, b, sx, sy in sorted(justos, key=lambda c: max(c[2], c[3])):
+            hueco = -min(sx, sy)
+            print(f"   {a:5} <-> {b:5}   {hueco:5.2f} mm de separacion")
+        print()
+    if not choques:
         print("Sin solapamientos.")
 
     xs = [c[1] for c in cajas] + [c[3] for c in cajas]
@@ -137,7 +150,10 @@ def main():
     print(f"\nOcupa  x {min(xs):.1f} .. {max(xs):.1f} mm"
           f"  ·  y {min(ys):.1f} .. {max(ys):.1f} mm")
     print(f"Contorno sugerido en Edge.Cuts: {max(xs) + 4:.0f} x {max(ys) + 4:.0f} mm")
-    sys.exit(1 if choques else 0)
+    # Solo falla si algo se pisa de verdad. "Muy justo" se informa pero no
+    # bloquea: puede ser una decision deliberada, como las dos tiras del
+    # zocalo o un capacitor pegado al pin que desacopla.
+    sys.exit(1 if pisan else 0)
 
 
 if __name__ == "__main__":

@@ -1402,7 +1402,7 @@
 	(footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm"
 		(layer "F.Cu")
 		(uuid "342e49a1-acb1-4762-9132-24e03de1f41b")
-		(at 92 62)
+		(at 87 62)
 		(descr "C, Disc series, Radial, pin pitch=5.00mm, diameter*width=5*2.5mm^2, Capacitor, http://cdn-reichelt.de/documents/datenblatt/B300/DS_KERKO_TC.pdf")
 		(tags "C Disc series Radial pin pitch 5.00mm diameter 5mm width 2.5mm Capacitor")
 		(property "Reference" "C2"
@@ -5883,7 +5883,7 @@
 	(footprint "Fuse:Fuseholder_Cylinder-5x20mm_Bulgin_FX0457_Horizontal_Closed"
 		(layer "F.Cu")
 		(uuid "b2c896f2-dec6-40cd-8d6d-6f8af06a0fb9")
-		(at 62 62)
+		(at 49 62)
 		(descr "Fuseholder, 5x20, closed, horizontal, Bulgin, FX0457, Sicherungshalter,")
 		(tags "Fuseholder 5x20 closed horizontal Bulgin FX0457 Sicherungshalter ")
 		(property "Reference" "F1"

@@ -89,10 +89,10 @@ POSICIONES = {
     # OJO con F1: mide 35.6 x 13.1 mm pero sus pads estan solo en x=0
     # y x=10.16. El cuerpo se extiende 23 mm mas alla del ultimo pad,
     # asi que hay que mirar el courtyard y no los pads.
-    "F1":  (46.0, 62.0, 0),                         # portafusible
+    "F1":  (49.0, 62.0, 0),                         # portafusible
     "J5":  (78.0, 48.0, 0),                         # salida al JD-VCC
     "C1":  (92.0, 48.0, 0),                         # reservorio 1000 uF
-    "C2":  (85.0, 62.0, 0),                         # desacople de 5 V
+    "C2":  (87.0, 62.0, 0),                         # desacople de 5 V
 }
 
 
