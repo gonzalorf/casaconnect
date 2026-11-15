@@ -378,6 +378,45 @@ La Placa A es chica pero tiene el ruteo más irregular.
 Aun así, contá con **puentes de alambre** por el lado de componentes: a una sola capa
 son inevitables. Es normal en placas caseras.
 
+### Rutear en una cara: las dos tecnicas que lo hacen posible
+
+Intentar resolver todo con pistas en una sola cara es imposible en la
+practica: muchos cruces no tienen solucion. Las dos tecnicas que cambian el
+problema de raiz:
+
+**1. Plano de masa.** Un relleno de cobre asignado a `GND` sobre toda la
+cara. Los pads de masa se conectan solos y salen del ruteo:
+
+| | Conexiones totales | Solo `GND` |
+|---|---:|---:|
+| Placa A | 109 | **18** |
+| Placa B | 193 | **35** |
+
+Casi el 40 % de las conexiones son alimentacion y masa. El plano se lleva la
+parte mas grande de eso sin que dibujes una sola pista.
+
+**2. La cara superior es la capa de puentes.** Configurar KiCad a **2 capas**
+aunque la placa sea de una:
+
+```
+   B.Cu  ->  el cobre que se etcha
+   F.Cu  ->  NO se etcha: cada pista dibujada ahi es un
+             PUENTE DE ALAMBRE que se suelda por arriba
+```
+
+Asi se rutea como si fuera doble faz y cualquier cruce se resuelve. Al
+fabricar se imprime y ataca **solo `B.Cu`**, y cada segmento de `F.Cu` indica
+donde va un puente y entre que dos puntos.
+
+> **Regla:** que los puentes vayan **de pad a pad**. Todos los componentes son
+> pasantes, asi que sus agujeros ya cruzan la placa y el alambre se suelda
+> arriba sin perforar nada extra. Un puente que arranque a mitad de pista
+> necesita una via — un agujero soldado de los dos lados — que se puede hacer
+> pero es trabajo evitable.
+
+Con las dos tecnicas juntas, el ruteo deja de ser un rompecabezas sin
+solucion y pasa a ser una decision de cuantos puentes se aceptan.
+
 ### Reglas de dibujo para etching casero
 
 | Parámetro | Valor |
