@@ -35,46 +35,57 @@ from pathlib import Path
 PCB = Path(__file__).parent.parent / "kicad" / "CasaConnect" / "CasaConnect.kicad_pcb"
 
 # Geometria del zocalo
-SOCKET_X = 12.0          # donde arranca el pin 1 de las tres tiras
-SOCKET_Y = 18.0          # fila izquierda (J2)
+#
+# OJO: las huellas PinHeader/PinSocket de KiCad corren a lo largo del eje
+# Y: el pin 1 queda arriba y los demas bajan. Asi que la separacion entre
+# las filas del zocalo va en X, y cada tira ocupa 19 x 2.54 = 45.72 mm de
+# alto.
+SOCKET_X = 16.0          # columna izquierda del ESP32 (J2)
+SOCKET_Y = 12.0          # donde arranca el pin 1 de las tres tiras
 SEP_09 = 22.86           # 0.9 pulgadas -> MCU-001
 SEP_10 = 25.40           # 1.0 pulgadas -> MCU-002
 
 # designador -> (x, y, rotacion)
 POSICIONES = {
-    # --- enlace a la Placa B, sobre el borde superior ---
-    "J8":  (SOCKET_X, 6.0, 0),
+    # --- enlace a la Placa B, borde izquierdo ---
+    "J8":  (6.0, SOCKET_Y, 0),                      # 1x20, 48.3 mm de alto
 
-    # --- zocalo del ESP32: las tres tiras, distancias exactas ---
+    # --- zocalo del ESP32: tres tiras verticales, separacion exacta en X ---
     "J2":  (SOCKET_X, SOCKET_Y, 0),
-    "J3":  (SOCKET_X, SOCKET_Y + SEP_09, 0),
-    "J3B": (SOCKET_X, SOCKET_Y + SEP_10, 0),
+    "J3":  (SOCKET_X + SEP_09, SOCKET_Y, 0),
+    "J3B": (SOCKET_X + SEP_10, SOCKET_Y, 0),
 
-    # --- interfaz, sobre el borde derecho ---
-    "J6":  (74.0, 18.0, 0),      # OLED
-    "J7":  (74.0, 30.0, 0),      # I2C de expansion
-    "R9":  (64.0, 24.0, 0),      # pull-up I2C (SDA)
-    "R10": (64.0, 36.0, 0),      # pull-up I2C (SCL)
+    # --- desacople de 3V3, arriba del pin 1 de J2 ---
+    "C3":  (14.0, 6.0, 0),
 
-    # --- pull-ups de rele, en fila entre el ESP32 y J4 ---
-    # Verticales (rot 90): cada una ocupa 10.16 mm a lo alto.
-    "R1":  (14.0, 57.0, 90),
-    "R2":  (19.0, 57.0, 90),
-    "R3":  (24.0, 57.0, 90),
-    "R4":  (29.0, 57.0, 90),
-    "R5":  (34.0, 57.0, 90),
-    "R6":  (39.0, 57.0, 90),
-    "R7":  (44.0, 57.0, 90),
-    "R8":  (49.0, 57.0, 90),
+    # --- pull-ups de rele: columna entre el ESP32 y J4 ---
+    # Horizontales. OJO: en estas huellas el pad 1 esta en el ORIGEN,
+    # no centrado, asi que cada una se extiende 10.16 mm hacia la
+    # DERECHA del punto de colocacion.
+    "R1":  (46.0, 12.0, 0),
+    "R2":  (46.0, 17.0, 0),
+    "R3":  (46.0, 22.0, 0),
+    "R4":  (46.0, 27.0, 0),
+    "R5":  (46.0, 32.0, 0),
+    "R6":  (46.0, 37.0, 0),
+    "R7":  (46.0, 42.0, 0),
+    "R8":  (46.0, 47.0, 0),
 
-    # --- alimentacion, toda junta abajo y pegada a J4 (masa en estrella) ---
-    "J4":  (14.0, 70.0, 0),      # header de 10 al modulo de reles
-    "J1":  (44.0, 70.0, 0),      # entrada de 5 V
-    "F1":  (44.0, 60.0, 0),      # portafusible
-    "J5":  (60.0, 70.0, 0),      # salida 5 V al JD-VCC
-    "C1":  (76.0, 68.0, 0),      # reservorio de 1000 uF
-    "C2":  (76.0, 56.0, 0),      # desacople del riel de 5 V
-    "C3":  (6.0, 26.0, 0),       # desacople de 3V3, cerca del pin del zocalo
+    # --- header al modulo de 8 reles ---
+    "J4":  (62.0, 12.0, 0),                         # 1x10, 22.9 mm de alto
+
+    # --- interfaz, borde derecho ---
+    "J6":  (76.0, 12.0, 0),                         # OLED
+    "J7":  (76.0, 26.0, 0),                         # I2C de expansion
+    "R9":  (86.0, 14.0, 0),                         # pull-up I2C (SDA)
+    "R10": (86.0, 20.0, 0),                         # pull-up I2C (SCL)
+
+    # --- alimentacion, abajo y agrupada (masa en estrella) ---
+    "J1":  (62.0, 48.0, 0),                         # entrada de 5 V
+    "F1":  (62.0, 62.0, 0),                         # portafusible
+    "J5":  (78.0, 48.0, 0),                         # salida al JD-VCC
+    "C1":  (92.0, 48.0, 0),                         # reservorio 1000 uF
+    "C2":  (92.0, 62.0, 0),                         # desacople de 5 V
 }
 
 
