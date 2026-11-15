@@ -5,8 +5,12 @@ del ESP32, directamente riesgoso: las tres tiras tienen que quedar a
 distancias exactas o la placa no entra.
 
     1. Guardar la placa en KiCad (Ctrl+S) y CERRAR el programa
-    2. python tools/colocar-placa-a.py
+    2. python tools/colocar-placa-a.py            <- coloca los 23
+       python tools/colocar-placa-a.py F1 C2      <- solo esos dos
     3. Reabrir la placa
+
+Pasarle designadores sirve para corregir algo puntual sin deshacer los
+ajustes que hayas hecho a mano en el resto.
 
 ESTO ES UN PUNTO DE PARTIDA, NO EL DISENO FINAL
 -----------------------------------------------
@@ -82,10 +86,13 @@ POSICIONES = {
 
     # --- alimentacion, abajo y agrupada (masa en estrella) ---
     "J1":  (62.0, 48.0, 0),                         # entrada de 5 V
-    "F1":  (62.0, 62.0, 0),                         # portafusible
+    # OJO con F1: mide 35.6 x 13.1 mm pero sus pads estan solo en x=0
+    # y x=10.16. El cuerpo se extiende 23 mm mas alla del ultimo pad,
+    # asi que hay que mirar el courtyard y no los pads.
+    "F1":  (46.0, 62.0, 0),                         # portafusible
     "J5":  (78.0, 48.0, 0),                         # salida al JD-VCC
     "C1":  (92.0, 48.0, 0),                         # reservorio 1000 uF
-    "C2":  (92.0, 62.0, 0),                         # desacople de 5 V
+    "C2":  (85.0, 62.0, 0),                         # desacople de 5 V
 }
 
 
@@ -123,6 +130,14 @@ def main():
     if not PCB.exists():
         sys.exit(f"No existe {PCB}")
 
+    pedidos = {a.upper() for a in sys.argv[1:]}
+    if pedidos:
+        desconocidos = pedidos - set(POSICIONES)
+        if desconocidos:
+            sys.exit("Sin posicion definida: " + ", ".join(sorted(desconocidos)))
+        print("Moviendo solo: " + ", ".join(sorted(pedidos)) + "
+")
+
     texto = PCB.read_text(encoding="utf-8")
     bloques = list(bloques_footprint(texto))
     if not bloques:
@@ -137,11 +152,11 @@ def main():
         salida.append(texto[cursor:ini])
         bloque = texto[ini:fin]
         ref = referencia(bloque)
-        if ref in POSICIONES:
+        if ref in POSICIONES and (not pedidos or ref in pedidos):
             x, y, rot = POSICIONES[ref]
             bloque = reposicionar(bloque, x, y, rot)
             movidos.append((ref, x, y, rot))
-        elif ref:
+        elif ref and not pedidos:
             sin_posicion.append(ref)
         salida.append(bloque)
         cursor = fin
@@ -156,7 +171,7 @@ def main():
     if sin_posicion:
         print(f"\nSin posicion definida: {', '.join(sorted(sin_posicion))}")
 
-    faltan = set(POSICIONES) - {r for r, *_ in movidos}
+    faltan = (pedidos or set(POSICIONES)) - {r for r, *_ in movidos}
     if faltan:
         print(f"No estaban en la placa: {', '.join(sorted(faltan))}")
 
