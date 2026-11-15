@@ -135,8 +135,8 @@ def main():
         desconocidos = pedidos - set(POSICIONES)
         if desconocidos:
             sys.exit("Sin posicion definida: " + ", ".join(sorted(desconocidos)))
-        print("Moviendo solo: " + ", ".join(sorted(pedidos)) + "
-")
+        print("Moviendo solo: " + ", ".join(sorted(pedidos)))
+        print()
 
     texto = PCB.read_text(encoding="utf-8")
     bloques = list(bloques_footprint(texto))
